@@ -1,8 +1,10 @@
-/* ------ COMPONENTS : BUTTONS ------ */
+/* ------ COMPONENTS : NAVBAR ------ */
 
 
 #navbar {
   background: $light-gray;
+  display: flex;
+  justify-content: space-between;
 }
 
 
