@@ -22,7 +22,12 @@
   color: $neon-orange;
   font-weight: $font-weight-bold;
   text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
   @include border-medium($neon-orange);
+    &:hover {
+    color: white;
+    background: $neon-orange;
+  }
 }
 
 .cta {
