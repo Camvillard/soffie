@@ -1,6 +1,5 @@
-/* -------------------------------------
- * Your CSS code for flash notices and alerts
-* ------------------------------------- */
+/* ------ COMPONENTS : ALERTS & NOTICES ------ */
+
 
 .alert {
   margin: 0;
@@ -8,8 +7,8 @@
   color: white;
 }
 .alert-info {
-  background: $green;
+  background: $peach-orange;
 }
 .alert-warning {
-  background: $red;
+  background: $neon-orange;
 }
