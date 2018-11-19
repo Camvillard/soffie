@@ -1,14 +1,13 @@
 /* ------ PAGES : GENERAL STYLES ------ */
 
-
 * {
   margin: 0;
 }
 
-
 body {
   font-size: 100%;
   font-family: $body-font;
+  color: $medium-gray;
 }
 
 p {
@@ -21,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: $font-weight-extrabold;
   line-height: 1.625;
   margin: 0px;
+  color: $dark-gray;
 }
 
 h1 {
@@ -53,5 +53,9 @@ h6 {
   margin: 1.2rem auto;
 }
 
+.content {
+  width: 70%;
+  margin:auto;
+}
 
 
