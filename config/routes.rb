@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/styles', to: 'pages#styles'
 
-  get '/users/speed_test', to: 'users#speed_test'
+  get '/speed_test', to: 'pages#speed_test'
+  patch '/updating_users_reading_time', to: 'pages#updating_users_reading_time'
 
   resources :users_books, only: [:index, :new, :create]
 end
