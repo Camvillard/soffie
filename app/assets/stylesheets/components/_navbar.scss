@@ -1,10 +1,34 @@
 /* ------ COMPONENTS : NAVBAR ------ */
 
 
+#soffie-logo {
+  margin-left: 22px;
+  margin-top: 22px;
+}
+
 #navbar {
-  background: $light-gray;
-  display: flex;
-  justify-content: space-between;
+  // background: $light-gray;
+  // display: flex;
+  // justify-content: space-between;
+
+  .profile-button {
+    border: none;
+    position: fixed;
+    right: 0;
+    top: 80px;
+    background: $dark-blue;
+    width: 60px;
+    height: 52px;
+
+  }
+  .menu-bars {
+
+  }
+  .menu-bars i{
+    color: white;
+    font-size: 2.4rem;
+    padding-right: 8px;
+  }
 }
 
 
