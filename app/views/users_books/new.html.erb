@@ -1,2 +1,5 @@
-<h1>UsersBooks#new</h1>
-<p>Find me in app/views/users_books/new.html.erb</p>
+<form action="<%= users_books_path %>" method='post'>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name='query'>
+  <input type="submit">
+</form>

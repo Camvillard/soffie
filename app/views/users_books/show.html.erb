@@ -1,0 +1,8 @@
+<p>Title: <%= @book.title %></p>
+<p>Author: <%= @book.author %></p>
+<p>description: <%= simple_format(@book.description) %></p>
+<p><%= @book.num_pages %> pages</p>
+<br>
+<%= image_tag @book.image_url %>
+
+

@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   get '/users/speed_test', to: 'users#speed_test'
 
-  resources :users_books, only: [:index, :new, :create]
+  resources :users_books, only: [:index, :new, :create, :show]
 end
