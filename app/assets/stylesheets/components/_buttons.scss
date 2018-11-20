@@ -1,29 +1,38 @@
 /* ------ COMPONENTS : BUTTONS ------ */
 
 
-.button {
+// .button-neon {
+//   @include button-primary($neon-orange);
+//   padding: $padding-y-sm $padding-x-sm;
+//   color: white;
+
+//   &:hover {
+//     background: white;
+//   }
+// }
+
+.button-peach {
+  @include button-primary($peach-orange);
   padding: $padding-y-sm $padding-x-sm;
-  background: $medium-gray;
   color: white;
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  transition: background 0.3s ease-in-out;
-  @include border-medium($medium-gray);
 
   &:hover {
     background: white;
-    color: $medium-gray;
   }
 }
 
-.button-border {
+.button-border-neon {
+  @include button-border($neon-orange);
   padding: $padding-y-sm $padding-x-sm;
-  background: white;
-  color: $neon-orange;
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  transition: background 0.3s ease-in-out;
-  @include border-medium($neon-orange);
+    &:hover {
+    color: white;
+    background: $neon-orange;
+  }
+}
+
+.button-border-blue {
+  @include button-border($dark-blue);
+  padding: $padding-y-sm $padding-x-sm;
     &:hover {
     color: white;
     background: $neon-orange;
@@ -31,6 +40,7 @@
 }
 
 .cta {
+  display: inline-block;
   border-bottom: 4px solid $dark-gray;
   color: $dark-gray;
   font-family: $headers-font;
