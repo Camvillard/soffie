@@ -1,0 +1,9 @@
+/* ------ MIXINS : STYLES HELPERS ------ */
+// for dev purposes only, don't forget to remove it before production
+
+@mixin style-colors($color) {
+  background: $color;
+  width: 100%;
+  height: 120px;
+}
+
