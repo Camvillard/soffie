@@ -2,7 +2,7 @@ console.log("hello from speed_test");
 
 // defining the elements
 const button = document.getElementById("starter");
-const result = document.querySelector(".result");
+const result = document.querySelector(".modal-body");
 const times = [];
 let counter = 0;
 
@@ -24,7 +24,8 @@ button.addEventListener('click', function(event) {
   if (counter == 2) {
     const speedTest = computeDifference();
     console.log(speedTest);
-    result.innerHTML = calculateReadingTime(speedTest / 1000);
+    result.innerHTML = calculateReadingTime(speedTest / 1000) + " words per minute";
+    $('#myModal').modal('show');
   }
 });
 
