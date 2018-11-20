@@ -24,19 +24,11 @@
 .button-border-neon {
   @include button-border($neon-orange);
   padding: $padding-y-sm $padding-x-sm;
-    &:hover {
-    color: white;
-    background: $neon-orange;
-  }
 }
 
 .button-border-blue {
   @include button-border($dark-blue);
   padding: $padding-y-sm $padding-x-sm;
-    &:hover {
-    color: white;
-    background: $neon-orange;
-  }
 }
 
 .cta {
