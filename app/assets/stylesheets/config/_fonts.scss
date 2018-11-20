@@ -5,14 +5,15 @@
 @import url("https://use.typekit.net/nix4amn.css");
 
 // settings up font families
-$font-family-ambroise: "ambroise-std", serif;
+$font-family-escrow: "escrow", serif;
 $font-family-benton: "benton-sans", sans-serif;
 
 $body-font: $font-family-benton;
-$headers-font: $font-family-ambroise;
-$accent-font: $font-family-ambroise;
+$headers-font: $font-family-escrow;
+$accent-font: $font-family-escrow;
 
 // setting up font-weight
-$font-weight-extrabold: 800;
-$font-weight-bold: 700;
-$font-weight-normal: 400;
+$font-weight-extrabold: 800; // escrow
+$font-weight-bold: 700; // benton
+$font-weight-normal: 400; // escrow & benton
+$font-weight-light: 300; // benton

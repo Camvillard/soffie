@@ -1,0 +1,35 @@
+
+@mixin button-primary($color) {
+  background: $color;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-transform: uppercase;
+  transition: background 0.2s ease-in-out;
+  font-weight: 700;
+  @include border-medium($color);
+
+  &:hover {
+    background: white;
+    color: $color;
+    text-decoration: none;
+  }
+}
+
+@mixin button-border($color) {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: white;
+  color: $color;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background 0.2s ease-in-out;
+  @include border-medium($color);
+    &:hover {
+    color: white;
+    background: $color;
+    text-decoration: none;
+  }
+
+}
