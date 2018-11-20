@@ -1,14 +1,31 @@
 console.log("hello from speed_test");
 
-const start = document.getElementById("start_time");
-const stop = document.getElementById("end_time");
+// defining the elements
+const button = document.getElementById("starter");
+const result = document.querySelector(".result");
+const times = [];
+let counter = 0;
 
-start.addEventListener('click', function(event) {
-  start_time = Date.now();
-  console.log(start_time);
+
+// functions
+const computeDifference = () => {
+  return times[1] - times[0];
+};
+
+const calculateReadingTime = (seconds) => {
+  return Math.floor((1272 / seconds) * 60);
+};
+
+// event listeners
+button.addEventListener('click', function(event) {
+  button.innerText = "stop timer";
+  times.push(Date.now());
+  counter++;
+  if (counter == 2) {
+    const speedTest = computeDifference();
+    console.log(speedTest);
+    result.innerHTML = calculateReadingTime(speedTest / 1000);
+  }
 });
 
-stop.addEventListener('click', function(event) {
-  stop_time = Date.now();
-  console.log(stop_time);
-});
+// 1272 mots
