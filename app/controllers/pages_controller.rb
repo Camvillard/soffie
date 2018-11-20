@@ -10,4 +10,12 @@ class PagesController < ApplicationController
 
   def styles
   end
+
+  def speed_test
+
+  end
+
+  def updating_users_reading_time
+
+  end
 end
