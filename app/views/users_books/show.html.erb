@@ -3,7 +3,13 @@
 <p>description: <%= simple_format(@user_book.description) %></p>
 <p><%= @user_book.num_pages %> pages</p>
 <br>
+
+<% if @user_book.image_url.present? %>
 <p>Cover: <%= image_tag @user_book.image_url %></p>
+
+<% end %>
+
+
 
 
 
