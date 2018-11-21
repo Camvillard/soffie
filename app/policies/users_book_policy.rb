@@ -20,4 +20,8 @@ class UsersBookPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def search_for_a_book?
+    true
+  end
 end

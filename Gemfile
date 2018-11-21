@@ -19,6 +19,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'pundit'
+gem "select2-rails"
 
 gem 'goodreads'
 gem 'rest-client'

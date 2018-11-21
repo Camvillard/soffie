@@ -30,6 +30,11 @@ class UsersBooksController < ApplicationController
     end
   end
 
+  def search_for_a_book
+    @book = UsersBook.new
+    authorize @book
+  end
+
   private
 
   def retrieve_information_from_google_api(search)
