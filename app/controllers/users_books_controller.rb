@@ -1,8 +1,11 @@
 require 'open-uri'
 
 class UsersBooksController < ApplicationController
-  def index
+  def results
     @users_books = policy_scope(UsersBook)
+    #1 : retrieve all the informations given by the form
+    #2 : filter all the books you have wi
+
   end
 
   def show
