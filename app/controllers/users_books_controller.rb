@@ -1,4 +1,3 @@
-require 'goodreads'
 require 'open-uri'
 
 class UsersBooksController < ApplicationController
@@ -17,7 +16,7 @@ class UsersBooksController < ApplicationController
   end
 
   def create
-    built_query = build_api_query(params[:title], params[:author])
+    built_query = build_api_query(params[:title], params[:author], params[:isbn])
     data = retrieve_information_from_google_api(built_query)["items"][0]["volumeInfo"]
     @book = UsersBook.new(
       title: data["title"],
@@ -36,8 +35,12 @@ class UsersBooksController < ApplicationController
 
   private
 
-  def build_api_query(title, author)
-    "#{title}+inauthor:#{author}"
+  def build_api_query(title, author, isbn)
+    output = ""
+    output += title
+    output += "+inauthor:#{author}" unless author.empty?
+    output += "+isbn:#{isbn}" unless isbn.empty?
+    return output
   end
 
   def retrieve_information_from_google_api(search)
