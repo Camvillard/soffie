@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_11_20_221913) do
     t.integer "num_pages"
     t.text "description"
     t.string "image_url"
+    t.integer "isbn"
   end
 
   add_foreign_key "book_categories", "categories", column: "categories_id"

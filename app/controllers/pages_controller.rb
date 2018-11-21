@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
+
   def home
   end
 
@@ -9,5 +11,13 @@ class PagesController < ApplicationController
   end
 
   def styles
+  end
+
+  def speed_test
+
+  end
+
+  def updating_users_reading_time
+
   end
 end
