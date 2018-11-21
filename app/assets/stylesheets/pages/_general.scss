@@ -8,6 +8,7 @@ body {
   font-size: 62.5%;
   font-family: $body-font;
   color: $medium-gray;
+  @include border-large($dark-blue);
 }
 
 div {
@@ -98,8 +99,8 @@ span.accent-text {
 /* only for dev */
 
 .styles-sections {
-  margin-left: 4%;
-  margin-right: 4%;
+  margin-left: 8%;
+  margin-right: 8%;
 
   p {
   font-size: 1.2rem;
