@@ -4,14 +4,17 @@
 
 <%= f.input :categories, class: "js-example-basic-multiple", as: :select, collection: Category::CATEGORIES_LIST %>
 
-
-
 <% end %>
 
-  <select class="js-example-basic-multiple" name="genres[]" multiple="multiple">
-    <option value="FIC">fiction</option>
-    <option value="ADV">adventure</option>
-    <option value="ROM">romance</option>
-    <option value="THR">thriller</option>
-    <option value="TRA">tragedy</option>
-  </select>
+<!-- <script>
+  $(document).ready(function() {
+    if ($('#users_book_categories')) {
+      $('#users_book_categories').select2({
+      multiple: "multiple"
+      });
+    }
+  });
+</script> -->
+
+
+<%= javascript_pack_tag 'select2' %>

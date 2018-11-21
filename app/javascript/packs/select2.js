@@ -1,3 +1,12 @@
+import "bootstrap";
+import $ from 'jquery';
+import "select2";
+
 $(document).ready(function() {
-    $('.js-example-basic-multiple').select2();
+  if ($('#users_book_categories')) {
+  $('#users_book_categories').select2({
+  multiple: "multiple"
+  });
+
+  }
 });

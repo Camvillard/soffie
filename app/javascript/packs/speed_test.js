@@ -1,12 +1,11 @@
-console.log("hello from speed_test");
-
 // defining the elements
+import "bootstrap";
+
 const button = document.getElementById("starter");
 const result = document.querySelector(".modal-body");
 const times = [];
 let counter = 0;
-const hiddenField = document.getElementById("words_per_minute")
-
+const hiddenField = document.getElementById("words_per_minute");
 
 
 // functions
