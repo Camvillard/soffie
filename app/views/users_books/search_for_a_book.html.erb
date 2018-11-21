@@ -1,20 +1,11 @@
-<h1>hello from search page</h1>
+<div class="container">
 
-<%= simple_form_for(@book) do |f| %>
+  <h1>i want to read something</h1>
 
-<%= f.input :categories, class: "js-example-basic-multiple", as: :select, collection: Category::CATEGORIES_LIST %>
+  <%= simple_form_for(@book) do |f| %>
+    <%= f.input :categories, class: "js-example-basic-multiple", as: :select, collection: Category::CATEGORIES_LIST %>
+  <% end %>
 
-<% end %>
-
-<!-- <script>
-  $(document).ready(function() {
-    if ($('#users_book_categories')) {
-      $('#users_book_categories').select2({
-      multiple: "multiple"
-      });
-    }
-  });
-</script> -->
-
+</div>
 
 <%= javascript_pack_tag 'select2' %>
