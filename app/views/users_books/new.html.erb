@@ -4,9 +4,17 @@
       <div class='text-center'>
         <h3>add a new book</h3>
       </div>
-      <%= render "form" %>
+      <form action="<%= users_books_path %>" method='post'>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="text" name='query'>
+        <input type="submit">
+      </form>
     <% else %>
       <%= link_to "Login", new_user_session_path %>
     <% end %>
   </div>
 </div>
+
+
+
+
