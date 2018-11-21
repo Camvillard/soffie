@@ -20,6 +20,10 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 
+gem 'goodreads'
+gem 'rest-client'
+gem 'xml-simple'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

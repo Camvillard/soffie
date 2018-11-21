@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/speed_test', to: 'pages#speed_test'
   patch '/updating_users_reading_time', to: 'pages#updating_users_reading_time'
 
-  resources :users_books, only: [:index, :new, :create]
+  resources :users_books, only: [:index, :new, :create, :show]
 end
