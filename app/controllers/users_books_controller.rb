@@ -2,6 +2,7 @@ require 'goodreads'
 
 class UsersBooksController < ApplicationController
   def index
+    # @users_books = policy_scope(Users_book)
   end
 
   def show
@@ -10,8 +11,7 @@ class UsersBooksController < ApplicationController
 
   def new
     @users_book = UsersBook.new
-    # authorize @users_book
-
+    authorize @users_book
   end
 
   def create
@@ -19,10 +19,8 @@ class UsersBooksController < ApplicationController
       api_key: ENV['GOODREADS_API_KEY'],
       api_secret: ENV['GOODREADS_API_SECRET']
     )
-
     # first request
     search = client.search_books(params[:query])
-    # raise
     title = search.results.work.first.best_book.title
     author = search.results.work.first.best_book.author.name
     image = search.results.work.first.best_book.image_url
