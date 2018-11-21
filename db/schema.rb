@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_221913) do
+ActiveRecord::Schema.define(version: 2018_11_21_170931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 2018_11_20_221913) do
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "isbn"
     t.integer "num_pages"
     t.text "description"
     t.string "image_url"
+    t.bigint "isbn"
   end
 
   add_foreign_key "book_categories", "categories", column: "categories_id"
