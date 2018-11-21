@@ -19,13 +19,16 @@ class UsersBooksController < ApplicationController
   def create
     built_query = build_api_query(params[:title], params[:author])
     data = retrieve_information_from_google_api(built_query)["items"][0]["volumeInfo"]
+    image = data['imageLinks'].is_a?(Hash) ? data['imageLinks']['thumbnail'] : data['imageLinks'].first['thumbnail']
     @book = UsersBook.new(
       title: data["title"],
       author: data["authors"][0],
       description: data["description"],
       num_pages: data["pageCount"],
-      isbn: data["industryIdentifiers"][0]["identifier"]
-    )
+      isbn: data["industryIdentifiers"][0]["identifier"],
+      image_url: image
+      )
+
     authorize @book
     if @book.save
       redirect_to users_book_path(@book)
