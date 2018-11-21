@@ -3,7 +3,7 @@ require 'open-uri'
 
 class UsersBooksController < ApplicationController
   def index
-    # @users_books = policy_scope(UserBook)
+    @users_books = policy_scope(UsersBook)
   end
 
   def show
@@ -43,7 +43,8 @@ class UsersBooksController < ApplicationController
       title: data["items"][0]["volumeInfo"]["title"],
       author: data["items"][0]["volumeInfo"]["authors"][0],
       description: data["items"][0]["volumeInfo"]["description"],
-      num_pages: data["items"][0]["volumeInfo"]["pageCount"]
+      num_pages: data["items"][0]["volumeInfo"]["pageCount"],
+      isbn: data["items"][0]["volumeInfo"]["industryIdentifiers"][0]["identifier"]
     )
   end
 
