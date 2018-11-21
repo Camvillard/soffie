@@ -1,0 +1,18 @@
+/* ------ PAGES : SPEED TEST ------ */
+
+#pages-speed_test {
+  height: 100vh;
+}
+
+#test-header {
+  text-align: right;
+
+  button {
+    width: 100%;
+  }
+}
+
+#test-text {
+  max-height: 70vh;
+  overflow: scroll;
+}
