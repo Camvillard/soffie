@@ -8,7 +8,6 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 
-# gem 'bootstrap', '~> 4.1.3'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 # gem 'sprockets-rails', :require => 'sprockets/railtie'
@@ -19,6 +18,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'pundit'
+
+gem 'goodreads'
+gem 'rest-client'
+gem 'xml-simple'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

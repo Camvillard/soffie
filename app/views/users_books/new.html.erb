@@ -1,4 +1,20 @@
-<h3>add a new book</h3>
-<p><%= render "form" %></p>
+<div class="container">
+  <div class="row">
+    <% if policy(UsersBook).create? %>
+      <div class='text-center'>
+        <h3>add a new book</h3>
+      </div>
+      <form action="<%= users_books_path %>" method='post'>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="text" name='query' placeholder="title">
+        <input type="submit">
+      </form>
+    <% else %>
+      <%= link_to "Login", new_user_session_path %>
+    <% end %>
+  </div>
+</div>
+
+
 
 
