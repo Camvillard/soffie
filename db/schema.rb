@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 2018_11_20_221913) do
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "isbn"
     t.integer "num_pages"
     t.text "description"
     t.string "image_url"
-    t.integer "isbn"
   end
 
   add_foreign_key "book_categories", "categories", column: "categories_id"

@@ -6,7 +6,11 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <%= form_tag updating_users_reading_time_path, method: "patch" do %>
+          <%= hidden_field_tag "words_per_minute"%>
+          <%= submit_tag "Save changes", class: "btn btn-default" %>
+        <% end %>
       </div>
     </div>
   </div>
