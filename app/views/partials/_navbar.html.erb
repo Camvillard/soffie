@@ -1,15 +1,34 @@
-<div id="navbar">
+<div id="soffie-logo">
+  <%= image_tag "logo_blue.png" %>
+</div>
 
-  <div id="navbar-search">
+
+
+<div id="navbar">
+  <button class="profile-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <span class="menu-bars"><i class="fas fa-bars"></i></span>
+  </button>
+  <div class="collapse" id="collapseExample">
+    <div class="well">
+      <h1>hello Claire!</h1>
+      <h4>nice to see you</h4>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!--   <div id="navbar-search">
     search
   </div>
 
   <div id="navbar-menu">
-    <%= link_to 'read a book', '#' %>
-    <%= link_to 'add a book', new_users_book_path %>
+    <%#= link_to 'read a book', '#' %>
+    <%#= link_to 'add a book', new_users_book_path %>
   </div>
 
   <div id="navbar-profile">
     <i class="far fa-user-circle"></i>
   </div>
-</div>
+ -->
