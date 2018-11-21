@@ -1,42 +1,53 @@
 require 'goodreads'
+require 'open-uri'
 
 class UsersBooksController < ApplicationController
   def index
-    # @users_books = policy_scope(Users_book)
+    # @users_books = policy_scope(UserBook)
   end
 
   def show
-    @book = UsersBook.find(params[:id])
+    @user_book = UsersBook.find(params[:id])
+    authorize @user_book
   end
 
   def new
-    @users_book = UsersBook.new
-    authorize @users_book
+    @user_book = UsersBook.new
+    authorize @user_book
   end
 
   def create
-    client = Goodreads.new(
-      api_key: ENV['GOODREADS_API_KEY'],
-      api_secret: ENV['GOODREADS_API_SECRET']
-    )
-    # first request
-    search = client.search_books(params[:query])
-    title = search.results.work.first.best_book.title
-    author = search.results.work.first.best_book.author.name
-    image = search.results.work.first.best_book.image_url
+    data = retrieve_information_from_google_api(params[:query])
+    @book = UsersBook.new
+    authorize @book
+    @book.save
 
-    # second request to get specific detail
-    book_detail = client.book_by_title(title)
-    num_pages = book_detail.num_pages
-    description = book_detail.description
+    if @book.save
+      update_the_book_with_google_infos(@book, data)
+      redirect_to users_book_path(@book)
+    else
+      render :new
+    end
+  end
 
-    book = UsersBook.create!(
-      title: title,
-      author: author,
-      num_pages: num_pages,
-      description: description,
-      image_url: image
+  private
+
+  def retrieve_information_from_google_api(search)
+    url = "https://www.googleapis.com/books/v1/volumes?q=#{search}"
+    serialized = open(url).read
+    JSON.parse(serialized)
+  end
+
+  def update_the_book_with_google_infos(book, data)
+    book.update(
+      title: data["items"][0]["volumeInfo"]["title"],
+      author: data["items"][0]["volumeInfo"]["authors"][0],
+      description: data["items"][0]["volumeInfo"]["description"],
+      num_pages: data["items"][0]["volumeInfo"]["pageCount"]
     )
-    redirect_to users_book_path(book)
+  end
+
+  def users_book_params
+    params.require(:user_books).permit(:title, :author, :isbn, :details, :reading_time, :num_pages, :description, :image_url)
   end
 end

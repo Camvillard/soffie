@@ -8,7 +8,6 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 
-# gem 'bootstrap', '~> 4.1.3'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 # gem 'sprockets-rails', :require => 'sprockets/railtie'
