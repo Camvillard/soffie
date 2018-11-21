@@ -1,1 +1,17 @@
 <h1>hello from search page</h1>
+
+<%= simple_form_for(@book) do |f| %>
+
+<%= f.input :categories, class: "js-example-basic-multiple", as: :select, collection: Category::CATEGORIES_LIST %>
+
+
+
+<% end %>
+
+  <select class="js-example-basic-multiple" name="genres[]" multiple="multiple">
+    <option value="FIC">fiction</option>
+    <option value="ADV">adventure</option>
+    <option value="ROM">romance</option>
+    <option value="THR">thriller</option>
+    <option value="TRA">tragedy</option>
+  </select>
