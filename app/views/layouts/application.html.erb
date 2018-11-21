@@ -11,7 +11,11 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body id="<%= controller_name %>-<%= action_name %>">
-    <%= render "partials/navbar" %>
+
+    <% unless action_name == "home"  %>
+      <%= render "partials/navbar" %>
+    <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
