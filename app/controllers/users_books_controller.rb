@@ -4,7 +4,7 @@ class UsersBooksController < ApplicationController
   def results
     @users_books = policy_scope(UsersBook)
     #1 : retrieve all the informations given by the form
-    #2 : filter all the books you have wi
+    #2 : filter all the books you have by category and by length
 
   end
 
@@ -29,10 +29,11 @@ class UsersBooksController < ApplicationController
       num_pages: data["pageCount"],
       isbn: data["industryIdentifiers"][0]["identifier"],
       image_url: image
-      )
+    )
 
     authorize @book
     if @book.save
+      Category.add_new_category(data, @book)
       redirect_to users_book_path(@book)
     else
       render :new
@@ -45,6 +46,10 @@ class UsersBooksController < ApplicationController
   end
 
   private
+
+  def calculate_reading_time(days, hours)
+
+  end
 
   def build_api_query(title, author, isbn)
     output = ""
