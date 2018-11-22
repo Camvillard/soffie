@@ -50,7 +50,7 @@ class UsersBooksController < ApplicationController
   end
 
   def calculate_reading_time(days, hours)
-    total_hours = days.to_i * hours.to_i
+    days.to_i * hours.to_i
   end
 
   private

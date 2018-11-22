@@ -85,8 +85,8 @@ Category.create(name: "thriller")
 
 harry_potter_2.categories = [Category.find_by(name: "young adult")]
 rien_ne_soppose.categories = [Category.find_by(name: "fiction")]
-les_chaussures_italiennes = [Category.find_by(name: "drama")]
-singuliere_tristesse = [Category.find_by(name: "fiction")]
+les_chaussures_italiennes.categories = [Category.find_by(name: "drama")]
+singuliere_tristesse.categories = [Category.find_by(name: "fiction")]
 
 # UsersBook.create([
 #   { user_id: claire.id, title: 'My Brilliant Friend', author: 'Elena Ferrante', isbn: 9781609450786},
