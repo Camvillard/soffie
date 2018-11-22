@@ -9,7 +9,9 @@
 puts 'cleaning the soffie db...'
 
 User.delete_all
+BookCategory.delete_all
 UsersBook.delete_all
+Category.delete_all
 
 puts 'planting seeds for soffie...'
 
@@ -19,102 +21,68 @@ camille = User.create(email: 'camille@lewagon.org', password: 'wagonwagon')
 serge = User.create(email: 'serge@lewagon.org', password: 'wagonwagon')
 
 
-UsersBook.create([
-  { user_id: esteban.id,
-    reading_time: "200",
-    description: "an entertaining alphabet picture book...",
-    num_pages: 200,
-    title: 'chicka chicka boom boom',
-    author: 'bill martin',
-    image_url: 'image',
-    isbn: 9781416990918
-  },
-
-  { user_id: esteban.id,
-    reading_time: "200",
-    description: "Feeling misunderstood at home and at school...",
-    num_pages: 300, title: 'where the wild things are',
-    author: 'maurice sendak',
-    image_url: 'image',
-    isbn: 9780064431781
-  },
-
-  { user_id: esteban.id,
-    reading_time: "200",
-    description: "a children's fantasy adventure novel...",
-    num_pages: 500,
-    title: 'the phantom tollbooth',
-    author: 'norton juster',
-    image_url: 'image',
-    isbn: 9780394820378
-  },
-])
-
-UsersBook.create([
-  { user_id: camille.id,
-    reading_time: "297",
-    description: "it follows a wizard in his fourth year at...",
-    num_pages: 2000,
-    title: 'Harry Potter And The Goblet of Fire',
+harry_potter_2 = UsersBook.create(
+    user_id: camille.id,
+    title: 'Harry Potter And The Chamber Of Secrets',
     author: 'JK Rowling',
-    image_url: 'image',
-    isbn: 9780747538486
-  },
+    isbn: 9780747538486,
+    image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
+    num_pages: 357,
+    reading_time: "32725"
+    )
 
-  { user_id: camille.id,
-    reading_time: "297",
-    description: "a novel based on her investigation into the life of...",
-    num_pages: 1500,
+harry_potter_7 = UsersBook.create(
+    user_id: camille.id,
+    title: 'Harry Potter and the Deathly Hallows',
+    author: 'JK Rowling',
+    isbn: 9780747538486,
+    image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
+    num_pages: 784,
+    reading_time: "71866",
+    description: "Harry Potter is leaving Privet Drive for the last time. But as he climbs into the sidecar of Hagrid’s motorbike and they take to the skies, he knows Lord Voldemort and the Death Eaters will not be far behind.The protective charm that has kept him safe until now is broken. But the Dark Lord is breathing fear into everything he loves. And he knows he can’t keep hiding. To stop Voldemort, Harry knows he must find the remaining Horcruxes and destroy them. He will have to face his enemy in one final battle."
+    )
+
+rien_ne_soppose = UsersBook.create(
+    user_id: camille.id,
     title: 'Rien ne soppose à la nuit',
     author: 'Delphine de Vigan',
-    image_url: 'image',
-    isbn: 9782253164265
-  },
+    isbn: 9782253164265,
+    image_url: "https://images.gr-assets.com/books/1327247619l/12351695.jpg",
+    num_pages: 352,
+    reading_time: "32266.7"
+    )
 
-  { user_id: camille.id,
-    reading_time: "297",
-    description: "the novel focusses on Fredrik Welin, once a successful orthopaedic...",
-    num_pages: 1000,
+les_chaussures_italiennes = UsersBook.create(
+    user_id: camille.id,
     title: 'Les Chaussures italiennes',
     author: 'Henning Mankell',
-    image_url: 'image',
-    isbn: 9782757821626
-  },
-  ])
+    isbn: 9782757821626,
+    image_url: "https://images.gr-assets.com/books/1329585015l/7145210.jpg",
+    num_pages: 352,
+    reading_time: "322667"
+    )
 
-UsersBook.create([
-  { user_id: claire.id,
-    reading_time: "221",
-    description: "After learning that her lifelong...",
-    num_pages: 600,
-    title: 'My Brilliant Friend',
-    author: 'Elena Ferrante',
-    image_url: 'image',
-    isbn: 9781609450786
-  },
+singuliere_tristesse = UsersBook.create(
+    user_id: camille.id,
+    title: 'La Singulière Tristesse du gâteau au citron',
+    author: 'Aimee Bender',
+    isbn: 9782879297804,
+    image_url: "https://images.gr-assets.com/books/1369746930l/17984746.jpg",
+    num_pages: 345,
+    reading_time: "31625"
+    )
 
-  { user_id: claire.id,
-    reading_time: "221",
-    description: "Set in the small Southern town of Maycomb...",
-    num_pages: 500,
-    title: 'To Kill a Mockingbird',
-    author: 'Harper Lee',
-    image_url: 'image',
-    isbn: 9780446310789
-  },
+Category.create(name: "fiction")
+Category.create(name: "romance")
+Category.create(name: "young adult")
+Category.create(name: "drama")
+Category.create(name: "mystery")
+Category.create(name: "thriller")
 
-  { user_id: claire.id,
-    reading_time: "221",
-    description: "The novel is a murder thriller set in 1930s Brighton...",
-    num_pages: 700,
-    title: 'Brighton Rock',
-    author: 'Graham Greene',
-    image_url: 'image',
-    isbn: 9780142437971
-  },
-  ])
 
-users = User.all
-usersbook = UsersBook.all
+harry_potter_2.categories = [Category.find_by(name: "young adult")]
+rien_ne_soppose.categories = [Category.find_by(name: "fiction")]
+les_chaussures_italiennes.categories = [Category.find_by(name: "drama")]
+singuliere_tristesse.categories = [Category.find_by(name: "fiction")]
 
 puts 'soffie is ready to search ^_^-b'

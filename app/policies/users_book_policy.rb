@@ -1,7 +1,7 @@
 class UsersBookPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
 
@@ -18,6 +18,10 @@ class UsersBookPolicy < ApplicationPolicy
   end
 
   def create?
+    true
+  end
+
+  def search_for_a_book?
     true
   end
 end
