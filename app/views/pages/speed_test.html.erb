@@ -3,6 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
+        <!-- <span id="speed-result"></span> -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -54,4 +55,5 @@ Nearly Headless Nick took several deep breaths and then said, in a far calmer to
   start timer
 </button>
 
-<div class="result"></div>
+<div class="result"><span id="speed-result"></span><span>word per minute</span></div>
+<%= javascript_pack_tag 'speed_test' %>
