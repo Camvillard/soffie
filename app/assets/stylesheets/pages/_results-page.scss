@@ -1,23 +1,42 @@
 /* ------ PAGES : RESULTS ------ */
 
+#users_books-results {
+  .row {
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+}
+
 
 .first-result {
   display: flex;
   justify-content: space-between;
-}
 
-
-#other-results {
-  border: 3px solid red;
-  h3 {
-    font-size: 2.6rem;
-  }
-  h4 {
-    font-size: 2rem;
+  .book-details {
+    flex: 0 0 60%;
+    align-self: flex-end;
   }
 }
+
 
 .other-results {
   display: flex;
   justify-content: space-between;
+
+    h3 {
+      font-size: 2.6rem;
+    }
+    h4 {
+      font-size: 2rem;
+    }
+
+    .book-image img{
+      // flex: 0 1 30%;
+    }
+
+    .book-details {
+      flex: 0 1 60%;
+      align-self: flex-end;
+    }
 }
+

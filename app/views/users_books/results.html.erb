@@ -46,7 +46,7 @@
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <div class="first-result">
+        <div class="first-result" id="first-result">
 
           <div class="book-image">
             <%= image_tag @final_books[0].image_url %>
@@ -99,7 +99,7 @@
               </div>
 
               <div class="book-actions">
-                <%= link_to "great soffie, I'll take this one", "#", class: "button-peach" %>
+                <%= link_to "choose this book", "#", class: "button-peach" %>
               </div>
 
             </div> <!-- end of .book-details -->
