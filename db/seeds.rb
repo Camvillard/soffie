@@ -15,17 +15,10 @@ Category.delete_all
 
 puts 'planting seeds for soffie...'
 
-# esteban = User.create(email: 'esteban@lewagon.org', password: 'wagonwagon')
-# claire = User.create(email: 'claire@lewagon.org', password: 'wagonwagon')
+esteban = User.create(email: 'esteban@lewagon.org', password: 'wagonwagon')
+claire = User.create(email: 'claire@lewagon.org', password: 'wagonwagon')
 camille = User.create(email: 'camille@lewagon.org', password: 'wagonwagon')
-# serge = User.create(email: 'serge@lewagon.org', password: 'wagonwagon')
-
-
-# UsersBook.create([
-#   { user_id: esteban.id, title: 'chicka chicka boom boom', author: 'bill martin', isbn: 9781416990918 },
-  # {user_id: esteban.id, title: 'where the wild things are', author: 'maurice sendak', isbn: 9780064431781},
-#   { user_id: esteban.id, title: 'the phantom tollbooth', author: 'norton juster', isbn: 9780394820378},
-# ])
+serge = User.create(email: 'serge@lewagon.org', password: 'wagonwagon')
 
 
 harry_potter_2 = UsersBook.create(
@@ -87,19 +80,9 @@ Category.create(name: "mystery")
 Category.create(name: "thriller")
 
 
-
 harry_potter_2.categories = [Category.find_by(name: "young adult")]
 rien_ne_soppose.categories = [Category.find_by(name: "fiction")]
 les_chaussures_italiennes.categories = [Category.find_by(name: "drama")]
 singuliere_tristesse.categories = [Category.find_by(name: "fiction")]
 
-# UsersBook.create([
-#   { user_id: claire.id, title: 'My Brilliant Friend', author: 'Elena Ferrante', isbn: 9781609450786},
-#   { user_id: claire.id, title: 'To Kill a Mockingbird', author: 'Harper Lee', isbn: 9780446310789},
-#   { user_id: claire.id, title: 'Brighton Rock', author: 'Graham Greene', isbn: 9780142437971},
-#   ])
-
-# users = User.all
-# usersbook = UsersBook.all
-
-puts 'soffie is ready to search'
+puts 'soffie is ready to search ^_^-b'
