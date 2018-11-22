@@ -35,6 +35,7 @@ harry_potter_2 = UsersBook.create(
     isbn: 9780747538486,
     image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
     num_pages: 357,
+    reading_time: "32725"
     )
 
 harry_potter_7 = UsersBook.create(
@@ -44,6 +45,7 @@ harry_potter_7 = UsersBook.create(
     isbn: 9780747538486,
     image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
     num_pages: 784,
+    reading_time: "71866",
     description: "Harry Potter is leaving Privet Drive for the last time. But as he climbs into the sidecar of Hagrid’s motorbike and they take to the skies, he knows Lord Voldemort and the Death Eaters will not be far behind.The protective charm that has kept him safe until now is broken. But the Dark Lord is breathing fear into everything he loves. And he knows he can’t keep hiding. To stop Voldemort, Harry knows he must find the remaining Horcruxes and destroy them. He will have to face his enemy in one final battle."
     )
 
@@ -54,6 +56,7 @@ rien_ne_soppose = UsersBook.create(
     isbn: 9782253164265,
     image_url: "https://images.gr-assets.com/books/1327247619l/12351695.jpg",
     num_pages: 352,
+    reading_time: "32266.7"
     )
 
 les_chaussures_italiennes = UsersBook.create(
@@ -63,6 +66,7 @@ les_chaussures_italiennes = UsersBook.create(
     isbn: 9782757821626,
     image_url: "https://images.gr-assets.com/books/1329585015l/7145210.jpg",
     num_pages: 352,
+    reading_time: "322667"
     )
 
 singuliere_tristesse = UsersBook.create(
@@ -72,6 +76,7 @@ singuliere_tristesse = UsersBook.create(
     isbn: 9782879297804,
     image_url: "https://images.gr-assets.com/books/1369746930l/17984746.jpg",
     num_pages: 345,
+    reading_time: "31625"
     )
 
 Category.create(name: "fiction")

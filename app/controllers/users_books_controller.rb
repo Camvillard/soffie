@@ -6,8 +6,7 @@ class UsersBooksController < ApplicationController
     categories = Category.find(params[:categories])
     reading_time = calculate_reading_time(params[:day], params[:hours])
     @users_books = policy_scope(UsersBook)
-
-    raise
+    @readable_books = find_a_book_with_time(reading_time)
     #1 : retrieve all the informations given by the form
     #2 : filter all the books you have by category and by length
   end
@@ -32,11 +31,15 @@ class UsersBooksController < ApplicationController
       description: data["description"],
       num_pages: data["pageCount"],
       isbn: data["industryIdentifiers"][0]["identifier"],
-      image_url: image
+      image_url: image,
+      user: current_user
     )
 
+    # binding.pry
     authorize @book
+
     if @book.save
+      # @book.define_reading_time_for_a_book
       # Category.add_new_category(data, @book)
       redirect_to users_book_path(@book)
     else
@@ -50,20 +53,20 @@ class UsersBooksController < ApplicationController
   end
 
   def calculate_reading_time(days, hours)
-    days.to_i * hours.to_i
+    #returns the number of seconds available to read a book
+    days.to_f * hours.to_f * 3600
   end
 
   private
 
   def find_a_book_with_time(time)
-    # for a given time (total hours), find a book
-    result_books = []
-    books = UsersBook.all
-    books.each do |book|
-      if book.reading_time > time - 5 && book.reading_time < time + 5
-        result_books << book
+    @time_books = []
+    @users_books.each do |users_book|
+      if users_book.reading_time.to_f > time - 18000 && users_book.reading_time.to_f < time + 18000
+        @time_books << users_book
       end
     end
+    raise
   end
 
   def build_api_query(title, author, isbn)
