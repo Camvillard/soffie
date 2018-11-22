@@ -2,6 +2,12 @@ class UsersBookPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
+
+  # CATEGORIES_LIST.each do |cat| {
+  #   users_book.include?(cat)
+  # }
+
+
     end
   end
 

@@ -2,14 +2,10 @@
 
   <h1>i want to read something</h1>
 
-
    <%= form_tag results_path, method: 'get' do %>
       <%=  select_tag "categories", options_from_collection_for_select(Category.all, "id", "name"), class: "js-example-basic-multiple" %>
-
      <h1>i can read <input type="text" name="hours" placeholder="3">hours a day and i want to finish my book in <input type="text" name="day" placeholder="3"> days.</h1>
     <%= submit_tag "give me a book", class: "button-neon" %>
-
-
    <% end %>
 
 </div>
