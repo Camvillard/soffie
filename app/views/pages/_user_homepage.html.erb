@@ -1,8 +1,18 @@
 <h1> welcome back, <%= current_user.first_name%></h1>
 
 <!-- Image Carousel -->
+<div class="your-class">
+  <div> Your Content 1 </div>
+  <div> Your Content 2</div>
+  <div> Your Content 3</div>
+  <div> Your Content 4</div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+  <div> Your Content </div>
+</div>
 
-<%= link_to "add a book to your pile", new_users_book_path %>
+<p><%= link_to "add a book to your pile", new_users_book_path %></p>
 
-<!-- Add search route -->
-<%#= link_to "search for your next read", ANCHOR_URL %>
+<p><%= link_to "search for your next read", search_path %></p>
+
+
