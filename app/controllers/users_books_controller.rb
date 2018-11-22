@@ -1,14 +1,16 @@
 require 'open-uri'
 
 class UsersBooksController < ApplicationController
-
   def results
     categories = Category.find(params[:categories])
     reading_time = calculate_reading_time(params[:day], params[:hours])
     @users_books = policy_scope(UsersBook)
     @readable_books = find_a_book_with_time(reading_time)
-    #1 : retrieve all the informations given by the form
-    #2 : filter all the books you have by category and by length
+    @final_books = []
+
+    @readable_books.each do |book|
+      @final_books << book if book.is_valid?(categories)
+    end
   end
 
   def show
@@ -34,8 +36,6 @@ class UsersBooksController < ApplicationController
       image_url: image,
       user: current_user
     )
-
-    # binding.pry
     authorize @book
 
     if @book.save
@@ -66,7 +66,7 @@ class UsersBooksController < ApplicationController
         @time_books << users_book
       end
     end
-    raise
+    # raise
   end
 
   def build_api_query(title, author, isbn)
