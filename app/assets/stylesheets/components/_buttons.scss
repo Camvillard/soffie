@@ -1,15 +1,15 @@
 /* ------ COMPONENTS : BUTTONS ------ */
 
 
-// .button-neon {
-//   @include button-primary($neon-orange);
-//   padding: $padding-y-sm $padding-x-sm;
-//   color: white;
+.button-neon {
+  @include button-primary($neon-orange);
+  padding: $padding-y-sm $padding-x-sm;
+  color: white;
 
-//   &:hover {
-//     background: white;
-//   }
-// }
+  &:hover {
+    background: white;
+  }
+}
 
 .button-peach {
   @include button-primary($peach-orange);
@@ -19,6 +19,11 @@
   &:hover {
     background: white;
   }
+}
+
+.button-border-peach {
+  @include button-border($peach-orange);
+  padding: $padding-y-sm $padding-x-sm;
 }
 
 .button-border-neon {

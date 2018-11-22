@@ -1,0 +1,23 @@
+/* ------ PAGES : RESULTS ------ */
+
+
+.first-result {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#other-results {
+  border: 3px solid red;
+  h3 {
+    font-size: 2.6rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+}
+
+.other-results {
+  display: flex;
+  justify-content: space-between;
+}
