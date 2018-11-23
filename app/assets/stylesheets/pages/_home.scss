@@ -6,9 +6,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
 
+#brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  h3 {
+    margin-top: 0px;
+  }
 }
 
 #homepage-logo {
   width: 50%;
+}
+
+#actions {
+  width: 30vw;
+  a {
+    display: block;
+  }
 }

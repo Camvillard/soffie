@@ -1,0 +1,50 @@
+/* ------ COMPONENTS : FORMS ------ */
+
+.form-inputs {
+  input {
+    border: none;
+    margin: 3rem auto;
+    font-family: $headers-font;
+    font-weight: $font-weight-extrabold;
+    background: none;
+    padding-bottom: 1rem;
+  }
+
+  input:focus,
+  input:visited,
+  input:active {
+    border: none;
+    outline-offset: 0px;
+    outline: none;
+  }
+
+  input.password {
+    display: block;
+  }
+}
+
+.hidden-label {
+  display: none;
+}
+
+.form-cta {
+  border: none;
+}
+
+input {
+  border: none;
+  @include horizontal-border(6px, $dark-blue);
+  margin: 3rem auto;
+  font-family: $headers-font;
+  font-weight: $font-weight-extrabold;
+  background: none;
+  padding-bottom: 1rem;
+}
+
+input:focus,
+input:visited,
+input:active {
+  border: none;
+  outline-offset: 0px;
+  outline: none;
+}

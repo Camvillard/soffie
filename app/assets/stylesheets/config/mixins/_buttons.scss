@@ -1,5 +1,6 @@
 
 @mixin button-primary($color) {
+  text-align: center;
   background: $color;
   display: inline-block;
   margin-left: 10px;
@@ -17,6 +18,7 @@
 }
 
 @mixin button-border($color) {
+  text-align: center;
   display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
@@ -31,4 +33,15 @@
     background: $color;
     text-decoration: none;
   }
+}
+
+@mixin cta($width, $font-color, $color) {
+  border: none;
+  display: inline-block;
+  border-bottom: $width solid $color;
+  padding-bottom: -20px;
+  color: $font-color;
+  font-family: $headers-font;
+  text-transform:lowercase;
+  font-weight: $font-weight-extrabold;
 }

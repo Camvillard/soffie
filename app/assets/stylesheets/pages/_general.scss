@@ -9,6 +9,7 @@ body {
   font-family: $body-font;
   color: $medium-gray;
   @include border-large($dark-blue);
+  min-height: 100vh;
 }
 
 div {
@@ -34,7 +35,7 @@ a {
 h1, h2, h3, h4, h5 {
   font-family: $headers-font;
   font-weight: $font-weight-extrabold;
-  line-height: 1.625;
+  line-height: 1.4;
   margin: 0px;
   color: $headers-color;
 }
@@ -93,6 +94,11 @@ span.accent-text {
 .md-underline {
   padding-bottom: 0.4rem;
   border-bottom: 4px solid $headers-color;
+}
+
+.row {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 

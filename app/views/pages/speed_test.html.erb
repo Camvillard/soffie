@@ -3,57 +3,42 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <!-- <span id="speed-result"></span> -->
+        <h3>you can read</h3>
+        <h4><span class="result-content"></span> words per minute</h4>
+        <hr class="md-border-blue">
+        <p class="modal-accent">that means you could read the entire
+Harry Potter collection in 4 days, without doing anything else, which is a little bit intense, but well, you could.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="cta-neon" data-dismiss="modal">close</button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <%= form_tag updating_users_reading_time_path, method: "patch" do %>
           <%= hidden_field_tag "words_per_minute"%>
-          <%= submit_tag "Save changes", class: "btn btn-default" %>
+          <%= submit_tag "save my result", class: "cta-neon" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 
-<p>October arrived, spreading a damp chill over the grounds and into the castle. Madam Pomfrey, the nurse, was kept busy by a sudden spate of colds among the staff and students. Her Pepperup potion worked instantly, though it left the drinker smoking at the ears for several hours afterward. Ginny Weasley, who had been looking pale, was bullied into taking some by Percy. The steam pouring from under her vivid hair gave the impression that her whole head was on fire.
+<div class="container">
+  <div class="row">
 
-Raindrops the size of bullets thundered on the castle windows for days on end; the lake rose, the flower beds turned into muddy streams, and Hagrid's pumpkins swelled to the size of garden sheds. Oliver Wood's enthusiasm for regular training sessions, however, was not dampened, which was why Harry was to be found, late one stormy Saturday afternoon a few days before Halloween, returning to Gryffindor Tower, drenched to the skin and splattered with mud.
+    <div class="col-md-4" id="test-header">
+      <h3>Don’t worry, nothing complicated here.</h3>
+      <p> All you have to do is get a coffee, and when you’re ready, hit the start button. Read the extract at your regular pace, it’s not a competition, and it will help Soffie to me more accurate. When you’re done, hit the button: that’s it..</p>
+      <button id="starter" class="button-peach">start timer</button>
+    </div> <!-- end of #test-header -->
 
-Even aside from the rain and wind it hadn't been a happy practice session. Fred and George, who had been spying on the Slytherin team, had seen for themselves the speed of those new Nimbus Two Thousand and Ones. They reported that the Slytherin team was no more than seven greenish blurs, shooting through the air like missiles.
+      <div class="col-md-8" id="test-text">
+        <%= render "partials/speed-test-text" %>
 
-As Harry squelched along the deserted corridor he came across somebody who looked just as preoccupied as he was. Nearly Headless Nick, the ghost of Gryffindor Tower, was staring morosely out of a window, muttering under his breath, ". . . don't fulfill their requirements . . . half an inch, if that . . ."
+      </div>
 
-"Hello, Nick," said Harry.
+    </div> <!-- end of row -->
+  </div> <!-- end of container -->
 
-"Hello, hello," said Nearly Headless Nick, starting and looking round. He wore a dashing, plumed hat on his long curly hair, and a tunic with a ruff, which concealed the fact that his neck was almost completely severed. He was pale as smoke, and Harry could see right through him to the dark sky and torrential rain outside.
+</div>
 
-"You look troubled, young Potter," said Nick, folding a transparent letter as he spoke and tucking it inside his doublet.
 
-"So do you," said Harry.
-
-"Ah," Nearly Headless Nick waved an elegant hand, "a matter of no importance. . . . It's not as though I really wanted to join. . . . Thought I'd apply, but apparently I 'don't fulfill requirements' -"
-
-In spite of his airy tone, there was a look of great bitterness on his face.
-
-"But you would think, wouldn't you," he erupted suddenly, pulling the letter back out of his pocket, "that getting hit forty-five times in the neck with a blunt axe would qualify you to join the Headless Hunt?"
-
-"Oh - yes," said Harry, who was obviously supposed to agree.
-
-"I mean, nobody wishes more than I do that it had all been quick and clean, and my head had come off properly, I mean, it would have saved me a great deal of pain and ridicule. However -" Nearly Headless Nick shook his letter open and read furiously: "'We can only accept huntsmen whose heads have parted company with their bodies. You will appreciate that it would be impossible otherwise for members to participate in hunt activities such as Horseback Head-Juggling and Head Polo. It is with the greatest regret, therefore, that I must inform you that you do not fulfill our requirements. With very best wishes, Sir Patrick Delaney-Podmore.'"
-
-Fuming, Nearly Headless Nick stuffed the letter away.
-
-"Half an inch of skin and sinew holding my neck on, Harry! Most people would think that's good and beheaded, but oh, no, it's not enough for Sir Properly Decapitated-Podmore."
-
-Nearly Headless Nick took several deep breaths and then said, in a far calmer tone, "So - what's bothering you? Anything I can do?"
-
-"No," said Harry. "Not unless you know where we can get seven free Nimbus Two Thousand and Ones for our match against Sly -" </p>
-
-<button id="starter">
-  start timer
-</button>
-
-<div class="result"><span id="speed-result"></span><span>word per minute</span></div>
 <%= javascript_pack_tag 'speed_test' %>

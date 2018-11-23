@@ -9,7 +9,7 @@ class UsersBooksController < ApplicationController
     @final_books = []
 
     @readable_books.each do |book|
-      @final_books << book if book.is_valid?(categories)
+      @final_books << book if book.is_valid?(@categories)
     end
     render :no_results if @final_books.empty?
     # default : render views - users_books - results.html.erb

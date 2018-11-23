@@ -1,35 +1,55 @@
 <div id="soffie-logo">
-  <%= image_tag "logo_blue.png" %>
+  <%= link_to root_path do %>
+    <%= image_tag "logo_blue.png" %>
+  <% end %>
 </div>
 
-
-
-<div id="navbar">
-  <button class="profile-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+<!--   <button class="profile-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     <span class="menu-bars"><i class="fas fa-bars"></i></span>
   </button>
+
   <div class="collapse" id="collapseExample">
-    <div class="well">
-      <h1>hello Claire!</h1>
-      <h4>nice to see you</h4>
+    <div class="well"> -->
+
+<div id="navbar">
+  <button id="menu-trigger" class="profile-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <span class="menu-bars"><i class="fas fa-bars"></i></span>
+  </button>
+
+  <div id="menu-container" class="hidden">
+    <button id="close-menu" class="profile-button" >
+       <span class="menu-bars"><i class="fas fa-times"></i></span>
+    </button>
+
+    <div id="menu-content">
+
+      <div id="menu-header">
+        <h1>hello Claire!</h1>
+        <h4>nice to see you</h4>
+        <p>your last finished book was: <span class="accent-text">Harry Potter and the Philosopher's Stone</span></p>
       <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-    </div>
+      </div>
+
+      <div id="menu-actions">
+        <ul>
+          <li><%= link_to 'update my profile', edit_user_registration_path, class: 'cta-big-white' %></li>
+          <li><%= link_to 'take the reading test', speed_test_path, class: 'cta-big-white' %>
+
+            <p>Your average reading time is now: <%= current_user.reading_speed %> words per minute. <span class="accent-text">How do we calculate that?</span></p>
+          </li>
+        </ul>
+      </div>
+
+      <div id="menu-footer">
+        <%= link_to 'contact -', '#' %>
+        <%= link_to 'about', '#' %>
+      </div>
+
+    </div> <!-- end of #menu-content -->
+
   </div>
 
 </div>
 
 
 
-<!--   <div id="navbar-search">
-    search
-  </div>
-
-  <div id="navbar-menu">
-    <%#= link_to 'read a book', '#' %>
-    <%#= link_to 'add a book', new_users_book_path %>
-  </div>
-
-  <div id="navbar-profile">
-    <i class="far fa-user-circle"></i>
-  </div>
- -->
