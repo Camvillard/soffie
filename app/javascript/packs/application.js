@@ -4,4 +4,5 @@ import "bootstrap";
 // import "./speed_test";
 
 import "./carousel";
+import "./slider-menu";
 

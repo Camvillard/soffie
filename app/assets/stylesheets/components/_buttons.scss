@@ -59,3 +59,14 @@
     border-bottom: 8px solid $neon-orange;
   }
 }
+
+.cta-big-white {
+  @include cta(12px, white, white);
+  font-size: 4.8rem;
+  border-bottom: 8px solid white;
+  transition: all 0.2s ease;
+  &:hover {
+    color: $peach-orange;
+    border-bottom: 8px solid $peach-orange;
+  }
+}
