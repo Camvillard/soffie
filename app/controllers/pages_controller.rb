@@ -13,6 +13,9 @@ class PagesController < ApplicationController
   def styles
   end
 
+  def book_confirmation
+  end
+
   def speed_test
   end
 

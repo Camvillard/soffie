@@ -24,4 +24,8 @@ class UsersBookPolicy < ApplicationPolicy
   def search_for_a_book?
     true
   end
+
+  def results?
+    true
+  end
 end

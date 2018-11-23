@@ -2,7 +2,7 @@ require 'open-uri'
 
 class UsersBooksController < ApplicationController
   def results
-    @categories = Category.find(params[:categories])
+    categories = Category.find(params[:categories])
     @reading_time = calculate_reading_time(params[:day], params[:hours])
     @users_books = policy_scope(UsersBook)
     @readable_books = find_a_book_with_time(@reading_time)
@@ -11,6 +11,8 @@ class UsersBooksController < ApplicationController
     @readable_books.each do |book|
       @final_books << book if book.is_valid?(@categories)
     end
+    render :no_results if @final_books.empty?
+    # default : render views - users_books - results.html.erb
   end
 
   def show
@@ -85,6 +87,6 @@ class UsersBooksController < ApplicationController
   end
 
   def users_book_params
-    params.require(:user_books).permit(:title, :author, :isbn, :details, :reading_time, :num_pages, :description, :image_url)
+    params.require(:user_books, :book_confirmation).permit(:title, :author, :isbn, :details, :reading_time, :num_pages, :description, :image_url, :book_confirmation)
   end
 end

@@ -1,0 +1,26 @@
+<div>
+  <div class="container">
+    <h5>great, let's have a look</h5>
+
+    <div class="col-xs-12 col-sm-5">
+      <%# if @user_book.image_url.present? %>
+      <p><%= image_tag @user_book.image_url, width: '70%' %></p>
+
+      <% end %>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-7">
+      <p>Title: <%= @user_book.title %></p>
+      <p>Author: <%= @user_book.author %></p>
+      <p>description: <%= simple_format(@user_book.description) %></p>
+      <p><%= @user_book.num_pages %> pages</p>
+    </div>
+
+    <div>
+        <%#= link_to "ADD ANOTHER BOOK", routeprefix_path, class: 'button-peach'  %>
+        <%= link_to  "BACK TO BOOKS", :back, class: 'button-peach'  %>
+    </div>
+  </div>
+</div>
+

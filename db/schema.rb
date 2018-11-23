@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 2018_11_22_184625) do
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "isbn"
     t.integer "num_pages"
     t.text "description"
     t.string "image_url"
+    t.bigint "isbn"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_users_books_on_user_id"
   end
