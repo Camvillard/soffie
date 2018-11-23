@@ -26,6 +26,13 @@
   padding: $padding-y-sm $padding-x-sm;
 }
 
+
+.button-border-peach {
+  @include button-border($peach-orange);
+  padding: $padding-y-sm $padding-x-sm;
+}
+
+
 .button-border-blue {
   @include button-border($dark-blue);
   padding: $padding-y-sm $padding-x-sm;
