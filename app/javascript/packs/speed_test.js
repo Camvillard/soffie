@@ -1,12 +1,11 @@
-console.log("hello from speed_test");
-
 // defining the elements
+import "bootstrap";
+
 const button = document.getElementById("starter");
 const result = document.querySelector(".modal-body");
 const times = [];
 let counter = 0;
-const hiddenField = document.getElementById("words_per_minute")
-
+const hiddenField = document.getElementById("words_per_minute");
 
 
 // functions
@@ -25,12 +24,11 @@ button.addEventListener('click', function(event) {
   counter++;
   if (counter == 2) {
     const speedTest = computeDifference();
-    console.log(speedTest);
     const calculation = calculateReadingTime(speedTest / 1000)
     // Inject 'x words per minute' in midal body
     result.innerHTML = calculation + " words per minute";
     // Set the hidden input's value to calculation
-    hiddenField.value=calculation;
+    hiddenField.value = calculation;
     // Making the modal visible
     $('#myModal').modal('show');
   }

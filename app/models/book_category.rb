@@ -1,4 +1,4 @@
 class BookCategory < ApplicationRecord
-  belongs_to :users_books
-  belongs_to :categories
+  belongs_to :users_book
+  belongs_to :category
 end

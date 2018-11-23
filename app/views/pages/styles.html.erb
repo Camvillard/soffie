@@ -73,11 +73,15 @@
 </div>
 
 <div class="container">
-  <div id="buttons-styles">
-    <div><%= link_to "i'm a button", '#', class: "button-peach" %> </div>
-    <div><%= link_to "i'm an other button", '#', class: "button-border-neon" %><%= link_to "i'm a button too!", '#', class: "button-border-blue" %></div>
-    <div>
-      <%= link_to "i'm a cta", '#', class: "cta" %>
+  <div class="row">
+    <div id="buttons-styles">
+      <div><%= link_to "i'm a button", '#', class: "button-peach" %> </div>
+      <div><%= link_to "i'm an other button", '#', class: "button-border-neon" %><%= link_to "i'm a button too!", '#', class: "button-border-blue" %></div>
+      <div id="cta-styles">
+        <%= link_to "i'm a cta", '#', class: "cta" %>
+        <%= link_to "i'm a big cta", '#', class: "cta-big" %>
+      </div>
     </div>
+
   </div>
 </div>

@@ -12,15 +12,22 @@
   </head>
   <body id="<%= controller_name %>-<%= action_name %>">
 
-    <% unless action_name == "home"  %>
+    <% unless action_name == "home" || controller_path.include?("devise" ) %>
       <%= render "partials/navbar" %>
     <% end %>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <%= render "partials/footer" %>
+
+    <%= render "partials/footer-nav" %>
+
+     <% unless controller_path.include?("devise" ) %>
+      <%= render "partials/footer" %>
+    <% end %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
   </body>
 </html>

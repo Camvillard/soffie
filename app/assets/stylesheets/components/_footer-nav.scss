@@ -1,0 +1,8 @@
+/* ------ COMPONENTS : FOOTER NAV ------ */
+
+#footer-nav {
+
+  li a {
+    @extend .cta-big;
+  }
+}

@@ -1,0 +1,34 @@
+/* ------ PAGES : SIGNUP PAGE ------ */
+
+
+#registrations-new {
+  background: $peach-orange;
+  height: 100vh;
+  width: 100vw;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+form#new_user {
+
+  input {
+    font-size: 5rem;
+    color: $dark-blue;
+    // border-bottom: 3px solid white;
+  }
+
+  ::placeholder {
+    color: white;
+    border-bottom: 3px solid white;
+  }
+}
+
+
+
+
+
+
