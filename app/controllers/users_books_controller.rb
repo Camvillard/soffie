@@ -43,7 +43,7 @@ class UsersBooksController < ApplicationController
     if @book.save
       # @book.define_reading_time_for_a_book
       # Category.add_new_category(data, @book)
-      redirect_to users_book_path(@book)
+      redirect_to book_confirmation_path(@book)
     else
       render :new
     end

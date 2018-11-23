@@ -1,11 +1,10 @@
 <div>
   <div class="container">
-    <h5>great, let's have a look</h5>
+    <h5>great, your new book is now in your pile!</h5>
 
     <div class="col-xs-12 col-sm-5">
-      <%# if @user_book.image_url.present? %>
-      <p><%= image_tag @user_book.image_url, width: '70%' %></p>
-
+      <% if @user_book.image_url.present? %>
+        <p><%= image_tag @user_book.image_url, width: '70%' %></p>
       <% end %>
 
     </div>
@@ -18,8 +17,8 @@
     </div>
 
     <div>
-        <%#= link_to "ADD ANOTHER BOOK", routeprefix_path, class: 'button-peach'  %>
-        <%= link_to  "BACK TO BOOKS", :back, class: 'button-peach'  %>
+        <%= link_to "ADD ANOTHER BOOK", new_users_book_path, class: 'button-peach'  %>
+        <%= link_to  "GO TO YOUR PILE", root_path , class: 'button-peach'  %>
     </div>
   </div>
 </div>
