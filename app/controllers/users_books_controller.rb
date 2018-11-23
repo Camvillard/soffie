@@ -2,14 +2,14 @@ require 'open-uri'
 
 class UsersBooksController < ApplicationController
   def results
-    categories = Category.find(params[:categories])
-    reading_time = calculate_reading_time(params[:day], params[:hours])
+    @categories = Category.find(params[:categories])
+    @reading_time = calculate_reading_time(params[:day], params[:hours])
     @users_books = policy_scope(UsersBook)
-    @readable_books = find_a_book_with_time(reading_time)
+    @readable_books = find_a_book_with_time(@reading_time)
     @final_books = []
 
     @readable_books.each do |book|
-      @final_books << book if book.is_valid?(categories)
+      @final_books << book if book.is_valid?(@categories)
     end
   end
 
