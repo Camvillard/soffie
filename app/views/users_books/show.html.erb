@@ -1,13 +1,38 @@
-<p>Title: <%= @user_book.title %></p>
-<p>Author: <%= @user_book.author %></p>
-<p>description: <%= simple_format(@user_book.description) %></p>
-<p><%= @user_book.num_pages %> pages</p>
-<br>
+<div>
+  <div class="container">
+    <div class="col-xs-12 col-sm-5">
+      <% if @user_book.image_url.present? %>
+      <p><%= image_tag @user_book.image_url, width: '60%' %></p>
 
-<% if @user_book.image_url.present? %>
-<p>Cover: <%= image_tag @user_book.image_url %></p>
+      <% end %>
 
-<% end %>
+    </div>
+
+    <div class="col-xs-12 col-sm-7">
+      <h3><%= @user_book.title %></h3>
+      <h4><%= @user_book.author %></h4>
+      <p><%= simple_format(@user_book.description) %></p>
+      <p><%= @user_book.num_pages %> pages</p>
+      <br>
+    </div>
+
+    <div class="col-xs-12">
+        <%= link_to  "RETURN TO YOUR PILE", :back, class: 'md-underline'  %>
+        <br>
+        <br>
+        <%= link_to  "ADD A BOOK TO YOUR PILE", :back, class: 'md-underline'  %>
+        <br>
+        <br>
+        <%= link_to  "SEARCH YOUR NEXT BOOK", :back, class: 'md-underline'  %>
+        <br>
+        <br>
+    </div>
+   </div>
+</div>
+
+
+
+
 
 
 

@@ -18,6 +18,10 @@ class ApplicationPolicy
     create?
   end
 
+  def book_confirmation?
+    index?
+  end
+
   class Scope
     attr_reader :user, :scope
 
