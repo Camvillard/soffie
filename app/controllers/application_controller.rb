@@ -16,6 +16,11 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  def not_found(exception)
+    redirect_to(root_path)
+  end
+
   private
 
   def skip_pundit?
