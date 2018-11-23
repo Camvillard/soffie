@@ -15,10 +15,10 @@ User.delete_all
 
 puts 'planting seeds for soffie...'
 
-esteban = User.create(email: 'esteban@lewagon.org', password: 'wagonwagon')
-claire = User.create(email: 'claire@lewagon.org', password: 'wagonwagon')
-camille = User.create(email: 'camille@lewagon.org', password: 'wagonwagon')
-serge = User.create(email: 'serge@lewagon.org', password: 'wagonwagon')
+esteban = User.create(email: 'esteban@lewagon.org', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes')
+claire = User.create(email: 'claire@lewagon.org', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman')
+camille = User.create(email: 'camille@lewagon.org', password: 'wagonwagon', first_name: 'camille', last_name: 'villard')
+serge = User.create(email: 'serge@lewagon.org', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc' )
 
 
 harry_potter_2 = UsersBook.create(
