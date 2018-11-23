@@ -3,14 +3,18 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <!-- <span id="speed-result"></span> -->
+        <h3>you can read</h3>
+        <h4><span class="result-content"></span> words per minute</h4>
+        <hr class="md-border-blue">
+        <p class="modal-accent">that means you could read the entire
+Harry Potter collection in 4 days, without doing anything else, which is a little bit intense, but well, you could.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="cta-neon" data-dismiss="modal">close</button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <%= form_tag updating_users_reading_time_path, method: "patch" do %>
           <%= hidden_field_tag "words_per_minute"%>
-          <%= submit_tag "Save changes", class: "btn btn-default" %>
+          <%= submit_tag "save my result", class: "cta-neon" %>
         <% end %>
       </div>
     </div>

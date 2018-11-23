@@ -43,16 +43,15 @@
   padding: $padding-y-sm $padding-x-sm;
 }
 
-.cta {
-  display: inline-block;
-  border-bottom: 4px solid $dark-gray;
-  color: $dark-blue;
-  font-family: $headers-font;
-  font-weight: $font-weight-extrabold;
+.cta-neon {
+  @include cta(6px, $neon-orange, $dark-blue);
+  font-style: italic;
 }
 
+
 .cta-big {
-  @extend .cta;
+  @include cta(12px, $neon-orange, $dark-blue);
+  // @extend .cta;
   font-size: 4.8rem;
   border-bottom: 8px solid $dark-blue;
   transition: all 0.2s ease;

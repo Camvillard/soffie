@@ -1,7 +1,7 @@
 /* ------ PAGES : SPEED TEST ------ */
 
-#pages-speed_test {
-  height: 100vh;
+body#pages-speed_test {
+  min-height: 100vh;
 }
 
 #test-header {
@@ -15,4 +15,31 @@
 #test-text {
   max-height: 70vh;
   overflow: scroll;
+}
+
+#pages-speed_test {
+
+  .md-border-blue {
+    width: 60%;
+    margin: 4px auto 24px;
+  }
+  .modal-content {
+    @include border-large($neon-orange);
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-align: center;
+    color: $medium-gray;
+  }
+
+  .modal-footer {
+    border-top: none;
+  }
+  p.modal-accent {
+    margin-top: 20px;
+    width: 60%;
+    margin: auto;
+    font-family: $accent-font;
+    font-style: italic;
+  }
 }
