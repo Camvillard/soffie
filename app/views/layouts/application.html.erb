@@ -12,7 +12,7 @@
   </head>
   <body id="<%= controller_name %>-<%= action_name %>">
 
-    <% unless action_name == "home" || controller_path.include?("devise" ) %>
+    <% unless controller_path.include?("devise" ) %>
       <%= render "partials/navbar" %>
     <% end %>
 
