@@ -12,12 +12,13 @@ class ApplicationController < ActionController::Base
   # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   # def user_not_authorized
-  #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
 
+  rescue_from ActionController::RoutingError, with: :not_found
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   def not_found(exception)
+    flash[:alert] = exception.to_s
     redirect_to(root_path)
   end
 
