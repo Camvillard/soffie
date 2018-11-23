@@ -50,8 +50,7 @@
 
 
 .cta-big {
-  @include cta(12px, $neon-orange, $dark-blue);
-  // @extend .cta;
+  @include cta(12px, $dark-blue, $dark-blue);
   font-size: 4.8rem;
   border-bottom: 8px solid $dark-blue;
   transition: all 0.2s ease;
