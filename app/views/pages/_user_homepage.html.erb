@@ -1,14 +1,23 @@
 <h1> welcome back, <%= current_user.first_name%></h1>
 
 <!-- Image Carousel -->
-<div class="your-class">
-  <div> Your Content 1 </div>
-  <div> Your Content 2</div>
-  <div> Your Content 3</div>
-  <div> Your Content 4</div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
+<div class="book-carousel">
+   <% @users_books.each do |book| %>
+      <div class="book-card">
+        <% if book.image_url.present? %>
+          <%= image_tag book.image_url %>
+        <% end %>
+        <div class="book-carousel-description">
+         <h3><%= book.title %></h3>
+         <h4><%= book.author %></h4>
+         <p><%= book.num_pages%> pages</p>
+        </div>
+      </div>
+    <% end %>
+
 </div>
+
+
+
 
 
