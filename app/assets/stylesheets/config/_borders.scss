@@ -1,2 +1,9 @@
 /* ------ VARIABLES : BORDERS ------ */
 
+.lg-border-blue {
+  @include horizontal-border(12px, $dark-blue);
+}
+
+.md-border-blue {
+  @include horizontal-border(8px, $dark-blue);
+}

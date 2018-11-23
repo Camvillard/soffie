@@ -16,3 +16,6 @@
   border-style: solid;
 }
 
+@mixin horizontal-border($width,$color) {
+  border-bottom: $width solid $color;
+}

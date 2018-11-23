@@ -34,3 +34,14 @@
     text-decoration: none;
   }
 }
+
+@mixin cta($width, $font-color, $color) {
+  border: none;
+  display: inline-block;
+  border-bottom: $width solid $color;
+  padding-bottom: -20px;
+  color: $font-color;
+  font-family: $headers-font;
+  text-transform:lowercase;
+  font-weight: $font-weight-extrabold;
+}

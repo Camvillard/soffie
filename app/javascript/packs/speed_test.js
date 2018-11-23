@@ -2,7 +2,7 @@
 import "bootstrap";
 
 const button = document.getElementById("starter");
-const result = document.querySelector(".modal-body");
+const result = document.querySelector(".result-content");
 const times = [];
 let counter = 0;
 const hiddenField = document.getElementById("words_per_minute");
@@ -26,7 +26,7 @@ button.addEventListener('click', function(event) {
     const speedTest = computeDifference();
     const calculation = calculateReadingTime(speedTest / 1000)
     // Inject 'x words per minute' in midal body
-    result.innerHTML = calculation + " words per minute";
+    result.innerHTML = calculation;
     // Set the hidden input's value to calculation
     hiddenField.value = calculation;
     // Making the modal visible
