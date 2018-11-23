@@ -81,7 +81,7 @@ my_brilliant_friend = UsersBook.create(
     title: 'My Brilliant Friend',
     author: 'Elena Ferrante',
     isbn: 9781609450786,
-    image_url: '"http://books.google.com/books/content?id=KYUHsZOX1gwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"',
+    image_url: "http://books.google.com/books/content?id=KYUHsZOX1gwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     num_pages: 336,
     reading_time: "31625",
     description: "Book one in the series follows Lila and Elena from their first fateful meeting as ten-year-olds through their school years and adolescence.",
@@ -372,17 +372,6 @@ find_you_in_the_dark = UsersBook.create(
 
     )
 
-fifty_shaeds_of_grey = UsersBook.create(
-    user_id: camille.id,
-    title: "Fifty Shades of Grey",
-    author: "E. L. James",
-    isbn: 9781773060798,
-    image_url: "https://upload.wikimedia.org/wikipedia/en/5/5e/50ShadesofGreyCoverArt.jpg",
-    num_pages: 514,
-    reading_time: "50476",
-    description: "When literature student Anastasia Steele is drafted to interview the successful young entrepreneur Christian Grey for her campus magazine, she finds him attractive, enigmatic and intimidating. Convinced their meeting went badly, she tries to put Grey out of her mind - until he happens to turn up at the out-of-town hardware store where she works part-time. Erotic, amusing, and deeply moving, the Fifty Shades Trilogy is a tale that will obsess you, possess you, and stay with you forever.",
-    )
-
 pride_and_prejudice = UsersBook.create(
     user_id: camille.id,
     title: "Pride and Prejudice",
@@ -394,93 +383,16 @@ pride_and_prejudice = UsersBook.create(
     description: "Austen’s most celebrated novel tells the story of Elizabeth Bennet, a bright, lively young woman with four sisters, and a mother determined to marry them to wealthy men. At a party near the Bennets’ home in the English countryside, Elizabeth meets the wealthy, proud Fitzwilliam Darcy. Elizabeth initially finds Darcy haughty and intolerable, but circumstances continue to unite the pair. Mr. Darcy finds himself captivated by Elizabeth’s wit and candor, while her reservations about his character slowly vanish. The story is as much a social critique as it is a love story, and the prose crackles with Austen’s wry wit.",
     )
 
-a_princess_in_theory = UsersBook.create(
-    user_id: camille.id,
-    title: "A Princess in Theory",
-    author: "Alyssa Cole",
-    isbn: 9780062685551,
-    image_url: "http://books.google.com/books/content?id=9JIlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    num_pages: 384,
-    reading_time: "36386",
-    description: "From acclaimed author Alyssa Cole comes the tale of a city Cinderella and her Prince Charming in disguise . . . Between grad school and multiple jobs, Naledi Smith doesn’t have time for fairy tales…or patience for the constant e-mails claiming she’s betrothed to an African prince. Sure. Right. Delete! As a former foster kid, she’s learned that the only things she can depend on are herself and the scientific method, and a silly e-mail won’t convince her otherwise. Prince Thabiso is the sole heir to the throne of Thesolo, shouldering the hopes of his parents and his people. At the top of their list? His marriage. Ever dutiful, he tracks down his missing betrothed. When Naledi mistakes the prince for a pauper, Thabiso can’t resist the chance to experience life—and love—without the burden of his crown. The chemistry between them is instant and irresistible, and flirty friendship quickly evolves into passionate nights. But when the truth is revealed, can a princess in theory become a princess ever after?",
-    )
-
-the_lover = UsersBook.create(
-    user_id: camille.id,
-    title: "The Lover",
-    author: "Nia Forrester",
-    isbn: 9781548920180,
-    image_url: "http://books.google.com/books/content?id=nRSXMAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    num_pages: 430,
-    reading_time: "43336",
-    description: "Ryann Walker knows she's a difficult woman; difficult enough that it would take a rare, and special breed of man to take her on permanently. Thankfully, she isn't looking for that. What she does want is a baby. And after a rash decision made during a one-night stand, she just may be having one, with the very successful, good-looking, but completely wrong for her, Spencer Hall. But once Spencer learns that he may become a father, Ryann just can't shake him. He isn't interested in being an absentee parent; and she isn't interested in having a man hang around who is hell-bent on crawling into her heart, breaking down her defenses and unearthing all her secrets, including the ugliest one of all.",
-    )
-
-love_in_catalina_cove = UsersBook.create(
-    user_id: camille.id,
-    title: "Love in Catalina Cove",
-    author: "Brenda Jackson",
-    isbn: 9781488096419,
-    image_url: "http://books.google.com/books/content?id=9Z9FDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    num_pages: 384,
-    reading_time: "36943",
-    description: "In her brand-new series, Brenda Jackson welcomes you to Catalina Cove, where even the biggest heartbreaks can be healed… In the wake of a devastating teen pregnancy that left her childless and heartbroken, Vashti Alcindor left Catalina Cove, Louisiana, with no plans to return. Now, over a decade later, Vashti reluctantly finds herself back in her hometown after inheriting her aunt’s B and B. Her homecoming gets off to a rocky start when the new sheriff, Sawyer Grisham, pulls her over for speeding, and things go downhill from there. The B and B, a place she’d always found refuge in when it seemed like the whole world was against her, has fallen into disrepair. When a surprising benefactor encourages Vashti to reopen the B and B, Vashti embraces a fresh start, and soon old hurts begin to fade as she makes new memories with the town—and its handsome sheriff… But some pasts are too big to escape, and when a bombshell of a secret changes everything she thought was true, Vashti is left reeling. With Sawyer and his teenage daughter determined to see her through the storm, though, she’s learning family isn’t always a matter of blood—sometimes it’s a matter of heart.",
-    )
-
-his_secret_son = UsersBook.create(
-    user_id: camille.id,
-    title: "His Secret Son",
-    author: "Brenda Jackson",
-    isbn: 9781488011993,
-    image_url: "http://books.google.com/books/content?id=0xvhDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    num_pages: 192,
-    reading_time: "1380",
-    description: "Three nights with a Texan…and one pregnancy surprise! Only from New York Times bestselling author Brenda Jackson! The Texas rancher and navy SEAL who fathered Bristol Lockett’s son died a hero’s death…or so she was told. Yet when Laramie “Coop” Cooper strolls into her exhibit at an art gallery three years later, he’s very much alive—and still making her pulse zing. The all-consuming chemistry between them is as undeniable now as it was then, but Bristol won’t risk her heart—or their son’s. Little does Bristol know he’s determined to win over his unexpected family at any cost!",
-    )
-
-the_darkest_passion = UsersBook.create(
-    user_id: camille.id,
-    title: "The Darkest Passion",
-    author: "Gena Showalter",
-    isbn: 9781460395554,
-    image_url: "http://books.google.com/books/content?id=bwSmCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    num_pages: 384,
-    reading_time: "36459",
-    description: "New York Times bestselling author Gena Showalter returns with another sizzling installment of the Lords of the Underworld series as Aeron, keeper of the demon of Wrath, finally meets his match… For weeks the immortal warrior Aeron has sensed an invisible female presence. An angel—a demon-assassin—has been sent to kill him. Or has she? Olivia claims she fell from the heavens, giving up immortality because she couldn't bear to harm him. But trusting—and falling for—Olivia will endanger them all. So how has this “mortal” with the huge blue eyes already unleashed Aeron's darkest passion? Now, with an enemy hot on his trail and his faithful demon companion determined to remove Olivia from his life, Aeron is trapped between duty and consuming desire. Worse still, a new executioner has been sent to do the job Olivia wouldn't… Included in this ebook edition is a special scene from the latest installment in the series, The Darkest Torment, featuring the ruthless, beautiful Baden! Previously Published.",
-    )
-
-destinys_embrace = UsersBook.create(
-    user_id: camille.id,
-    title: "Destiny's Embrace",
-    author: "Beverly Jenkins",
-    isbn: 9780062031266,
-    image_url: "http://books.google.com/books/content?id=bwSmCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    num_pages: 384,
-    reading_time: "36459",
-    description: "Award-winning romance author Beverly Jenkins offers up another high-stakes historical romance that is sure to make you swoon. With Destiny’s Embrace, Jenkins brings readers back to the American West, where Logan Yates, a self-important ranch owner, must confront his feelings for his beautiful, free spirited housekeeper, Mariah Cooper. While they bicker incessantly, their sexual tension is palpable, and only rises when Mariah's former lover arrives on the scene. Will she accept Logan's heart? Set in 19th-century California, Destiny's Embrace features unforgettable characters and a satisfying mix of adventure and passion from nation's premier writer of African-American historical romance.",
-    )
-
-spontaneous = UsersBook.create(
-    user_id: camille.id,
-    title: "Spontaneous",
-    author: "Brenda Jackson",
-    isbn: 9781426854941,
-    image_url: "http://books.google.com/books/content?id=taVmeUqY61YC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    num_pages: 224,
-    reading_time: "25459",
-    description: "Kimani Cannon knows she's in trouble the second she lays eyes on 6'4 of luscious male. The best kind of trouble, too…mm-mmm! Duan Jeffries turns out to be the perfect man—charming, considerate…and the best lover she's ever had. Too bad Mr. Delicious is just a one-night stand…. Until Kim needs a date to her mother's (fifth) wedding! Duan's willing to act the part of her fiancé… as long as it means full benefits. More amazing sex? No problem! Then Kim finds out that Duan's got his own private agenda. Suddenly, she doesn't know what to believe. Her head and heart are telling her to be careful. But the sensual thrumming in her blood is turning out to be much more persuasive….",
-    )
-
-locked_in_temptation = UsersBook.create(
-    user_id: camille.id,
-    title: "Locked in Temptation",
-    author: "Brenda Jackson",
-    isbn: 9781460399965,
-    image_url: "http://books.google.com/books/content?id=jGt9DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    num_pages: 384,
-    reading_time: "37459",
-    description: "His job is to protect her…no matter the cost Police detective Joy Ingram's connection to elite security expert Stonewall Courson is instant. Undeniable. Electric. But her commitment to protect and serve has always come first. Everything else is secondary—especially when she uncovers an underground surrogate baby-making ring. Joy can't risk a distraction during the most important case of her career, not even one as sexy as reformed ex-con Stonewall. There are few things Stonewall values more than a strong woman. But when Joy's investigation draws her into a deadly conspiracy that goes deeper than she ever imagined, he must convince her that he's the best man to protect her. And while he puts his life on the line to save hers, the insatiable attraction between them becomes the one danger neither of them can escape.",
-    )
+# sense_and_sensibility = UsersBook.create(
+#     user_id: camille.id,
+#     title: "Sense and Sensibility",
+#     author: "Jane Austen",
+#     isbn: 9781853260001,
+#     image_url: "hhttp://books.google.com/books/content?id=s1gVAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+#     num_pages: 401,
+#     reading_time: "32986",
+#     description: "Austen’s most celebrated novel tells the story of Elizabeth Bennet, a bright, lively young woman with four sisters, and a mother determined to marry them to wealthy men. At a party near the Bennets’ home in the English countryside, Elizabeth meets the wealthy, proud Fitzwilliam Darcy. Elizabeth initially finds Darcy haughty and intolerable, but circumstances continue to unite the pair. Mr. Darcy finds himself captivated by Elizabeth’s wit and candor, while her reservations about his character slowly vanish. The story is as much a social critique as it is a love story, and the prose crackles with Austen’s wry wit.",
+#     )
 
 
 
@@ -539,16 +451,16 @@ the_couple_next_door.categories = [Category.find_by(name: "thriller")]
 dirty_sweet.categories = [Category.find_by(name: "thriller")]
 find_you_in_the_dark.categories = [Category.find_by(name: "thriller")]
 #  romance
-fifty_shaeds_of_grey.categories = [Category.find_by(name: "romance")]
+# fifty_shaeds_of_grey.categories = [Category.find_by(name: "romance")]
 pride_and_prejudice.categories = [Category.find_by(name: "romance")]
-a_princess_in_theory.categories = [Category.find_by(name: "romance")]
-the_lover.categories = [Category.find_by(name: "romance")]
-love_in_catalina_cove.categories = [Category.find_by(name: "romance")]
-his_secret_son.categories = [Category.find_by(name: "romance")]
-the_darkest_passion.categories = [Category.find_by(name: "romance")]
-destinys_embrace.categories = [Category.find_by(name: "romance")]
-spontaneous.categories = [Category.find_by(name: "romance")]
-locked_in_temptation.categories = [Category.find_by(name: "romance")]
+# a_princess_in_theory.categories = [Category.find_by(name: "romance")]
+# the_lover.categories = [Category.find_by(name: "romance")]
+# love_in_catalina_cove.categories = [Category.find_by(name: "romance")]
+# his_secret_son.categories = [Category.find_by(name: "romance")]
+# the_darkest_passion.categories = [Category.find_by(name: "romance")]
+# destinys_embrace.categories = [Category.find_by(name: "romance")]
+# spontaneous.categories = [Category.find_by(name: "romance")]
+# locked_in_temptation.categories = [Category.find_by(name: "romance")]
 
 
 
