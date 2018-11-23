@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    @users_books = UsersBook.where(user_id: current_user.id)
+    @users_book = UsersBook.first
   end
 
   def about
