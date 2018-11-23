@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
-  rescue_from ActionController::RoutingError, with: :not_found
+  # rescue_from ActionController::RoutingError, with: :not_found
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   def not_found(exception)
     flash[:alert] = exception.to_s
