@@ -5,10 +5,10 @@ class UsersBooksController < ApplicationController
     @categories = Category.find(params[:categories])
     @reading_time = calculate_reading_time(params[:day], params[:hours])
     @users_books = policy_scope(UsersBook)
-    @readable_books = find_a_book_with_time(@reading_time)
+    find_a_book_with_time(@reading_time)
     @final_books = []
 
-    @readable_books.each do |book|
+    @time_books.each do |book|
       @final_books << book if book.is_valid?(@categories)
     end
     render :no_results if @final_books.empty?
@@ -64,9 +64,10 @@ class UsersBooksController < ApplicationController
   def find_a_book_with_time(time)
     @time_books = []
     @users_books.each do |users_book|
-      if users_book.reading_time.to_f > time - 18000 && users_book.reading_time.to_f < time + 18000
+      if users_book.reading_time.to_f > (time - 3600) && users_book.reading_time.to_f < (time + 3600)
         @time_books << users_book
       end
+      # @time_books
     end
     # raise
   end
