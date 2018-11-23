@@ -1,0 +1,57 @@
+/* ------ PAGES : NEW BOOK ------ */
+
+
+#new-book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include border-large($peach-orange);
+  position: relative;
+  width: 60%;
+  margin: auto;
+
+  h2 {
+    margin-top: -40px;
+    padding: 4px 12px;
+    color: $peach-orange;
+    background: white;
+  }
+
+  form {
+    // flex: 1 0 60%;
+    width: 60%;
+    margin: auto;
+  }
+  input {
+    width: 100%;
+    display: block;
+    margin: 5rem auto;
+    padding: 2px 10px;
+    height: 5rem;
+    @include horizontal-border(6px, $peach-orange);
+    font-size: 3rem;
+  }
+
+  input:active,
+  input:hover,
+  input:visited,
+  input:focus {
+    font-family: $headers-font;
+    color: $dark-blue;
+    font-size: 3rem;
+    font-style: italic;
+    @include horizontal-border(6px, $dark-blue);
+  }
+
+  ::placeholder {
+    font-family: $headers-font;
+    color: $peach-orange;
+    font-size: 3rem;
+    font-style: normal !important;
+  }
+  button {
+    margin-bottom: 20px;
+    align-self: baseline;
+  }
+}
