@@ -27,8 +27,8 @@ harry_potter_2 = UsersBook.create(
     author: 'JK Rowling',
     isbn: 9780747538486,
     image_url: "http://books.google.com/books/content?id=_kLanQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    num_pages: 357,
-    reading_time: "32725",
+    num_pages: 3408,
+    reading_time: "312308.4",
     description: "'There is a plot, Harry Potter. A plot to make most terrible things happen at Hogwarts School of Witchcraft and Wizardry this year. Harry Potter's summer has included the worst birthday ever, doomy warnings from a house-elf called Dobby, and rescue from the Dursleys by his friend Ron Weasley in a magical flying car! Back at Hogwarts School of Witchcraft and Wizardry for his second year, Harry hears strange whispers echo through empty corridors - and then the attacks start. Students are found as though turned to stone... Dobby's sinister predictions seem to be coming true."
     )
 
@@ -42,6 +42,7 @@ harry_potter_7 = UsersBook.create(
     reading_time: "71866",
     description: "Harry Potter is leaving Privet Drive for the last time. But as he climbs into the sidecar of Hagrid’s motorbike and they take to the skies, he knows Lord Voldemort and the Death Eaters will not be far behind.The protective charm that has kept him safe until now is broken. But the Dark Lord is breathing fear into everything he loves. And he knows he can’t keep hiding. To stop Voldemort, Harry knows he must find the remaining Horcruxes and destroy them. He will have to face his enemy in one final battle."
     )
+
 
 rien_ne_soppose = UsersBook.create(
     user_id: camille.id,
@@ -71,9 +72,20 @@ singuliere_tristesse = UsersBook.create(
     author: 'Aimee Bender',
     isbn: 9782879297804,
     image_url: "http://books.google.com/books/content?id=CCvfBfUU_WYC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    num_pages: 345,
-    reading_time: "31625",
+    num_pages: 3411,
+    reading_time: "312308.4",
     description: "Le jour de ses neuf ans, Rose Edelstein mord avec délice dans le gâteau au citron préparé pour l'occasion. S'ensuit une incroyable révélation : elle ressent précisément l'émotion éprouvée par sa mère, alors qu'elle assemblait les couches de génoise et de crème. Sous la douceur la plus exquise, Rose perçoit le désespoir. Ce bouleversement va entraîner la petite fille dans une enquête sur sa famille. Car, chez les Edelstein, tous disposent d'un pouvoir embarrassant : odorat surpuissant ou capacité de se fondre dans le décor au point de disparaître. Pour ces superhéros du quotidien, ce don est un fardeau. Chacun pense être affligé d'un mal unique, d'un pouvoir qu'il faut passer sous silence. Comment vivre lorsque les petits arrangements avec la vérité sont impossibles ? Comment supporter le monde lorsque la moindre bouchée provoque un séisme intérieur ? Comme le singulier gâteau de Rose, les livres d'Aimee Bender sont recouverts d'un succulent glaçage, fait d'humour et de fantaisie. Dans ce texte plein de charme, proche des films de Wes Anderson, elle met l'imagination au pouvoir et prouve qu'elle est l'un des auteurs les plus originaux du paysage littéraire américain. Aimee Bender vit à Los Angeles. Après un roman (L'Ombre de moi-même) et deux recueils de nouvelles (La Fille en jupe inflammable et Des créatures obstinées) publiés aux Éditions de l'Olivier, elle a connu un grand succès aux États-Unis avec La Singulière Tristesse du gâteau au citron."
+    )
+
+saga_harry_potter = UsersBook.create(
+    user_id: camille.id,
+    title: 'Harry Potter - the whole saga',
+    author: 'JK Rowling',
+    isbn: 9780747538486,
+    image_url: "http://books.google.com/books/content?id=KXyNjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    num_pages: 3407,
+    reading_time: "312308.4",
+    description: "The whole Harry Potter saga."
     )
 
 my_brilliant_friend = UsersBook.create(
@@ -418,11 +430,12 @@ Category.create(name: 'travel')
 
 
 # fiction
-harry_potter_7.categories = [Category.find_by(name: "fiction")]
-harry_potter_2.categories = [Category.find_by(name: "fiction")]
+harry_potter_7.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult") ]
+saga_harry_potter.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
+harry_potter_2.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
 my_brilliant_friend.categories = [Category.find_by(name: "fiction")]
 rien_ne_soppose.categories = [Category.find_by(name: "fiction")]
-singuliere_tristesse.categories = [Category.find_by(name: "fiction")]
+singuliere_tristesse.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
 les_chaussures_italiennes.categories = [Category.find_by(name: "fiction")]
 the_neapolitan_quartet_reader = [Category.find_by(name: "fiction")]
 to_kill_a_mockingbird.categories = [Category.find_by(name: "fiction")]
