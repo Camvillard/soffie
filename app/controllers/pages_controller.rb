@@ -14,6 +14,7 @@ class PagesController < ApplicationController
   end
 
   def book_confirmation
+    @user_book = UsersBook.find(params[:id])
   end
 
   def speed_test
