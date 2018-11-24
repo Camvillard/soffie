@@ -21,6 +21,16 @@
   }
 }
 
+.button-blue {
+  @include button-primary($dark-blue);
+  padding: $padding-y-sm $padding-x-sm;
+  color: white;
+
+  &:hover {
+    background: white;
+  }
+}
+
 .button-border-peach {
   @include button-border($peach-orange);
   padding: $padding-y-sm $padding-x-sm;
@@ -60,10 +70,21 @@
   }
 }
 
+.cta-md {
+  @include cta(8px, $dark-blue, $dark-blue);
+  font-size: 4rem;
+  border-bottom: 8px solid $dark-blue;
+  transition: all 0.2s ease;
+  &:hover {
+    color: $neon-orange;
+    border-bottom: 8px solid $neon-orange;
+  }
+}
+
 .cta-big-white {
   @include cta(12px, white, white);
   font-size: 4.8rem;
-  border-bottom: 8px solid white;
+  // border-bottom: 8px solid white;
   transition: all 0.2s ease;
   &:hover {
     color: $peach-orange;

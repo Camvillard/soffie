@@ -1,34 +1,60 @@
-<div>
-  <div class="container">
-    <div class="col-xs-12 col-sm-5">
-      <% if @user_book.image_url.present? %>
-      <p><%= image_tag @user_book.image_url, width: '60%' %></p>
+<div id="single-book-nav">
+  <%= link_to users_book_path(params[:id].to_i - 1) do %>
+    <i class="fas fa-angle-left"></i>
+  <% end %>
 
-      <% end %>
-
-    </div>
-
-    <div class="col-xs-12 col-sm-7">
-      <h3><%= @user_book.title %></h3>
-      <h4><%= @user_book.author %></h4>
-      <p><%= simple_format(@user_book.description) %></p>
-      <p><%= @user_book.num_pages %> pages</p>
-      <br>
-    </div>
-
-    <div class="col-xs-12">
-        <%= link_to  "RETURN TO YOUR PILE", root_path, class: 'md-underline'  %>
-        <br>
-        <br>
-        <%= link_to  "ADD A BOOK TO YOUR PILE", new_users_book_path, class: 'md-underline'  %>
-        <br>
-        <br>
-        <%= link_to  "SEARCH YOUR NEXT BOOK", search_path, class: 'md-underline'  %>
-        <br>
-        <br>
-    </div>
-   </div>
+  <%= link_to users_book_path(params[:id].to_i + 1) do %>
+    <i class="fas fa-angle-right"></i>
+  <% end %>
 </div>
+
+<div class="container">
+
+    <div id="single-book">
+      <div id="single-book-image">
+        <div id="book-extra">
+          <ul>
+            <li><%= link_to "notes", "#", class: "book-extra-actions" %></li>
+            <li><%= link_to "recommend", "#", class: "book-extra-actions" %></li>
+            <li><%= link_to "add to a mood", "#", class: "book-extra-actions" %></li>
+          </ul>
+        </div>
+        <% if @user_book.image_url.present? %>
+          <%= image_tag @user_book.image_url %>
+        <% end %>
+      </div> <!-- end of single-book-image -->
+
+      <div id="single-book-details">
+
+        <div id="single-book-description">
+          <h3><%= @user_book.title %></h3>
+          <h4><%= @user_book.author %></h4>
+          <p><%= simple_format(@user_book.description) %></p>
+          <p>you've just started the book, <%= @user_book.num_pages %> pages left to read</p>
+        </div>
+
+        <div id="single-book-actions">
+          <%= link_to "finished!", "#", class: 'button-blue' %>
+          <%= link_to "update my reading", "#", class: 'button-border-blue' %>
+        </div> <!-- end of single-book-actions -->
+
+      </div>  <!-- end of single-book-details -->
+
+
+    </div> <!-- end of #single-book -->
+
+
+ </div> <!-- end of container -->
+
+ <div id="single-book-footer">
+
+   <ul>
+     <li><%= link_to "return to your pile", root_path, class: 'cta-md' %></li>
+     <li><%= link_to "add a book to your pile", root_path, class: 'cta-md' %></li>
+     <li><%= link_to "search your next book", root_path, class: 'cta-md' %></li>
+   </ul>
+
+ </div>
 
 
 
