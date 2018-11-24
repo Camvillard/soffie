@@ -3,10 +3,11 @@
 .book-card {
   background: white;
   width: 90% !important;
-  height: 240px;
+  margin: auto;
+  height: 360px;
   display: flex !important;
-  justify-content: space-between !important;
-  // align-items: center !important;
+  flex-direction: column;
+  justify-content: center !important;
   padding: 10px 20px;
 }
 
@@ -69,3 +70,24 @@
     content: "";
   }
 }
+
+// 2 cards displayed in the carousel
+@media (min-width: $sm-screen) {
+
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+  .book-card {
+    flex-direction: row !important;
+    height: 240px;
+    justify-content: space-between !important;
+    // align-items: center !important;
+  }
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px
+

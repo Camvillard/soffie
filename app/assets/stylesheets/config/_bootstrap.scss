@@ -306,26 +306,26 @@ hr {
   padding-left: 15px;
   padding-right: 15px;
 }
-@media (min-width: 768px) {
+@media (min-width: $sm-screen) {
   .container {
     // width: 750px;
     width: 90vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: $md-screen) {
   .container {
     // width: 970px;
     width: 85vw;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: $lg-screen) {
   .container {
     // width: 1170px;
     width: 80vw;
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: $hg-screen) {
   .container {
     // width: 1170px;
     width: 76vw;
