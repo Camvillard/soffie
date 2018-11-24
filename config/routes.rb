@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   patch '/updating_users_reading_time', to: 'pages#updating_users_reading_time'
 
   resources :users_books, only: [:new, :create, :show]
+  # match '/.*', to: 'pages#home'
 end

@@ -1,0 +1,93 @@
+/* ------ COMPONENTS : BOOK CARDS ------ */
+
+.book-card {
+  background: white;
+  width: 90% !important;
+  margin: auto;
+  height: 360px;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+  padding: 10px 20px;
+}
+
+.book-image {
+  align-self: center;
+}
+
+
+.book-carousel-description {
+  // padding-left: 30px;
+  flex: 0 1 57%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
+.main-description {
+  h4 {
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  h4 a{
+    font-size: 1.7rem;
+    color: $dark-blue;
+    text-transform: none;
+    font-weight: $font-weight-bold;
+  }
+
+  h6 {
+    font-size: 1.6rem;
+    margin-top: 4px;
+  }
+
+}
+
+.reading-details {
+  ul {
+    display: inline-block;
+    margin-block-start: 0em;
+    padding-inline-start: 0px;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-top: 4px;
+    margin-bottom: 6px;
+  }
+}
+
+.reading-details li{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  list-style: none;
+  display: inline-block;
+  &:after {
+    content: "/";
+  }
+  &:last-child:after  {
+    content: "";
+  }
+}
+
+// 2 cards displayed in the carousel
+@media (min-width: $sm-screen) {
+
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+  .book-card {
+    flex-direction: row !important;
+    height: 240px;
+    justify-content: space-between !important;
+    // align-items: center !important;
+  }
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px
+

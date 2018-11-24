@@ -2,6 +2,10 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    unless current_user.nil?
+    @users_books = UsersBook.where(user_id: current_user.id)
+    @users_book = UsersBook.first
+    end
   end
 
   def about

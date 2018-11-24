@@ -1,14 +1,53 @@
-<h1> welcome back, <%= current_user.first_name%></h1>
+<div class="container">
 
-<!-- Image Carousel -->
-<div class="your-class">
-  <div class="test"> Your Content 1 </div>
-  <div> Your Content 2</div>
-  <div> Your Content 3</div>
-  <div> Your Content 4</div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-  <div> Your Content </div>
-</div>
+  <h1> welcome back, <%= current_user.first_name%></h1>
+  <h4>you have <%= current_user.users_books.size %> books in your pile.</h4>
+  <p>you are currently reading 4 books and you have 6 moods created.</p>
+
+</div>  <!-- end of container -->
+
+<div id="carousel-container">
+
+  <!-- <div class="container"> -->
+
+  <div class="book-carousel">
+    <% @users_books.each do |book| %>
+      <div class="book-card">
+
+        <div class="book-image">
+        <% if book.image_url.present? %>
+          <%= image_tag book.image_url %>
+        <% end %>
+        </div>
+
+        <div class="book-carousel-description">
+
+          <div class="main-description">
+            <h4><%= link_to book.title, users_book_path(book) %></h4>
+            <h6><%= book.author %></h6>
+          </div>
+
+          <div class="reading-details">
+            <% unless book.categories.nil? %>
+              <ul>
+                <% book.categories.each do |category| %>
+                  <li class="book-category"> <%= category.name %></li>
+                <% end %>
+              </ul>
+            <% end %>
+            <p>35 out of <%= book.num_pages%> pages</p>
+          </div>
+
+        </div> <!-- end of book carousel description -->
+
+      </div>
+    <% end %>
+  </div>
+
+  <!-- </div> -->
+  <!-- Image Carousel -->
+
+</div> <!-- end of carousel container -->
+
 
 

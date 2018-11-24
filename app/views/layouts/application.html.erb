@@ -20,9 +20,7 @@
     <p class="alert"><%= alert %></p>
     <%= yield %>
 
-    <%= render "partials/footer-nav" %>
-
-     <% unless controller_path.include?("devise" ) %>
+     <% unless controller_path.include?("devise" ) || current_user.nil? %>
       <%= render "partials/footer" %>
     <% end %>
 
