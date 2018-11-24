@@ -1,6 +1,8 @@
 <div class="container">
 
   <h1> welcome back, <%= current_user.first_name%></h1>
+  <h4>you have <%= current_user.users_books.size %> books in your pile.</h4>
+  <p>you are currently reading 4 books and you have 6 moods created.</p>
 
 </div>  <!-- end of container -->
 
@@ -19,10 +21,24 @@
         </div>
 
         <div class="book-carousel-description">
-         <h3><%= book.title %></h3>
-         <h4><%= book.author %></h4>
-         <p><%= book.num_pages%> pages</p>
-        </div>
+
+          <div class="main-description">
+            <h4><%= link_to book.title, users_book_path(book) %></h4>
+            <h6><%= book.author %></h6>
+          </div>
+
+          <div class="reading-details">
+            <% unless book.categories.nil? %>
+              <ul>
+                <% book.categories.each do |category| %>
+                  <li class="book-category"> <%= category.name %></li>
+                <% end %>
+              </ul>
+            <% end %>
+            <p>35 out of <%= book.num_pages%> pages</p>
+          </div>
+
+        </div> <!-- end of book carousel description -->
 
       </div>
     <% end %>

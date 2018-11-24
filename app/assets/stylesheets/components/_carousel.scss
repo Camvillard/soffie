@@ -80,9 +80,17 @@ $slick-opacity-not-active: 0.25 !default;
 
 // SOFFIE'S STYLES
 
+#carousel-container {
+  background: $light-gray;
+}
+
+
 .book-carousel {
+  position:relative;
   width: 80%;
   margin: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .carousel-nav {
@@ -90,7 +98,7 @@ $slick-opacity-not-active: 0.25 !default;
   display: block;
   color: $dark-blue;
   font-size: 8rem;
-  top: 50%;
+  top: 40%;
   cursor: pointer;
 }
 
