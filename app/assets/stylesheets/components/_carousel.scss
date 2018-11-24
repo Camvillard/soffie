@@ -7,7 +7,6 @@
   margin-bottom: 40px;
 }
 
-
 .book-carousel {
   position:relative;
   width: 80%;
@@ -20,35 +19,42 @@
   position: absolute;
   display: block;
   color: $dark-blue;
-  font-size: 8rem;
-  top: 40%;
+  font-size: 4rem;
+  top: 45%;
   cursor: pointer;
 }
 
 .fa-angle-right {
-  right: -5%;
+  right: -8%;
 }
 
 .fa-angle-left {
-  left: -5%;
+  left: -8%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $sm-screen) {
+} // end of sm-screen
 
-}
-@media (min-width: 992px) {
+@media (min-width: $md-screen) {
+  .carousel-nav {
+    font-size: 8rem;
+    top: 40%;
+  }
 
-}
-@media (min-width: 1200px) {
+  .fa-angle-right {
+    right: -5%;
+  }
 
-}
+  .fa-angle-left {
+    left: -5%;
+  }
+} // end of md-screen
 
-@media (min-width: 1440px) {
+@media (min-width: $lg-screen) {
+} // end of lg-screen
 
-}
-
-
-
+@media (min-width: $hg-screen) {
+} // end of hg-screen
 
 
 
