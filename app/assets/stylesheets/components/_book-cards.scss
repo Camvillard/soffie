@@ -1,0 +1,12 @@
+/* ------ COMPONENTS : BOOK CARDS ------ */
+
+.book-card {
+  display: flex !important;
+  justify-content: center;
+  border: 3px solid red;
+}
+
+.book-image{
+  flex: 0 0 10%;
+  border: 3px solid blue;
+}
