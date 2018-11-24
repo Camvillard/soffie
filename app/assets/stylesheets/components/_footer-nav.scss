@@ -1,7 +1,6 @@
 /* ------ COMPONENTS : FOOTER NAV ------ */
 
 #footer-nav {
-  margin-left: 4vw;
 
   ul {
     list-style: none;
@@ -10,4 +9,11 @@
   // li a {
   //   @extend .cta-big;
   // }
+}
+
+
+#single-book-footer {
+  ul {
+    list-style: none;
+  }
 }
