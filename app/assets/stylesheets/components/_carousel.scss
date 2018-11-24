@@ -1,0 +1,55 @@
+/* ------ COMPONENTS : CAROUSEL ------ */
+
+
+#carousel-container {
+  background: $light-gray;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+
+.book-carousel {
+  position:relative;
+  width: 80%;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.carousel-nav {
+  position: absolute;
+  display: block;
+  color: $dark-blue;
+  font-size: 8rem;
+  top: 40%;
+  cursor: pointer;
+}
+
+.fa-angle-right {
+  right: -5%;
+}
+
+.fa-angle-left {
+  left: -5%;
+}
+
+@media (min-width: 768px) {
+
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1440px) {
+
+}
+
+
+
+
+
+
+
