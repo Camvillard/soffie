@@ -1,5 +1,23 @@
 /* ------ PAGES : SINGLE BOOK ------ */
 
+#single-book-nav {
+  a {
+  font-size: 10rem;
+  color: $dark-blue;
+
+  }
+  .fa-angle-left {
+    position: fixed;
+    top: calc(50vh - 5rem);
+    left: 2vw;
+  }
+  .fa-angle-right {
+    position: fixed;
+    top: calc(50vh - 5rem);
+    right: 2vw;
+  }
+}
+
 #single-book {
   display: flex;
   justify-content: center;

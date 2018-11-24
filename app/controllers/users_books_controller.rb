@@ -18,6 +18,8 @@ class UsersBooksController < ApplicationController
   def show
     @user_book = UsersBook.find(params[:id])
     authorize @user_book
+    # @prev_book = UsersBook.find(params[:id].to_i - 1)
+    # @next_book = UsersBook.find(params[:id].to_i + 1)
   end
 
   def new

@@ -1,3 +1,13 @@
+<div id="single-book-nav">
+  <%= link_to users_book_path(params[:id].to_i - 1) do %>
+    <i class="fas fa-angle-left"></i>
+  <% end %>
+
+  <%= link_to users_book_path(params[:id].to_i + 1) do %>
+    <i class="fas fa-angle-right"></i>
+  <% end %>
+</div>
+
 <div class="container">
 
     <div id="single-book">
@@ -36,7 +46,7 @@
 
  </div> <!-- end of container -->
 
- <div id="single-book-nav">
+ <div id="single-book-footer">
 
    <ul>
      <li><%= link_to "return to your pile", root_path, class: 'cta-md' %></li>
