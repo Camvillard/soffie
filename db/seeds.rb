@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts 'cleaning the soffie db...'
 
 BookCategory.delete_all
@@ -52,7 +44,9 @@ rien_ne_soppose = UsersBook.create(
     image_url: "http://books.google.com/books/content?id=8uDOAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     num_pages: 352,
     reading_time: "32266.7",
-    description: "La 4e de couverture indique : 'Ma famille incarne ce que la joie a de plus bruyant, de plus spectaculaire, l'écho inlassable des morts, et le retentissement du désastre. Aujourd'hui je sais aussi qu'elle illustre, comme tant d'autres familles, le pouvoir de destruction du verbe, et celui du silence.'"
+    description: "La douleur de Lucile, ma mère, a fait partie de notre enfance et plus tard de notre vie d’adulte, la douleur de Lucile sans doute nous constitue, ma sœur et moi, mais toute tentative d’explication est vouée à l’échec. L’écriture n’y peut rien, tout au plus me permet-elle de poser les questions et d’interroger la mémoire.
+La famille de Lucile, la nôtre par conséquent, a suscité tout au long de son histoire de nombreux hypothèses et commentaires. Les gens que j’ai croisés au cours de mes recherches parlent de fascination ; je l’ai souvent entendu dire dans mon enfance. Ma famille incarne ce que la joie a de plus bruyant, de plus spectaculaire, l’écho inlassable des morts, et le retentissement du désastre. Aujourd’hui je sais aussi qu’elle illustre, comme tant d’autres familles, le pouvoir de destruction du Verbe, et celui du silence.
+Le livre, peut-être, ne serait rien d’autre que ça, le récit de cette quête, contiendrait en lui-même sa propre genèse, ses errances narratives, ses tentatives inachevées. Mais il serait cet élan, de moi vers elle, hésitant et inabouti."
     )
 
 les_chaussures_italiennes = UsersBook.create(
@@ -408,25 +402,25 @@ pride_and_prejudice = UsersBook.create(
 
 
 
-Category.create(name: 'fiction')
-Category.create(name: 'romance')
-Category.create(name: 'thriller')
-Category.create(name: 'young adult')
-Category.create(name: 'tragedy')
-Category.create(name: 'biography')
-Category.create(name: 'chick lit')
-Category.create(name: 'classic')
-Category.create(name: 'fantasy')
-Category.create(name: 'history')
-Category.create(name: 'horror')
-Category.create(name: 'comedy')
-Category.create(name: 'poetry')
-Category.create(name: 'mystery')
-Category.create(name: 'philosophy')
-Category.create(name: 'religion')
-Category.create(name: 'science fiction')
-Category.create(name: 'sports')
-Category.create(name: 'travel')
+# Category.create(name: 'fiction')
+# Category.create(name: 'romance')
+# Category.create(name: 'thriller')
+# Category.create(name: 'young adult')
+# Category.create(name: 'tragedy')
+# Category.create(name: 'biography')
+# Category.create(name: 'chick lit')
+# Category.create(name: 'classic')
+# Category.create(name: 'fantasy')
+# Category.create(name: 'history')
+# Category.create(name: 'horror')
+# Category.create(name: 'comedy')
+# Category.create(name: 'poetry')
+# Category.create(name: 'mystery')
+# Category.create(name: 'philosophy')
+# Category.create(name: 'religion')
+# Category.create(name: 'science fiction')
+# Category.create(name: 'sports')
+# Category.create(name: 'travel')
 
 
 # fiction

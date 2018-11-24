@@ -2,7 +2,6 @@ class Category < ApplicationRecord
   has_many :book_categories
   has_many :users_books, through: :book_categories
 
-  # CATEGORIES_LIST = ["uncategorized", "fiction", "romance", "young adult", "drama", "mystery", "thriller"]
 
   def self.add_new_category(data, book)
     # cat_name = define_category(data)
@@ -14,7 +13,6 @@ class Category < ApplicationRecord
       cat = Category.create(name: "uncategorized")
     end
     book.categories << cat
-    CATEGORIES_LIST << cat.name if Category.find_by(name: data["categories"])
   end
 
   # def define_category(data)
