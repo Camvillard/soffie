@@ -1,87 +1,10 @@
 /* ------ COMPONENTS : CAROUSEL ------ */
 
-// SLICK CAROUSEL CSS
-
-// $slick-font-path: $accent-font;
-$slick-font-family: $body-font;
-$slick-loader-path: "./" !default;
-$slick-arrow-color: white !default;
-$slick-dot-color: black !default;
-$slick-dot-color-active: $slick-dot-color !default;
-$slick-prev-character: "./app/assets/images/arrow_prev.png";
-$slick-next-character: "";
-$slick-dot-character: "\2022" !default;
-$slick-dot-size: 6px !default;
-$slick-opacity-default: 0.75 !default;
-$slick-opacity-on-hover: 1 !default;
-$slick-opacity-not-active: 0.25 !default;
-
-/* Arrows */
-
-// .slick-prev,
-// .slick-next {
-//     position: absolute;
-//     display: block;
-//     // height: 20px;
-//     // width: 20px;
-//     // line-height: 0px;
-//     // font-size: 0px;
-//     cursor: pointer;
-//     // background: transparent;
-//     // color: transparent;
-//     top: 50%;
-//     -webkit-transform: translate(0, -50%);
-//     -ms-transform: translate(0, -50%);
-//     transform: translate(0, -50%);
-//     padding: 0;
-//     border: none;
-//     outline: none;
-//     &:hover, &:focus {
-//         outline: none;
-//         background: transparent;
-//         color: transparent;
-//         &:before {
-//             opacity: $slick-opacity-on-hover;
-//         }
-//     }
-//     &.slick-disabled:before {
-//         opacity: $slick-opacity-not-active;
-//     }
-//     &:before {
-//         font-family: $slick-font-family;
-//         font-size: 20px;
-//         line-height: 1;
-//         color: $slick-arrow-color;
-//         opacity: $slick-opacity-default;
-//         -webkit-font-smoothing: antialiased;
-//         -moz-osx-font-smoothing: grayscale;
-//     }
-// }
-
-// .slick-prev {
-//   border: 3px solid red !important;
-//     left: -5%;
-// }
-
-// // .slick-next {
-// //   border: 3px solid blue;
-// //     right: -5%;
-// //     [dir="rtl"] & {
-// //         left: -25px;
-// //         right: auto;
-// //     }
-// //     &:before {
-// //         // content: $slick-next-character;
-// //         [dir="rtl"] & {
-// //             // content: $slick-prev-character;
-// //         }
-// //     }
-// // }
-
-// SOFFIE'S STYLES
 
 #carousel-container {
   background: $light-gray;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 
@@ -109,6 +32,22 @@ $slick-opacity-not-active: 0.25 !default;
 .fa-angle-left {
   left: -5%;
 }
+
+@media (min-width: 768px) {
+
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1440px) {
+
+}
+
+
 
 
 
