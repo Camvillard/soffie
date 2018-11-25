@@ -75,3 +75,20 @@
     margin-bottom: 2rem;
   }
 }
+
+#new-book-form {
+  .select2-dropdown {
+    @include border-small($peach-orange);
+    font-size: 2.6rem;
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    padding: 6px 16px 3px;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+  }
+
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    font-size: 2.8rem;
+  }
+
+}
