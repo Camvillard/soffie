@@ -43,8 +43,8 @@ class UsersBooksController < ApplicationController
     authorize @book
 
     if @book.save
-      # @book.define_reading_time_for_a_book
-      # Category.add_new_category(data, @book)
+      @categories = params[:categories]
+      add_category_to_a_book(@book, @categories)
       redirect_to book_confirmation_path(@book)
     else
       render :new
@@ -62,6 +62,14 @@ class UsersBooksController < ApplicationController
   end
 
   private
+
+  def add_category_to_a_book(book, categories)
+    book_categories = []
+    categories.each do |category|
+      book_categories << Category.find(category)
+    end
+    book.categories = book_categories
+  end
 
   def find_a_book_with_time(time)
     @time_books = []
