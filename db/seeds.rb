@@ -7,10 +7,10 @@ User.delete_all
 
 puts 'planting seeds for soffie...'
 
-esteban = User.create(email: 'esteban@lewagon.org', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes', reading_speed: "190")
-claire = User.create(email: 'claire@lewagon.org', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman', reading_speed: "185")
-camille = User.create(email: 'camille@lewagon.org', password: 'wagonwagon', first_name: 'camille', last_name: 'villard', reading_speed: "220")
-serge = User.create(email: 'serge@lewagon.org', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc', reading_speed: "210" )
+esteban = User.find(email: 'esteban@lewagon.org', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes', reading_speed: "190")
+claire = User.find(email: 'claire@lewagon.org', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman', reading_speed: "185")
+camille = User.find(email: 'camille@lewagon.org', password: 'wagonwagon', first_name: 'camille', last_name: 'villard', reading_speed: "220")
+serge = User.find(email: 'serge@lewagon.org', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc', reading_speed: "210" )
 
 
 Category.create(name: 'fiction')
@@ -40,7 +40,7 @@ harry_potter_2 = UsersBook.create(
     title: 'Harry Potter And The Chamber Of Secrets',
     author: 'JK Rowling',
     isbn: 9780747538486,
-    image_url: "http://books.google.com/books/content?id=_kLanQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
     num_pages: 357,
     # reading_time: "312308.4",
     description:"The Dursleys were so mean and hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry.
@@ -235,7 +235,7 @@ the_phantom_tollbooth = UsersBook.create(
     description: "For Milo, everything’s a bore. When a tollbooth mysteriously appears in his room, he drives through only because he’s got nothing better to do. But on the other side, things seem different. Milo visits the Island of Conclusions (you get there by jumping), learns about time from a ticking watchdog named Tock, and even embarks on a quest to rescue Rhyme and Reason! Somewhere along the way, Milo realizes something astonishing.
     Life is far from dull. In fact, it’s exciting beyond his wildest dreams. . . ",
     )
-the_hate_you_give.categories = [Category.find_by(name: "young adult"), Category.find_by(name: "children")]
+the_phantom_tollbooth.categories = [Category.find_by(name: "young adult"), Category.find_by(name: "children")]
 
 
 the_hate_you_give = UsersBook.create(
