@@ -23,6 +23,7 @@
     width: 60%;
     margin: auto;
   }
+
   input {
     width: 100%;
     display: block;
@@ -50,8 +51,27 @@
     font-size: 3rem;
     font-style: normal !important;
   }
+
   button {
     margin-bottom: 20px;
-    align-self: baseline;
+    align-self: self-end;
+  }
+
+}
+
+
+#new-book-form .select2 {
+  width: 100% !important;
+  border: none;
+  border-bottom: 3px solid $dark-blue;
+  margin-bottom: 4rem;
+
+  select {
+    font-size: 4rem !important;
+    border: none !important;
+  }
+  input {
+    border: none;
+    margin-bottom: 2rem;
   }
 }
