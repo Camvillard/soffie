@@ -2,13 +2,21 @@
   <% if policy(UsersBook).create? %>
   <div id="new-book-form">
     <h2>add a new book</h2>
-    <form action="<%= users_books_path %>" method='post'>
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<!--     <form action="<%= users_books_path %>" method='post'>
+      <%#= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input type="text" name='title' placeholder="title">
       <input type="text" name='author' placeholder="author">
       <input type="text" name='isbn' placeholder="isbn">
+      <input type="text" name='category' placeholder="category">
       <button type="submit" class="button-border-blue">add a book</button>
-    </form>
+    </form> -->
+   <%= form_tag users_books_path, method: 'post' do %>
+    <input type="text" name='title' placeholder="title">
+    <input type="text" name='author' placeholder="author">
+    <input type="text" name='isbn' placeholder="isbn">
+    <%=  select_tag "categories[]", options_from_collection_for_select(Category.all, "id", "name"), class: "js-example-basic-multiple" %>
+    <%= submit_tag "add a book", class: "button-border-blue" %>
+   <% end %>
   </div>
 
   <% else %>
@@ -16,6 +24,4 @@
   <% end %>
 </div>
 
-
-
-
+<%= javascript_pack_tag 'select2' %>
