@@ -23,6 +23,7 @@
     width: 60%;
     margin: auto;
   }
+
   input {
     width: 100%;
     display: block;
@@ -50,8 +51,44 @@
     font-size: 3rem;
     font-style: normal !important;
   }
+
   button {
     margin-bottom: 20px;
-    align-self: baseline;
+    align-self: self-end;
   }
+
+}
+
+
+#new-book-form .select2 {
+  width: 100% !important;
+  border: none;
+  border-bottom: 3px solid $dark-blue;
+  margin-bottom: 4rem;
+
+  select {
+    font-size: 4rem !important;
+    border: none !important;
+  }
+  input {
+    border: none;
+    margin-bottom: 2rem;
+  }
+}
+
+#new-book-form {
+  .select2-dropdown {
+    @include border-small($peach-orange);
+    font-size: 2.6rem;
+  }
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    padding: 6px 16px 3px;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+  }
+
+  .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    font-size: 2.8rem;
+  }
+
 }
