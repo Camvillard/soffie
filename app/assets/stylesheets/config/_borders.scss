@@ -7,3 +7,7 @@
 .md-border-blue {
   @include horizontal-border(8px, $dark-blue);
 }
+
+.sm-border-blue {
+  @include horizontal-border(4px, $dark-blue);
+}
