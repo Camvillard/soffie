@@ -8,7 +8,8 @@
 }
 
 
-#registrations-new {
+#registrations-new,
+#sessions-new {
   background: $peach-orange;
   min-height: 100vh;
   width: 100vw;
@@ -17,17 +18,21 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  p.user-text {
-    color: white;
-    align-self: flex-end;
-  }
 }
 
 
-form#new_user {
+form#new_user{
+  display: flex;
+  flex-direction: column;
+
+  .form-actions {
+    align-self: center;
+  }
+
   small.form-text.text-muted {
     color: white;
-    font-size: 100%;
+    font-size: 80%;
+    text-transform: uppercase;
   }
 
   input {
@@ -35,18 +40,48 @@ form#new_user {
     color: $dark-blue;
   }
 
+  input.password {
+    margin-bottom: 0.5rem;
+  }
+
   ::placeholder {
     color: white;
     border-bottom: 6px solid white;
   }
+
   input[type="submit"] {
+    margin: 60px auto 50px;
     color: white;
     font-style: italic;
     font-size: 3.6rem;
-    float: right;
     &:hover {
       color: $dark-blue;
     }
+  }
+
+  fieldset {
+    border: none;
+  }
+  .form-check {
+    font-family: $body-font;
+    text-transform: uppercase;
+    color: white;
+  }
+  .form-check-input {
+    border: none;
+  }
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+} // end of form#new_user
+
+#session-actions {
+  position: fixed;
+  bottom: 2vh;
+  text-align: center;
+  color: white;
+  p.user-text {
+    color: white;
   }
 }
 
