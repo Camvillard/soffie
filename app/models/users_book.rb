@@ -15,7 +15,6 @@ class UsersBook < ApplicationRecord
   end
 
   def is_valid?(categories)
-    # valid_book = false
     self.categories.each do |category|
       if categories.include?(category)
         return true

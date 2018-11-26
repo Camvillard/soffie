@@ -1,7 +1,33 @@
 <div class="row">
 
-    <div class="first-result">
-      <h3><%= @final_books[0].title %></h3>
-    </div>
+    <div class="col-md-10 col-md-offset-1">
+    <div class="first-result" id="first-result">
+
+      <div class="book-image">
+        <%= image_tag @final_books.first.image_url %>
+      </div>
+
+      <div class="book-details">
+
+        <h3><%= @final_books.first.title.downcase.capitalize %></h3>
+        <hr class="sm-border-blue">
+        <h4><%= @final_books.first.author %></h4>
+        <div class="book-pages">
+          <p><%= @final_books.first.num_pages %> pages <br>
+            <%= @final_books.first.reading_time.to_i / 3600 %> hours of reading, don't forget to stay hydrated
+          </p>
+        </div>
+
+        <div class="book-description">
+          <p><%= @final_books.first.description %></p>
+        </div>
+
+        <div class="book-actions">
+          <%= link_to "great soffie, I'll read this one", users_book_path(@final_books.first), class: "button-peach" %>
+        </div>
+
+      </div> <!-- end of .book-details -->
+    </div> <!-- end of .first-result -->
+  </div>
 
 </div>
