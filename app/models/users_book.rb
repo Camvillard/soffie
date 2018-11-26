@@ -1,6 +1,7 @@
 class UsersBook < ApplicationRecord
   has_many :book_categories
   has_many :categories, through: :book_categories
+  has_many :reviews, dependent: :destroy
   belongs_to :user
 
   # before_save :define_reading_time_for_a_book

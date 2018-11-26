@@ -19,14 +19,15 @@ class UsersBooksController < ApplicationController
     # default : render views - users_books - results.html.erb
   end
 
-  def show
-    @user_book = UsersBook.find(params[:id])
-    authorize @user_book
-  end
-
   def new
     @user_book = UsersBook.new
     authorize @user_book
+  end
+
+  def show
+    @users_book = UsersBook.find(params[:id])
+    @review = Review.new
+    authorize @users_book
   end
 
   def create
