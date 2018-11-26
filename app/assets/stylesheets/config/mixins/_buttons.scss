@@ -45,3 +45,16 @@
   text-transform:lowercase;
   font-weight: $font-weight-extrabold;
 }
+
+@mixin text-link($color) {
+  font-weight: $font-weight-bold;
+  font-family: $headers-font;
+  font-style: italic;
+  color: $color;
+}
+
+
+
+
+
+

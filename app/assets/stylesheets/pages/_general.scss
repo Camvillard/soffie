@@ -101,6 +101,10 @@ span.accent-text {
   margin-bottom: 20px;
 }
 
+.sm-link-white {
+  @include text-link(white);
+}
+
 
 /* only for dev */
 

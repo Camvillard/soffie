@@ -88,3 +88,11 @@
     border-bottom: 12px solid $peach-orange;
   }
 }
+
+.form-big-cta {
+  border-bottom: 4px solid white;
+  &:hover {
+    border-bottom: 4px solid $dark-blue;
+  }
+}
+
