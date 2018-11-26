@@ -10,6 +10,8 @@ body {
   color: $medium-gray;
   @include border-large($dark-blue);
   min-height: 100vh;
+  font-size: 1.6rem;
+
 }
 
 div {
