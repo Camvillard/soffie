@@ -1,5 +1,5 @@
 class MoodsController < ApplicationController
   def index
-    @moods = Mood.all
+    @moods = policy_scope(Mood)
   end
 end
