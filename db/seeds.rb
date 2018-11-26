@@ -7,10 +7,10 @@ User.delete_all
 
 puts 'planting seeds for soffie...'
 
-esteban = User.find(email: 'esteban@lewagon.org', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes', reading_speed: "190")
-claire = User.find(email: 'claire@lewagon.org', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman', reading_speed: "185")
-camille = User.find(email: 'camille@lewagon.org', password: 'wagonwagon', first_name: 'camille', last_name: 'villard', reading_speed: "220")
-serge = User.find(email: 'serge@lewagon.org', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc', reading_speed: "210" )
+esteban = User.create(email: 'esteban@lewagon.org', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes', reading_speed: "190")
+claire = User.create(email: 'claire@lewagon.org', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman', reading_speed: "185")
+camille = User.create(email: 'camille@lewagon.org', password: 'wagonwagon', first_name: 'camille', last_name: 'villard', reading_speed: "220")
+serge = User.create(email: 'serge@lewagon.org', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc', reading_speed: "210" )
 
 
 Category.create(name: 'fiction')
@@ -143,7 +143,7 @@ saga_harry_potter = UsersBook.create(
     title: 'Harry Potter - the whole saga',
     author: 'JK Rowling',
     isbn: 9780747538486,
-    image_url: "http://books.google.com/books/content?id=KXyNjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+    image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
     num_pages: 3407,
     # reading_time: "312308.4",
     description: "The whole Harry Potter saga."
@@ -379,7 +379,6 @@ jane_eyre = UsersBook.create(
 But there is a terrifying secret inside the gloomy, forbidding Thornfield Hall. Is Rochester hiding from Jane? Will Jane be left heartbroken and exiled once again?"
     )
 jane_eyre.categories = [Category.find_by(name: "romance"), Category.find_by(name: "classic")]
-
 
 
 puts 'soffie is ready to search ^_^-b'
