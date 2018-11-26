@@ -1,8 +1,44 @@
+<% comments = [
+"don't forget to stay hydrated",
+  "stretch your legs from time to time",
+  "all those hours of peace"] %>
+
+
 <div class="row">
+
   <% @final_books.each do |book| %>
+
     <div class="col-md-6">
-      <%= book.title %>
-    </div>
+
+      <div class="other-results">
+
+        <div class="book-header">
+
+          <div class="book-image">
+            <%= image_tag book.image_url %>
+          </div>
+
+          <div class="book-details">
+            <h3><%= book.title.downcase.capitalize %></h3>
+            <hr class="sm-border-blue">
+            <h4><%= book.author %></h4>
+            <p><%= book.num_pages %> pages <br>
+                <%= book.reading_time.to_i / 3600 %> hours of reading, <%= comments.sample(1)[0] %>
+            </p>
+          </div> <!-- end of book details -->
+
+        </div> <!-- end of .book-header -->
+
+        <div class="book-description">
+          <p><%= book.description %></p>
+          <%= link_to "read this book", users_book_path(book), class: "button-peach" %>
+        </div>
+
+      </div> <!-- end of other-results -->
+
+    </div> <!-- end of col-md-6 -->
+
   <% end %>
 
-</div>
+
+</div> <!-- end of row -->

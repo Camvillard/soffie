@@ -79,9 +79,7 @@ class UsersBooksController < ApplicationController
       if users_book.reading_time.to_f > (time - 7200) && users_book.reading_time.to_f < (time + 7200)
         @time_books << users_book
       end
-      # @time_books
     end
-    # raise
   end
 
   def build_api_query(title, author, isbn)
