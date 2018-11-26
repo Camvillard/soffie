@@ -5,7 +5,11 @@ class UsersBooksController < ApplicationController
     @categories = Category.find(params[:categories])
     @reading_time = calculate_reading_time(params[:day], params[:hours])
     @users_books = policy_scope(UsersBook)
-    find_a_book_with_time(@reading_time)
+    if params[:day] == "" || params[:hours] == ""
+      @time_books = @users_books
+    else
+      find_a_book_with_time(@reading_time)
+    end
     @final_books = []
 
     @time_books.each do |book|
@@ -18,8 +22,6 @@ class UsersBooksController < ApplicationController
   def show
     @user_book = UsersBook.find(params[:id])
     authorize @user_book
-    # @prev_book = UsersBook.find(params[:id].to_i - 1)
-    # @next_book = UsersBook.find(params[:id].to_i + 1)
   end
 
   def new
@@ -74,7 +76,7 @@ class UsersBooksController < ApplicationController
   def find_a_book_with_time(time)
     @time_books = []
     @users_books.each do |users_book|
-      if users_book.reading_time.to_f > (time - 3600) && users_book.reading_time.to_f < (time + 3600)
+      if users_book.reading_time.to_f > (time - 7200) && users_book.reading_time.to_f < (time + 7200)
         @time_books << users_book
       end
       # @time_books
