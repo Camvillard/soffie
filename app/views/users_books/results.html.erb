@@ -1,15 +1,17 @@
-<% comments = [
-  "don't forget to stay hydrated",
-  "stretch your legs from time to time",
-  "all those hours of peace"] %>
-
 <div class="container">
   <div class="row">
-    <h1>hola <%= current_user.email.split('@')[0] %> </h1>
+    <h1>hola <%= current_user.first_name %> </h1>
     <h3>you want to read some
       <% @categories.each do |category| %>
         <span class="category" data-content="&"><%= category.name %></span>
       <% end %>
+      and you have
+      <% if params[:day] == "" || params[:hours] == "" %>
+        absolutely all the time in the world to read, lucky you.
+      <% else %>
+        <%= (params[:days].to_i * params[:hours].to_i) %> hours to read.
+      <% end %>
+      Here are my suggestions.
     </h3>
 
   </div>
@@ -17,100 +19,19 @@
 
 <div class="container">
 
-
     <% if @final_books.size == 1 %>
-    <div class="row">
 
-      <div class="col-md-10 col-md-offset-1">
-        <div class="first-result">
-          <h3><%= @final_books[0].title %></h3>
-        </div>
-      </div>
-
-    </div>
+      <%= render "partials/one-result" %>
 
     <% elsif @final_books.size == 2  %>
 
-    <div class="row">
-      <% @final_books.each do |book| %>
-        <div class="col-md-6">
-          <%= book.title %>
-        </div>
-      <% end %>
-
-    </div>
-
+      <%= render "partials/two-results" %>
 
     <% else %>
 
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="first-result" id="first-result">
-
-          <div class="book-image">
-            <%= image_tag @final_books[0].image_url %>
-          </div>
-
-          <div class="book-details">
-            <h3><%= @final_books[0].title.downcase.capitalize %></h3>
-            <h4><%= @final_books[0].author %></h4>
-            <div class="book-pages">
-              <p><%= @final_books[0].num_pages %> pages <br>
-                <%= @final_books[0].reading_time.to_i / 3600 %> hours of reading, don't forget to stay hydrated
-              </p>
-            </div>
-
-            <div class="book-description">
-              <p><%= @final_books[0].description %></p>
-            </div>
-
-            <div class="book-actions">
-              <%= link_to "great soffie, I'll take this one", users_book_path(@final_books[0]), class: "button-peach" %>
-              <%= link_to "not sure... show me the others (please, soffie)", "#other-results", class: "button-border-peach" %>
-            </div>
-
-          </div> <!-- end of .book-details -->
-        </div> <!-- end of .first-result -->
-      </div>
-    </div>
-
-    <div class="row">
-
-      <% @final_books[1..2].each do |book| %>
-        <div class="col-md-6">
-          <div class="other-results" id="other-results">
-
-            <div class="book-image">
-              <%= image_tag book.image_url %>
-            </div>
-
-            <div class="book-details">
-              <h3><%= book.title.downcase.capitalize %></h3>
-              <h4><%= book.author %></h4>
-              <div class="book-pages">
-                <p><%= book.num_pages %> pages <br>
-                  <%= book.reading_time.to_i / 3600 %> <%= comments.sample(1)[0] %>
-                </p>
-              </div>
-
-              <div class="book-description">
-                <p><%= book.description %></p>
-              </div>
-
-              <div class="book-actions">
-                <%= link_to "choose this book", users_book_path(book), class: "button-peach" %>
-              </div>
-
-            </div> <!-- end of .book-details -->
-          </div>
-
-          </div>
-      <% end %> <!-- end of iteration in the results -->
+      <%= render "partials/multiple-results" %>
 
     <% end %> <!-- end of if/elsif/else -->
-
-
-  </div> <!-- end of row -->
 
 </div> <!-- end of container -->
 
