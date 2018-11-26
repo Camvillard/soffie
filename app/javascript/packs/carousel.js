@@ -31,3 +31,5 @@ $(".book-carousel").slick({
     }
   ]
 });
+
+$(".book-mood-carousel").slick();

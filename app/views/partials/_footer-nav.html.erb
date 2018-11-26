@@ -15,7 +15,14 @@
         <li><%= link_to "add a book to your pile", root_path, class: 'cta-md' %></li>
         <li><%= link_to "search your next book", root_path, class: 'cta-md' %></li>
       </ul>
-
+    </div>
+  <% elsif controller_path == "moods" && action_name == "index" %>
+    <!-- footer for single book page -->
+    <div id="index-mood-footer">
+      <ul>
+        <li><%= link_to "create a new mood", "", class: "cta-big" %></li>
+        <li><%= link_to "search the next book to read", search_path, class: "cta-big" %></li>
+      </ul>
     </div>
   <% else %>
     <p>soffie.</p>
