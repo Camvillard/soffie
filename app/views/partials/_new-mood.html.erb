@@ -1,0 +1,35 @@
+<!-- Button trigger modal -->
+<button type="button" class="button-border-neon " data-toggle="modal" data-target="#new-mood-modal">
+  <i class="fas fa-plus-circle"></i>
+  add a mood
+</button>
+
+<!-- modal -->
+<div class="modal fade" id="new-mood-modal" tabindex="-1" role="dialog" aria-labelledby="new-mood-modalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <%= form_tag moods_path, method: 'post', id: "mood-modal-form" do %>
+         <input type="text" name='name' placeholder="name of the mood">
+         <input type="text" name='description' placeholder="description">
+         <p>add some book</p>
+         <%=  select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), class: "select2-mood-modal", id: "mood-modal" %>
+         <button type="submit" class="button-border-blue">create a mood</button>
+        <% end %>
+
+      </div> <!-- end of modal-body -->
+
+      <div class="modal-footer">
+        <button type="button" class="cta-neon" data-dismiss="modal">close</button>
+      </div>
+    </div> <!-- end of modal body -->
+  </div>
+
+</div> <!-- end of modal -->
+
+
+
+
+
+

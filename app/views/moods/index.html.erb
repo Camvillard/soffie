@@ -25,9 +25,8 @@
           </div> <!-- end of mood-content -->
 
           <div class="mood-actions">
-            <%= link_to '#', class: 'cta-md' do %>
-              <i class="fas fa-plus-circle"></i>
-            <% end %>
+            <%#= link_to '#', class: 'cta-md' do %>
+            <%# end %>
             <%= link_to '#', class: 'cta-md' do %>
               <i class="fas fa-share"></i>
             <% end %>
@@ -40,7 +39,11 @@
     <% end %> <!-- end of iteration over moods -->
 
  </div> <!-- en d of row -->
+              <%= render "partials/new-mood" %>
+
 
 </div> <!-- end of container -->
+
+<%= javascript_pack_tag 'select2' %>
 
 

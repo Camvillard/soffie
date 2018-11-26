@@ -23,11 +23,10 @@
   padding: 12px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  justify-content: space-between;
   h4 {
     color: $dark-blue;
-    text-align: center;
     font-size: 2rem;
     font-weight: $font-weight-bold;
   }
