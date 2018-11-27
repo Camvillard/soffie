@@ -6,10 +6,9 @@
   }
 }
 
-
 .mood-card {
   margin: 10px auto 20px;
-  background: $light-gray;
+  background: lighten($peach-orange, 10%);
   height: 320px;
   position: relative;
   // display: flex;

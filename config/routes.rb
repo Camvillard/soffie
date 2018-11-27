@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get '/speed_test', to: 'pages#speed_test'
   patch '/updating_users_reading_time', to: 'pages#updating_users_reading_time'
 
+  patch '/mood/:id', to: 'moods#add_book'
+
   resources :users_books, only: [:new, :create, :show]
-  resources :moods, only: [:index, :show, :new, :create]
-  # match '/.*', to: 'pages#home'
+  resources :moods, only: [:index, :show, :new, :create, :update]
 end

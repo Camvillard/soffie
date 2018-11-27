@@ -21,6 +21,14 @@ class MoodsController < ApplicationController
     end
   end
 
+  def update
+
+  end
+
+  def add_book
+    @mood = Mood.find(params[:mood])
+  end
+
   private
 
   def set_mood_params
