@@ -66,7 +66,6 @@ class UsersBooksController < ApplicationController
   end
 
   def calculate_reading_time(days, hours)
-    #returns the number of seconds available to read a book
     days.to_f * hours.to_f * 3600
   end
 
