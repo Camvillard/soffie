@@ -27,11 +27,20 @@ class MoodsController < ApplicationController
   end
 
   def update
-
   end
 
   def add_book
-    @mood = Mood.find(params[:mood])
+    @mood = Mood.find(params[:id])
+    authorize @mood
+    params[:books].each do |book_id|
+      @mood.users_books << UsersBook.find(book_id)
+    end
+    if @mood.save
+      redirect_to mood_path(@mood)
+    else
+      flash[:alert] = "oops, something wrong in here"
+    end
+
   end
 
   private

@@ -12,8 +12,8 @@
     <div id="single-book-footer">
       <ul>
         <li><%= link_to "return to your pile", root_path, class: 'cta-md' %></li>
-        <li><%= link_to "add a book to your pile", root_path, class: 'cta-md' %></li>
-        <li><%= link_to "search your next book", root_path, class: 'cta-md' %></li>
+        <li><%= link_to "add a book to your pile", new_users_book_path, class: 'cta-md' %></li>
+        <li><%= link_to "search your next book", search_path, class: 'cta-md' %></li>
       </ul>
     </div>
   <% elsif controller_path == "moods" && action_name == "index" %>
