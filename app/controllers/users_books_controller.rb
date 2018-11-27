@@ -75,6 +75,7 @@ class UsersBooksController < ApplicationController
     @user_book.status = "Reading in progress"
     @user_book.save
     authorize @user_book
+    @end_readingdate = Date.today + (users_book.reading_time.to_f / 86400)
     redirect_to root_path
   end
 
