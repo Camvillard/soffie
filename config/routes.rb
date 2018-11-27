@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   get '/speed_test', to: 'pages#speed_test'
   patch '/updating_users_reading_time', to: 'pages#updating_users_reading_time'
+  # patch '/page_update', to: 'users_books#update_completed_pages'
 
-
-  resources :users_books, only: [:new, :create, :show] do
+  resources :users_books, only: [:new, :create, :show, :update] do
     resources :reviews, only: [:create]
    end
 

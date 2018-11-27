@@ -34,17 +34,26 @@
                   <li class="book-category"> <%= category.name %></li>
                 <% end %>
               </ul>
+
+            <!-- Reading Progress Bar -->
+
+            <p><%=book.completed_pages%> out of <%= book.num_pages%> pages</p>
+              <div id="bar">
+                <div id="progress-bar"></div>
+              </div>
+            
             <% end %> <!-- end of iteration over the categories -->
             <p>35 out of <%= book.num_pages%> pages</p>
+
           </div>
 
         </div> <!-- end of book carousel description -->
-
       </div>
     <% end %>
   </div>
 
 </div> <!-- end of carousel container -->
+
 
 <div class="container">
 
@@ -61,8 +70,33 @@
 
 </div> <!-- end of container -->
 
-<%= javascript_pack_tag 'select2' %>
 
+<!-- Modal -->
+<div class="modal fade" id="pagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+        <ol>
+          <% @books_in_progress.each do |book| %>
+            <p><%= book.title %></p>
+          <% end %>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'completed-pages-read' %>
+<%= javascript_pack_tag 'select2' %>
 
 
 
