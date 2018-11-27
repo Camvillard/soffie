@@ -41,7 +41,7 @@
               <div id="bar">
                 <div id="progress-bar"></div>
               </div>
-            
+
             <% end %> <!-- end of iteration over the categories -->
             <p>35 out of <%= book.num_pages%> pages</p>
 
@@ -80,12 +80,16 @@
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        ...
         <ol>
           <% @books_in_progress.each do |book| %>
             <p><%= book.title %></p>
+            <%= simple_form_for book do |f| %>
+              <%= f.input :completed_pages %>
+              <%= f.submit %>
+            <% end %>
           <% end %>
         </ol>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

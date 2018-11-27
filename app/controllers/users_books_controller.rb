@@ -72,8 +72,7 @@ class UsersBooksController < ApplicationController
 
   def update
     @user_book = UsersBook.find(params[:id])
-    @user_book.status = "Reading in progress"
-    @user_book.save
+    @user_book.update(strong_params)
     authorize @user_book
     @end_readingdate = Date.today + (users_book.reading_time.to_f / 86400)
     redirect_to root_path
@@ -115,6 +114,10 @@ class UsersBooksController < ApplicationController
     url = "https://www.googleapis.com/books/v1/volumes?q=#{search_normalized}"
     serialized = open(url).read
     JSON.parse(serialized)
+  end
+
+  def strong_params
+    params.require(:users_book).permit(:status, :completed_pages)
   end
 
 end
