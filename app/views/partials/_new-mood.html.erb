@@ -8,11 +8,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
+        <h3>add a new mood</h3>
 
         <%= form_tag moods_path, method: 'post', id: "mood-modal-form" do %>
-         <input type="text" name='name' placeholder="name of the mood">
-         <input type="text" name='description' placeholder="description">
-         <p>add some book</p>
+
+         <input type="text" name='mood[name]' placeholder="name of the mood">
+         <input type="text" name='mood[description]' placeholder="description">
+         <h6>add some books to that mood</h6>
          <%=  select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), class: "select2-mood-modal", id: "mood-modal" %>
          <button type="submit" class="button-border-blue">create a mood</button>
         <% end %>

@@ -99,6 +99,6 @@ class UsersBooksController < ApplicationController
   end
 
   def users_book_params
-    params.require(:user_books, :book_confirmation).permit(:title, :author, :isbn, :details, :reading_time, :num_pages, :description, :image_url, :book_confirmation)
+    params.require(:users_books, :book_confirmation).permit(:title, :author, :isbn, :details, :reading_time, :num_pages, :description, :image_url, :book_confirmation)
   end
 end
