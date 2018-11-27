@@ -5,5 +5,5 @@ import "bootstrap";
 
 import "./carousel";
 import "./slider-menu";
-import "./progress_bar";
+
 

@@ -28,4 +28,8 @@ class UsersBookPolicy < ApplicationPolicy
   def results?
     true
   end
+
+  def update?
+    record.user == user
+  end
 end

@@ -65,9 +65,14 @@ class UsersBooksController < ApplicationController
   end
 
   def update
+    @user_book = UsersBook.find(params[:id])
+    @user_book.status = "Reading in progress"
+    @user_book.save
+    authorize @user_book
+    redirect_to root_path
   end
 
-  def updating_users_completed_pages
+  def update_completed_pages
     # TO DO
   end
 
