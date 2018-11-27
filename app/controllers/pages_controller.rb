@@ -4,7 +4,8 @@ class PagesController < ApplicationController
   def home
     unless current_user.nil?
     @users_books = UsersBook.where(user_id: current_user.id)
-    @users_book = UsersBook.first
+    @moods = Mood.all
+    # @users_book = UsersBook.first
     end
   end
 
@@ -31,3 +32,4 @@ class PagesController < ApplicationController
     redirect_to root_path # TODO: redirect somewhere else
   end
 end
+#
