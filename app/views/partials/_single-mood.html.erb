@@ -1,0 +1,45 @@
+<div id="single-mood-container">
+
+  <div id="single-mood-header">
+    <div id="content-header">
+      <h3><%= mood.name %></h3>
+      <h4><%= mood.description %></h4>
+    </div>
+    <div id="content-details">
+      <p class="accent-text"><%= pluralize(mood.users_books.count, "book")%> in this mood</p>
+      <% @mood_categories.each do |category| %>
+          <%= category %>
+      <% end %>
+      <h6><%= mood.user.first_name %></h6>
+    </div>
+  </div> <!-- end of #single-mood-header -->
+
+  <div id="single-mood-content">
+    <% mood.users_books.each do |book| %>
+
+      <div id="mood-book-content">
+
+        <div id="mood-book-cover">
+          <%= image_tag book.image_url if book.image_url.present? %>
+        </div> <!-- end of #mood-book-cover -->
+
+        <div id="mood-book-details">
+
+          <h4><%= book.title %>/<span id="book-author"><%= book.author %></span></h4>
+          <h6><%= book.num_pages %> pages, <%= book.reading_time.to_i / 3600 %> hours of reading </h6>
+          <ul>
+            <% book.categories.each do |category| %>
+              <li><%= category.name %></li>
+            <% end %>
+          </ul>
+
+        </div> <!-- end of #mood-book-details -->
+
+      </div> <!-- end of #mood-book-content -->
+
+    <% end %> <!-- end of iteration over users_books -->
+
+  </div> <!-- end of #single-mood-content -->
+
+</div> <!-- end of #single-mood-container -->
+
