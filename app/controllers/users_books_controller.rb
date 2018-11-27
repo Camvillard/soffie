@@ -19,15 +19,16 @@ class UsersBooksController < ApplicationController
     # default : render views - users_books - results.html.erb
   end
 
+  def show
+    @user_book = UsersBook.find(params[:id])
+    @review = Review.new
+    authorize @user_book
+    UserMailer.book_choice(@user_book).deliver_now
+  end
+
   def new
     @user_book = UsersBook.new
     authorize @user_book
-  end
-
-  def show
-    @users_book = UsersBook.find(params[:id])
-    @review = Review.new
-    authorize @users_book
   end
 
   def create
@@ -80,9 +81,7 @@ class UsersBooksController < ApplicationController
       if users_book.reading_time.to_f > (time - 7200) && users_book.reading_time.to_f < (time + 7200)
         @time_books << users_book
       end
-      # @time_books
     end
-    # raise
   end
 
   def build_api_query(title, author, isbn)

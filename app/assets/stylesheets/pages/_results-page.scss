@@ -1,19 +1,27 @@
 /* ------ PAGES : RESULTS ------ */
 
-#users_books-results {
-  .row {
-    margin-top: 20px;
-    margin-bottom: 70px;
-  }
+#result-header {
+  margin-top: 20px;
+  margin-bottom: 70px;
+  width: 65%;
+
 }
 
 
 .first-result {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
+
+  .book-image {
+    flex: 0 1 38%;
+    img {
+      width: 100%;
+    }
+  }
 
   .book-details {
-    flex: 0 0 60%;
+    flex: 0 1 60%;
     align-self: flex-end;
   }
 }
@@ -21,22 +29,38 @@
 
 .other-results {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-header {
+  display: flex;
   justify-content: space-between;
 
-    h3 {
-      font-size: 2.6rem;
-    }
-    h4 {
-      font-size: 2rem;
-    }
 
-    .book-image img{
-      // flex: 0 1 30%;
-    }
+  h3 {
+    font-size: 2.6rem;
+  }
 
-    .book-details {
-      flex: 0 1 60%;
-      align-self: flex-end;
+  h4 {
+    font-size: 2rem;
+  }
+
+  .book-image {
+    flex: 0 1 30%;
+    img {
+      width: 100%;
     }
+  }
+
+  .book-details {
+    flex: 0 1 65%;
+  }
+}
+
+.book-actions {
+  a {
+    display: inline-block;
+  }
 }
 
