@@ -2,7 +2,7 @@
 
   <h1> welcome, <%= current_user.first_name%></h1>
   <h4>you have <%= pluralize(current_user.users_books.size, "book") %> in your pile.</h4>
-  <p>you are currently reading (...) books and you have (...) moods created.</p>
+  <p>you are currently reading (...) books and you have <%= pluralize(@moods.size, "mood") %> created.</p>
 
 </div>  <!-- end of container -->
 
@@ -44,10 +44,50 @@
     <% end %>
   </div>
 
-  <!-- </div> -->
-  <!-- Image Carousel -->
-
 </div> <!-- end of carousel container -->
+
+<div class="container">
+
+  <h4>oh, all the moods that you have!</h4>
+
+  <div class="row">
+    <% @moods[0..3].each do |mood| %>
+      <div class="col-xs-12 col-md-6 col-lg-3">
+        <div class="mood-card">
+
+            <div class="mood-content">
+
+              <h4><%= mood.name %></h4>
+              <h6><%= mood.description %></h6>
+
+              <% if mood.users_books.size != 0 %>
+                <p>
+                  <%= mood.users_books.size %> books in that mood
+                </p>
+              <% else %>
+                <p>seems that there is no book yet in your mood!</p>
+              <% end %>
+            </div> <!-- end of mood-content -->
+
+            <div class="mood-actions">
+              <%= render "partials/add-book", {mood: mood} %>
+              <%= link_to '#', class: 'cta-md' do %>
+                <i class="fas fa-share"></i>
+              <% end %>
+            </div> <!-- end of mood actions -->
+
+        </div> <!-- end of mood-card -->
+
+
+      </div> <!-- end of col -->
+    <% end %>
+
+  </div> <!-- end of row -->
+
+</div> <!-- end of container -->
+
+<%= javascript_pack_tag 'select2' %>
+
 
 
 

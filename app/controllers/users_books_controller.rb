@@ -26,6 +26,9 @@ class UsersBooksController < ApplicationController
   def show
     @user_book = UsersBook.find(params[:id])
     authorize @user_book
+    @users_book = UsersBook.find(params[:id])
+    @review = Review.new
+    authorize @users_book
   end
 
   def new
@@ -101,7 +104,7 @@ class UsersBooksController < ApplicationController
     JSON.parse(serialized)
   end
 
-  def users_book_params
-    params.require(:user_books, :book_confirmation).permit(:title, :author, :isbn, :details, :reading_time, :num_pages, :description, :image_url, :book_confirmation)
-  end
+  # def users_book_params
+  #   params.require(:user_book, :book_confirmation).permit(:title, :author, :isbn, :details, :reading_time, :num_pages, :description, :image_url, :book_confirmation)
+  # end
 end
