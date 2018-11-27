@@ -63,6 +63,13 @@ class UsersBooksController < ApplicationController
     days.to_f * hours.to_f * 3600
   end
 
+  def update
+  end
+
+  def updating_users_completed_pages
+    # TO DO
+  end
+
   private
 
   def add_category_to_a_book(book, categories)
