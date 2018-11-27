@@ -20,7 +20,7 @@ class UsersBooksController < ApplicationController
     else
       UserMailer.book_choice(@final_books.first).deliver_now
     end
-    # default : render views - users_books - results.html.erb
+
   end
 
   def show
