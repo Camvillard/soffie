@@ -15,20 +15,25 @@ class UsersBooksController < ApplicationController
     @time_books.each do |book|
       @final_books << book if book.is_valid?(@categories)
     end
-    render :no_results if @final_books.empty?
-    # default : render views - users_books - results.html.erb
+    if @final_books.empty?
+      render :no_results
+    else
+      UserMailer.book_choice(@final_books.first).deliver_now
+    end
+
   end
 
   def show
     @user_book = UsersBook.find(params[:id])
-    @review = Review.new
     authorize @user_book
-    UserMailer.book_choice(@user_book).deliver_now
+    @users_book = UsersBook.find(params[:id])
+    @review = Review.new
+    authorize @users_book
   end
 
   def new
-    @user_book = UsersBook.new
-    authorize @user_book
+    @users_book = UsersBook.new
+    authorize @users_book
   end
 
   def create
@@ -61,7 +66,6 @@ class UsersBooksController < ApplicationController
   end
 
   def calculate_reading_time(days, hours)
-    #returns the number of seconds available to read a book
     days.to_f * hours.to_f * 3600
   end
 
@@ -99,7 +103,4 @@ class UsersBooksController < ApplicationController
     JSON.parse(serialized)
   end
 
-  # def users_book_params
-  #   params.require(:user_book, :book_confirmation).permit(:title, :author, :isbn, :details, :reading_time, :num_pages, :description, :image_url, :book_confirmation)
-  # end
 end

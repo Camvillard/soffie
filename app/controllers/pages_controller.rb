@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     unless current_user.nil?
     @users_books = UsersBook.where(user_id: current_user.id)
     @moods = Mood.all
-    # @users_book = UsersBook.first
+    @users_book = UsersBook.first
     end
   end
 
