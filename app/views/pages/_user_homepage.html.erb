@@ -41,7 +41,7 @@
               <div id="bar">
                 <div id="progress-bar"></div>
               </div>
-            
+
             <% end %> <!-- end of iteration over the categories -->
             <p>35 out of <%= book.num_pages%> pages</p>
 
@@ -62,7 +62,7 @@
   <div class="row">
     <% @moods[0..3].each do |mood| %>
 
-    <%= render "partials/mood-card", mood: mood %>
+    <%= render "partials/mood-card", mood: mood, test: mood.id %>
 
     <% end %>
 
