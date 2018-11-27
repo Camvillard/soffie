@@ -36,11 +36,11 @@ Category.create(name: 'science fiction')
 Category.create(name: 'children')
 Category.create(name: 'travel')
 
-Mood.create(name: "relaxing with a glass of whatever you need it to be", description: "pretty self-explanatory.")
-Mood.create(name: "reading for after an intense 9 weeks coding bootcamp", description: "perfect for an over-used brain that cries for some light reading.")
-Mood.create(name: "learning graphic design things", description: "useful for those you still use Comic Sans MS and actually think it's a good idea.")
-Mood.create(name: "paris is always a good idea", description: "bread, cheese & parisian stories")
-Mood.create(name: "stories that made you cry", description: "excellent for wintertime")
+Mood.create(name: "relaxing with a glass of whatever you need it to be", description: "pretty self-explanatory.", user: camille)
+Mood.create(name: "reading for after an intense 9 weeks coding bootcamp", description: "perfect for an over-used brain that cries for some light reading.", user: camille)
+Mood.create(name: "learning graphic design things", description: "useful for those you still use Comic Sans MS and actually think it's a good idea.", user: camille)
+Mood.create(name: "paris is always a good idea", description: "bread, cheese & parisian stories", user: camille)
+Mood.create(name: "stories that made you cry", description: "excellent for wintertime", user: camille)
 
 
 relax = Mood.find_by(name: "relaxing with a glass of whatever you need it to be")
@@ -126,6 +126,76 @@ and poignant third installment of the beloved series.
 )
 harry_potter_3.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
 harry_potter_3.moods = [relax, light]
+
+harry_potter_4 = UsersBook.create(
+    user_id: camille.id,
+    title: "Harry Potter and the Goblet of Fire",
+    author: "JK Rowling",
+    isbn: 9780439139601,
+    image_url: "https://images.gr-assets.com/books/1361482611l/6.jpg",
+    num_pages: 734,
+    description:"Harry Potter is midway through his training as a wizard and his coming of age.
+Harry wants to get away from the pernicious Dursleys and go to the International
+Quidditch Cup. He wants to find out about the mysterious event that's supposed
+to take place at Hogwarts this year, an event involving two other rival schools
+of magic, and a competition that hasn't happened for a hundred years. He wants
+to be a normal, fourteen-year-old wizard. But unfortunately for Harry Potter,
+he's not normal - even by wizarding standards. And in his case, different can be
+deadly."
+)
+harry_potter_4.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
+harry_potter_4.moods = [relax, light]
+
+harry_potter_5 = UsersBook.create(
+    user_id: camille.id,
+    title: "Harry Potter and the Goblet of Fire",
+    author: "JK Rowling",
+    isbn: 9780439358071,
+    image_url: "https://images.gr-assets.com/books/1542550214l/2.jpg",
+    num_pages: 870,
+    description:"There is a door at the end of a silent corridor. And it’s haunting Harry
+Pottter’s dreams. Why else would he be waking in the middle of the night,
+screaming in terror?
+Harry has a lot on his mind for this, his fifth year at Hogwarts: a Defense
+Against the Dark Arts teacher with a personality like poisoned honey; a big
+surprise on the Gryffindor Quidditch team; and the looming terror of the
+Ordinary Wizarding Level exams. But all these things pale next to the growing
+threat of He-Who-Must-Not-Be-Named---a threat that neither the magical
+government nor the authorities at Hogwarts can stop.
+As the grasp of darkness tightens, Harry must discover the true depth and
+strength of his friends, the importance of boundless loyalty, and the shocking
+price of unbearable sacrifice.
+
+His fate depends on them all."
+)
+harry_potter_5.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
+harry_potter_5.moods = [relax, light]
+
+
+harry_potter_6 = UsersBook.create(
+    user_id: camille.id,
+    title: "Harry Potter and the Half-Blood Prince",
+    author: "JK Rowling",
+    isbn: 9780439785969,
+    image_url: "https://images.gr-assets.com/books/1361039191l/1.jpg",
+    num_pages: 652,
+    description:"There is a door at the end of a silent corridor. And it’s haunting Harry
+Pottter’s dreams. Why else would he be waking in the middle of the night,
+screaming in terror?
+Harry has a lot on his mind for this, his fifth year at Hogwarts: a Defense
+Against the Dark Arts teacher with a personality like poisoned honey; a big
+surprise on the Gryffindor Quidditch team; and the looming terror of the
+Ordinary Wizarding Level exams. But all these things pale next to the growing
+threat of He-Who-Must-Not-Be-Named---a threat that neither the magical
+government nor the authorities at Hogwarts can stop.
+As the grasp of darkness tightens, Harry must discover the true depth and
+strength of his friends, the importance of boundless loyalty, and the shocking
+price of unbearable sacrifice.
+
+His fate depends on them all."
+)
+harry_potter_6.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
+harry_potter_6.moods = [relax, light]
 
 
 harry_potter_7 = UsersBook.create(
@@ -236,10 +306,7 @@ point de disparaître. Pour ces superhéros du quotidien, ce don est un fardeau.
 Chacun pense être affligé d’un mal unique, d’un pouvoir qu’il faut passer sous
 silence. Comment vivre lorsque les petits arrangements avec la vérité sont
 impossibles ? Comment supporter le monde lorsqu’une simple bouchée provoque un
-séisme intérieur ? Dans ce texte original, proche des films de Wes Anderson ou
-de Michel Gondry, Aimee Bender met une fois de plus l’imagination au pouvoir.
-Comme le singulier gâteau de Rose, les romans d’Aimee Bender sont recouverts
-d’un succulent glaçage, fait d’humour et de fantaisie.",
+séisme intérieur ?",
     )
 singuliere_tristesse.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
 singuliere_tristesse.moods = [relax, light]
@@ -252,10 +319,10 @@ saga_harry_potter = UsersBook.create(
     isbn: 9780747538486,
     image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
     num_pages: 3407,
-    # reading_time: "312308.4",
     description: "The whole Harry Potter saga."
     )
 saga_harry_potter.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
+saga_harry_potter.moods = [relax, light]
 
 
 my_brilliant_friend = UsersBook.create(
@@ -295,6 +362,21 @@ farenheit_451 = UsersBook.create(
     )
 farenheit_451.categories = [Category.find_by(name: "fiction"), Category.find_by(name: "science fiction"), Category.find_by(name: "dystopia")]
 
+beaux_quartiers = UsersBook.create(
+    user_id: camille.id,
+    title: "Les beaux quartiers",
+    author: "Louis Aragon",
+    isbn: 9782070362417,
+    image_url: "https://images.gr-assets.com/books/1186082926l/1628807.jpg",
+    num_pages: 624,
+    description:"Ce roman est l'histoire de deux frères, Edmond et Armand Barbentane. Le premier
+devra sa fortune à l'abandon qu'un homme riche lui fait de sa maîtresse. Armand,
+lui, abandonnant les siens, est devenu ouvrier dans une usine de Levallois-
+Perret : son avenir s'en trouvera changé."
+)
+
+beaux_quartiers.categories = [Category.find_by(name: "classic"),Category.find_by(name: "fiction")]
+beaux_quartiers.moods = [paris, wine]
 
 
 shining = UsersBook.create(
@@ -328,6 +410,25 @@ where_the_wild_things_are = UsersBook.create(
 where_the_wild_things_are.categories = [Category.find_by(name: "children")]
 where_the_wild_things_are.moods = [light]
 
+vie_devant_soi = UsersBook.create(
+    user_id: camille.id,
+    title: "La vie devant soi",
+    author: "Romain Gary",
+    isbn: 9782070373628,
+    image_url: "https://images.gr-assets.com/books/1327936672l/635150.jpg",
+    num_pages: 273,
+    description: "Signé Ajar, ce roman reçut le prix Goncourt en 1975. Histoire d'amour d'un petit
+garçon arabe pour une très vieille femme juive : Momo se débat contre les six
+étages que Madame Rosa ne veut plus monter et contre la vie parce que ' ça ne
+pardonne pas ' et parce qu'il n'est ' pas nécessaire d'avoir des raisons pour
+avoir peur '. Le petit garçon l'aidera à se cacher dans son ' trou juif ', elle
+n'ira pas mourir à l'hôpital et pourra ainsi bénéficier du droit sacré ' des
+peuples à disposer d'eux-mêmes ' qui n'est pas respecté par l'Ordre des
+médecins. Il lui tiendra compagnie jusqu'à ce qu'elle meure et même au-delà de
+la mort.."
+)
+vie_devant_soi.categories = [Category.find_by(name: "fiction")]
+vie_devant_soi.moods = [paris]
 
 
 the_phantom_tollbooth = UsersBook.create(
