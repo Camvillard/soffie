@@ -8,8 +8,12 @@ $(document).ready(function() {
   });
 
   $('.select2-mood-modal').select2({
-    //dropdownParent: $('#mood-modal-form'),
-    multiple: "multiple",
+    multiple: "multiple"
     });
 
+  $('.select2-book-modal').select2({
+    multiple: "multiple"
+    });
 });
+
+

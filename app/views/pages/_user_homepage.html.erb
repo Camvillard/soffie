@@ -70,9 +70,7 @@
             </div> <!-- end of mood-content -->
 
             <div class="mood-actions">
-              <%= link_to '#', class: 'cta-md' do  %>
-                <i class="fas fa-plus-circle"></i>
-              <% end %>
+              <%= render "partials/add-book", {mood: mood} %>
               <%= link_to '#', class: 'cta-md' do %>
                 <i class="fas fa-share"></i>
               <% end %>
@@ -87,6 +85,9 @@
   </div> <!-- end of row -->
 
 </div> <!-- end of container -->
+
+<%= javascript_pack_tag 'select2' %>
+
 
 
 
