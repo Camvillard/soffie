@@ -1,3 +1,52 @@
 /* ------ PAGES : SINGLE MOOD ------ */
 
+#single-mood-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#single-mood-header {
+  background: $dark-blue;
+  color: white;
+  height: 450px;
+  padding: 16px;
+  position: sticky;
+  top: 12%;
+  flex: 0 0 35%;
+  h3, h4, p {
+    color: white;
+  }
+}
+
+#single-mood-content {
+  flex: 0 0 60%;
+}
+
+#mood-book-content {
+  display: flex;
+  margin: 10px auto;
+}
+
+#mood-book-cover {
+  flex: 0 0 20%;
+  img {
+    width: 100%;
+  }
+}
+
+#mood-book-details {
+  ul {
+    list-style: none;
+    padding-inline-start: 0px;
+  }
+  li {
+    display: inline-block;
+  }
+  li:after {
+    content: "/";
+  }
+  li:last-child:after {
+    content: ""
+  }
+}
 
