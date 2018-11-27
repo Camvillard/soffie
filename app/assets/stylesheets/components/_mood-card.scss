@@ -1,0 +1,50 @@
+/* ------ COMPONENTS : MOOD CARD ------ */
+
+#moods-index {
+  .row {
+    margin-bottom: 30px;
+  }
+}
+
+.mood-card {
+  margin: 10px auto 20px;
+  background: lighten($peach-orange, 10%);
+  height: 320px;
+  position: relative;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+
+}
+
+.mood-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  justify-content: space-between;
+  h4 {
+    color: $dark-blue;
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+  }
+  h6 {
+    font-size: 1.6rem;
+  }
+  p {
+    font-family: $accent-font;
+    font-style: italic;
+  }
+
+}
+
+.mood-actions {
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  a {
+    margin: 0px auto;
+    border-bottom: none;
+  }
+}

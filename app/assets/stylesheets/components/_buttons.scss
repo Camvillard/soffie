@@ -96,3 +96,9 @@
   }
 }
 
+.share-icons {
+  @include cta(4px, $dark-blue, $dark-blue);
+  background: none;
+  border: none;
+}
+

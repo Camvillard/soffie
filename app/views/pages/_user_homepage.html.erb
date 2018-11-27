@@ -2,7 +2,7 @@
 
   <h1> welcome, <%= current_user.first_name%></h1>
   <h4>you have <%= pluralize(current_user.users_books.size, "book") %> in your pile.</h4>
-  <p>you are currently reading (...) books and you have (...) moods created.</p>
+  <p>you are currently reading (...) books and you have <%= pluralize(@moods.size, "mood") %> created.</p>
 
 </div>  <!-- end of container -->
 
@@ -34,13 +34,17 @@
                   <li class="book-category"> <%= category.name %></li>
                 <% end %>
               </ul>
-            <% end %>
+
             <!-- Reading Progress Bar -->
 
             <p><%=book.completed_pages%> out of <%= book.num_pages%> pages</p>
               <div id="bar">
                 <div id="progress-bar"></div>
               </div>
+            
+            <% end %> <!-- end of iteration over the categories -->
+            <p>35 out of <%= book.num_pages%> pages</p>
+
           </div>
 
         </div> <!-- end of book carousel description -->
@@ -48,10 +52,24 @@
     <% end %>
   </div>
 
-  <!-- </div> -->
-  <!-- Image Carousel -->
-
 </div> <!-- end of carousel container -->
+
+
+<div class="container">
+
+  <h4>oh, all the moods that you have!</h4>
+
+  <div class="row">
+    <% @moods[0..3].each do |mood| %>
+
+    <%= render "partials/mood-card", mood: mood %>
+
+    <% end %>
+
+  </div> <!-- end of row -->
+
+</div> <!-- end of container -->
+
 
 <!-- Modal -->
 <div class="modal fade" id="pagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -78,5 +96,7 @@
 </div>
 
 <%= javascript_pack_tag 'completed-pages-read' %>
+<%= javascript_pack_tag 'select2' %>
+
 
 

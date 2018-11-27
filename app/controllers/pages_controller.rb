@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     unless current_user.nil?
     @users_books = UsersBook.where(user_id: current_user.id)
     @books_in_progress = @users_books.where(status: "Reading in progress")
-    @users_book = UsersBook.first
+    @moods = Mood.all
     end
   end
 
@@ -32,3 +32,4 @@ class PagesController < ApplicationController
     redirect_to root_path # TODO: redirect somewhere else
   end
 end
+#

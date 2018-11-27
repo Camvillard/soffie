@@ -1,0 +1,82 @@
+/* ------ PAGES : SINGLE MOOD ------ */
+
+#single-mood-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#single-mood-header {
+  background: $dark-blue;
+  color: white;
+  height: 450px;
+  padding: 16px;
+  position: sticky;
+  top: 12%;
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h3, h4, p {
+    color: white;
+  }
+  h3 {
+    font-size: 3rem;
+    margin: 1.2rem auto 1.2rem;
+  }
+  h4 {
+    font-size: 2rem;
+    margin: 1.2rem auto 1rem;
+  }
+  h6 {
+    font-size: 1.6rem;
+    margin: 1.2rem auto 1rem;
+  }
+  p.accent-text {
+    font-style: italic;
+    font-family: $accent-font;
+  }
+}
+
+
+#single-mood-content {
+  flex: 0 0 60%;
+}
+
+#mood-book-content {
+  display: flex;
+  margin: 10px auto;
+  justify-content: space-between;
+}
+
+#mood-book-cover {
+  flex: 0 0 15%;
+  img {
+    width: 100%;
+  }
+}
+
+#mood-book-details {
+  flex: 0 0 80%;
+  h4 {
+    color: $dark-gray;
+    font-size: 2.2rem;
+  }
+  h4 span#book-author {
+    color: $medium-gray;
+    font-size: 1.8rem;
+  }
+  ul {
+    list-style: none;
+    padding-inline-start: 0px;
+  }
+  li {
+    display: inline-block;
+  }
+  li:after {
+    content: "/";
+  }
+  li:last-child:after {
+    content: ""
+  }
+}
+

@@ -10,6 +10,8 @@ body {
   color: $medium-gray;
   @include border-large($dark-blue);
   min-height: 100vh;
+  font-size: 1.6rem;
+
 }
 
 div {
@@ -68,7 +70,7 @@ h4 {
 h5 {
   font-size: 2.2rem;
   margin: 1.2rem auto;
-  color: $neon-orange;
+  color: $peach-orange;
 }
 
 h6 {
@@ -103,6 +105,11 @@ span.accent-text {
 
 .sm-link-white {
   @include text-link(white);
+}
+
+.accent-text {
+  font-style: italic;
+  font-family: $accent-font;
 }
 
 
