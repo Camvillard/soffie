@@ -10,5 +10,6 @@ class Mood < ApplicationRecord
         categories << category.name unless categories.include?(category)
       end
     end
+    categories
   end
 end

@@ -107,6 +107,11 @@ span.accent-text {
   @include text-link(white);
 }
 
+.accent-text {
+  font-style: italic;
+  font-family: $accent-font;
+}
+
 
 /* only for dev */
 
