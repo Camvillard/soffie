@@ -9,6 +9,7 @@ gem 'rails', '5.2.1'
 gem 'redis'
 
 gem "letter_opener", group: :development
+gem 'postmark-rails'
 
 gem 'autoprefixer-rails'
 gem 'jquery-rails'

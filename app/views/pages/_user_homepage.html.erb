@@ -1,8 +1,8 @@
 <div class="container">
 
-  <h1> welcome back, <%= current_user.first_name%></h1>
-  <h4>you have <%= current_user.users_books.size %> books in your pile.</h4>
-  <p>you are currently reading 4 books and you have 6 moods created.</p>
+  <h1> welcome, <%= current_user.first_name%></h1>
+  <h4>you have <%= pluralize(current_user.users_books.size, "book") %> in your pile.</h4>
+  <p>you are currently reading (...) books and you have (...) moods created.</p>
 
 </div>  <!-- end of container -->
 

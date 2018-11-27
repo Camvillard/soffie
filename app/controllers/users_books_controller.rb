@@ -22,6 +22,7 @@ class UsersBooksController < ApplicationController
   def show
     @user_book = UsersBook.find(params[:id])
     authorize @user_book
+    UserMailer.book_choice(@user_book).deliver_now
   end
 
   def new
@@ -86,9 +87,7 @@ class UsersBooksController < ApplicationController
       if users_book.reading_time.to_f > (time - 7200) && users_book.reading_time.to_f < (time + 7200)
         @time_books << users_book
       end
-      # @time_books
     end
-    # raise
   end
 
   def build_api_query(title, author, isbn)

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div id="result-header">
     <h1>hola <%= current_user.first_name %> </h1>
     <h3>you want to read some
       <% @categories.each do |category| %>
@@ -9,11 +9,10 @@
       <% if params[:day] == "" || params[:hours] == "" %>
         absolutely all the time in the world to read, lucky you.
       <% else %>
-        <%= (params[:days].to_i * params[:hours].to_i) %> hours to read.
+        <%= params[:day].to_i * params[:hours].to_i %> hours to read.
       <% end %>
       Here are my suggestions.
     </h3>
-
   </div>
 </div>
 
