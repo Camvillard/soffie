@@ -1,0 +1,28 @@
+/* ------ COMPONENT : NEW MOOD ------ */
+
+#new-mood-modal {
+  .modal-content {
+  border-radius: 0px;
+  @include border-large($peach-orange);
+
+  }
+}
+
+form#mood-modal-form {
+    input {
+    width: 100%;
+    display: block;
+    margin: 5rem auto;
+    padding: 2px 10px;
+    height: 5rem;
+    @include horizontal-border(6px, $peach-orange);
+    font-size: 3rem;
+  }
+
+  ::placeholder {
+    font-family: $headers-font;
+    color: $peach-orange;
+    font-size: 3rem;
+    font-style: normal !important;
+  }
+}

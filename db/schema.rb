@@ -1,3 +1,4 @@
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -24,11 +25,21 @@ ActiveRecord::Schema.define(version: 2018_11_26_162723) do
     t.index ["users_book_id"], name: "index_book_categories_on_users_book_id"
   end
 
+  create_table "book_moods", force: :cascade do |t|
+    t.bigint "mood_id"
+    t.bigint "users_book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mood_id"], name: "index_book_moods_on_mood_id"
+    t.index ["users_book_id"], name: "index_book_moods_on_users_book_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
   create_table "reviews", force: :cascade do |t|
     t.text "content"
@@ -37,6 +48,15 @@ ActiveRecord::Schema.define(version: 2018_11_26_162723) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["users_book_id"], name: "index_reviews_on_users_book_id"
+  end
+    
+  create_table "moods", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,5 +91,10 @@ ActiveRecord::Schema.define(version: 2018_11_26_162723) do
 
   add_foreign_key "book_categories", "categories"
   add_foreign_key "book_categories", "users_books"
+
   add_foreign_key "reviews", "users_books"
+
+  add_foreign_key "book_moods", "moods"
+  add_foreign_key "book_moods", "users_books"
+
 end
