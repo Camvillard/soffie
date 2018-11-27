@@ -27,8 +27,8 @@ class UsersBooksController < ApplicationController
   end
 
   def new
-    @user_book = UsersBook.new
-    authorize @user_book
+    @users_book = UsersBook.new
+    authorize @users_book
   end
 
   def create
@@ -99,7 +99,4 @@ class UsersBooksController < ApplicationController
     JSON.parse(serialized)
   end
 
-  # def users_book_params
-  #   params.require(:user_book, :book_confirmation).permit(:title, :author, :isbn, :details, :reading_time, :num_pages, :description, :image_url, :book_confirmation)
-  # end
 end

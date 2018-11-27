@@ -34,7 +34,7 @@
                   <li class="book-category"> <%= category.name %></li>
                 <% end %>
               </ul>
-            <% end %>
+            <% end %> <!-- end of iteration over the categories -->
             <p>35 out of <%= book.num_pages%> pages</p>
           </div>
 
@@ -54,6 +54,8 @@
     <% @moods[0..3].each do |mood| %>
       <div class="col-xs-12 col-md-6 col-lg-3">
         <div class="mood-card">
+
+
 
             <div class="mood-content">
 
