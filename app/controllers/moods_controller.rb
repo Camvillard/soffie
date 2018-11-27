@@ -3,6 +3,10 @@ class MoodsController < ApplicationController
     @moods = policy_scope(Mood)
   end
 
+  def show
+    @mood = Mood.find(params[:id])
+  end
+
   def new
     @mood = Mood.new
     authorize @mood

@@ -8,32 +8,39 @@
     <% @moods.each do |mood| %>
       <div class="col-xs-12 col-md-6 col-lg-4">
 
-        <div class="mood-card">
+        <%= link_to mood_path(mood) do %>
 
-          <div class="mood-content">
+          <div class="mood-card">
 
-            <h4><%= mood.name %></h4>
-            <h6><%= mood.description %></h6>
+            <div class="mood-content">
 
-            <% if mood.users_books.size != 0 %>
-              <p>
-                <%= mood.users_books.size %> books in that mood
-              </p>
-            <% else %>
-              <p>seems that there is no book yet in your mood!</p>
-            <% end %>
-          </div> <!-- end of mood-content -->
+              <h4><%= mood.name %></h4>
+              <h6><%= mood.description %></h6>
 
-          <div class="mood-actions">
-            <%#= link_to '#', class: 'cta-md' do %>
-            <%# end %>
-            <%= link_to '#', class: 'cta-md' do %>
-              <i class="fas fa-share"></i>
-            <% end %>
-          </div> <!-- end of mood actions -->
+              <% if mood.users_books.size != 0 %>
+                <p>
+                  <%= mood.users_books.size %> books in that mood
+                </p>
+              <% else %>
+                <p>seems that there is no book yet in your mood!</p>
+              <% end %>
+            </div> <!-- end of mood-content -->
+
+            <div class="mood-actions">
+              <%#= link_to '#', class: 'cta-md' do %>
+              <%# end %>
+              <%= link_to '#', class: 'cta-md' do %>
+                <i class="fas fa-share"></i>
+              <% end %>
+            </div> <!-- end of mood actions -->
 
 
-        </div> <!-- end of mood-card -->
+          </div> <!-- end of mood-card -->
+
+
+
+        <% end %>
+
 
       </div> <!-- end of cols -->
     <% end %> <!-- end of iteration over moods -->
