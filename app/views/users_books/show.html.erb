@@ -48,7 +48,6 @@
     </div> <!-- end of #single-book -->
 
 
-
  <!-- Review Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -66,24 +65,24 @@
   </div>
 </div>
 
-      <div class="list-group">
-        <% @users_book.reviews.each do |review| %>
-          <li class="list-group-item">
-            <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
-                <% end %>
-                <% count += 1 %>
-              <% end %>
-            </small>
-            <p><%= review.content %></p>
-          </li>
+<div class="list-group">
+  <% @users_book.reviews.each do |review| %>
+    <li class="list-group-item">
+      <small>
+        <% count = 0 %>
+        <% 5.times do %>
+          <% if review.rating > count %>
+            <i class="fas fa-star"></i>
+          <% else %>
+            <i class="far fa-star"></i>
+          <% end %>
+          <% count += 1 %>
         <% end %>
-      </div>
+      </small>
+      <p><%= review.content %></p>
+    </li>
+  <% end %>
+</div>
  </div> <!-- end of container -->
 
 
