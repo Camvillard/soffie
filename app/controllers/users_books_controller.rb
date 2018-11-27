@@ -15,14 +15,17 @@ class UsersBooksController < ApplicationController
     @time_books.each do |book|
       @final_books << book if book.is_valid?(@categories)
     end
-    render :no_results if @final_books.empty?
+    if @final_books.empty?
+      render :no_results
+    else
+      UserMailer.book_choice(@final_books.first).deliver_now
+    end
     # default : render views - users_books - results.html.erb
   end
 
   def show
     @user_book = UsersBook.find(params[:id])
     authorize @user_book
-    UserMailer.book_choice(@user_book).deliver_now
   end
 
   def new
