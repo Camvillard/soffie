@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  get 'reviews/create'
   devise_for :users
   root to: 'pages#home'
   get '/styles', to: 'pages#styles'
@@ -9,8 +11,13 @@ Rails.application.routes.draw do
   get '/speed_test', to: 'pages#speed_test'
   patch '/updating_users_reading_time', to: 'pages#updating_users_reading_time'
 
+
+  resources :users_books, only: [:new, :create, :show] do
+    resources :reviews, only: [:create]
+   end
+
   patch '/mood/:id', to: 'moods#add_book', as: 'add_book'
 
-  resources :users_books, only: [:new, :create, :show]
   resources :moods, only: [:index, :show, :new, :create]
+
 end

@@ -21,6 +21,7 @@ class UsersBooksController < ApplicationController
 
   def show
     @user_book = UsersBook.find(params[:id])
+    @review = Review.new
     authorize @user_book
     UserMailer.book_choice(@user_book).deliver_now
   end

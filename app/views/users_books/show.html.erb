@@ -14,23 +14,27 @@
       <div id="single-book-image">
         <div id="book-extra">
           <ul>
-            <li><%= link_to "notes", "#", class: "book-extra-actions" %></li>
+            <li>
+              <a class="book-extra-actions" data-toggle="modal" data-target="#myModal">
+                review
+              </a>
+            </li>
             <li><%= link_to "recommend", "#", class: "book-extra-actions" %></li>
             <li><%= link_to "add to a mood", "#", class: "book-extra-actions" %></li>
           </ul>
         </div>
-        <% if @user_book.image_url.present? %>
-          <%= image_tag @user_book.image_url %>
+        <% if @users_book.image_url.present? %>
+          <%= image_tag @users_book.image_url %>
         <% end %>
       </div> <!-- end of single-book-image -->
 
       <div id="single-book-details">
 
         <div id="single-book-description">
-          <h3><%= @user_book.title %></h3>
-          <h4><%= @user_book.author %></h4>
-          <p><%= simple_format(@user_book.description) %></p>
-          <p>you've just started the book, <%= @user_book.num_pages %> pages left to read</p>
+          <h3><%= @users_book.title %></h3>
+          <h4><%= @users_book.author %></h4>
+          <p><%= simple_format(@users_book.description) %></p>
+          <p>you've just started the book, <%= @users_book.num_pages %> pages left to read</p>
         </div>
 
         <div id="single-book-actions">
@@ -44,9 +48,43 @@
     </div> <!-- end of #single-book -->
 
 
+
+ <!-- Review Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h3>leave a review</h3>
+        <hr class="md-border-blue">
+        <%= render 'reviews/form', users_book: @users_book, review: @review %>
+        <p class="modal-accent">leaving a review encourages others to read your favorite books. make it a great review!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="cta-neon" data-dismiss="modal">close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="list-group">
+        <% @users_book.reviews.each do |review| %>
+          <li class="list-group-item">
+            <small>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <p><%= review.content %></p>
+          </li>
+        <% end %>
+      </div>
  </div> <!-- end of container -->
-
-
 
 
 
