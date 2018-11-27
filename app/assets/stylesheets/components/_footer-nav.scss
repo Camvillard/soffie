@@ -1,13 +1,13 @@
 /* ------ COMPONENTS : FOOTER NAV ------ */
 
-#footer-nav {
-  margin-left: 4vw;
+#footer-nav,
+#single-book-footer,
+#index-mood-footer {
 
   ul {
     list-style: none;
+    margin-block-start: 0em;
+    padding-inline-start: 0px;
   }
 
-  // li a {
-  //   @extend .cta-big;
-  // }
 }

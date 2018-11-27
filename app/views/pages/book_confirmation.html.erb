@@ -1,25 +1,43 @@
-<div>
-  <div class="container">
-    <h5>great, your new book is now in your pile!</h5>
+<div class="container">
+  <div id="book-confirmation">
+    <h3 class="action-title">great, your new book is now in your pile!</h3>
+    <div id="new-book-details">
 
-    <div class="col-xs-12 col-sm-5">
-      <% if @user_book.image_url.present? %>
-        <p><%= image_tag @user_book.image_url, width: '70%' %></p>
-      <% end %>
+      <div id="new-book-title">
+        <h3><%= @user_book.title %><span id="book-author"><%= @user_book.author %></span></h3>
+        <hr class="sm-border-blue">
+      </div>
 
-    </div>
+      <div id="new-book-content">
+        <div id="new-book-image">
+          <% if @user_book.image_url.present? %>
+            <%= image_tag @user_book.image_url %>
+            <% else %>
+            placeholder
+          <% end %>
+        </div> <!-- end of #book image -->
 
-    <div class="col-xs-12 col-sm-7">
-      <p>Title: <%= @user_book.title %></p>
-      <p>Author: <%= @user_book.author %></p>
-      <p>description: <%= simple_format(@user_book.description) %></p>
-      <p><%= @user_book.num_pages %> pages</p>
-    </div>
+        <div id="new-book-details">
+          <p><%= @user_book.description[0..600] %> (...)</p>
+          <p><%= @user_book.num_pages %> pages - <%= @user_book.reading_time.to_i / 3600 %> hours of reading </p>
+        </div> <!-- end of new book details -->
 
-    <div>
-        <%= link_to "ADD ANOTHER BOOK", new_users_book_path, class: 'button-peach'  %>
-        <%= link_to  "GO TO YOUR PILE", root_path , class: 'button-peach'  %>
-    </div>
-  </div>
-</div>
+      </div>
+
+
+      <div id="new-book-actions">
+        <%= link_to "add another book", new_users_book_path, class: 'button-peach'  %>
+        <%= link_to  "see my pile", root_path , class: 'button-border-peach'  %>
+
+      </div>
+
+
+    </div> <!-- end of new book details -->
+
+
+
+  </div> <!-- end of #book confirmation -->
+
+</div> <!-- end of container -->
+
 

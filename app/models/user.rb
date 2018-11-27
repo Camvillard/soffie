@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :users_books
+  has_many :moods
+
 
   after_create :send_welcome_email
 

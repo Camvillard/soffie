@@ -1,0 +1,95 @@
+/* ------ PAGES : BOOK CONFIRMATION ------ */
+
+
+
+#book-confirmation {
+  @include border-huge($dark-blue);
+  position: relative;
+  padding: 4% 8%;
+  h3.action-title {
+    font-style: italic;
+    position: absolute;
+    top: -5rem;
+    left: 10%;
+    background: white;
+    padding:3px 16px;
+    font-size: 3rem;
+  }
+}
+
+#new-book-details {
+  // margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#new-book-title {
+  h3 {
+    font-style: normal;
+  }
+  span#book-author {
+    margin-left: 2rem;
+    font-size: 2rem;
+    font-family: $body-font;
+    color: $medium-gray;
+    text-transform: uppercase;
+    font-weight: $font-weight-light;
+  }
+  span#book-author:before {
+    content: "\2022";
+    margin-right: 2rem;
+    font-size: 2rem;
+    font-family: $headers-font;
+    font-weight: $font-weight-extrabold;
+    color: $headers-color;
+  }
+
+  hr {
+    width: 100%;
+    // margin-left: -20%;
+  }
+}
+
+#new-book-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#new-book-image {
+  flex: 0 0 30%;
+  img {
+    width: 100%;
+  }
+}
+
+#new-book-details {
+  flex: 0 0 68%;
+  margin-bottom: 30px;
+  p {
+    align-self: flex-start !important;
+    margin: 1rem auto 0.5rem;
+  }
+}
+
+#new-book-actions {
+  display: flex;
+  justify-content: center;
+}
+
+
+@media (min-width: $sm-screen) {
+} // end of sm-screen - 768px
+
+@media (min-width: $md-screen) {
+} // end of md-screen - 992px
+
+@media (min-width: $lg-screen) {
+  .container #book-confirmation {
+    width: 55vw;
+    margin: auto;
+  }
+} // end of lg-screen - 1200px
+
+@media (min-width: $hg-screen) {
+} // end of hg-screen - 1440px

@@ -16,6 +16,12 @@
   border-style: solid;
 }
 
+@mixin border-huge($color) {
+  border-color: $color;
+  border-width: 18px;
+  border-style: solid;
+}
+
 @mixin horizontal-border($width,$color) {
   border-bottom: $width solid $color;
 }

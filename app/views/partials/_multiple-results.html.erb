@@ -1,0 +1,72 @@
+<% comments = [
+"don't forget to stay hydrated",
+  "stretch your legs from time to time",
+  "all those hours of peace"] %>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="first-result" id="first-result">
+
+      <div class="book-image">
+        <%= image_tag @final_books.first.image_url %>
+      </div>
+
+      <div class="book-details">
+
+        <h3><%= @final_books.first.title.downcase.capitalize %></h3>
+        <hr class="sm-border-blue">
+        <h4><%= @final_books.first.author %></h4>
+        <div class="book-pages">
+          <p><%= @final_books.first.num_pages %> pages <br>
+            <%= @final_books.first.reading_time.to_i / 3600 %> hours of reading, don't forget to stay hydrated
+          </p>
+        </div>
+
+        <div class="book-description">
+          <p><%= @final_books.first.description %></p>
+        </div>
+
+        <div class="book-actions">
+          <%= link_to "great soffie, I'll read this one", users_book_path(@final_books.first), method: :patch, class: "button-peach" %>
+          <%= link_to "show me the others (please, soffie)", "#other-results", class: "button-border-peach" %>
+        </div>
+
+      </div> <!-- end of .book-details -->
+    </div> <!-- end of .first-result -->
+  </div>
+</div>
+
+<div class="row">
+
+  <% @final_books[1..2].each do |book| %>
+    <div class="col-md-6">
+
+      <div class="other-results" id="other-results">
+
+        <div class="book-header">
+
+          <div class="book-image">
+            <%= image_tag book.image_url %>
+          </div>
+
+          <div class="book-details">
+            <h3><%= book.title.downcase.capitalize %></h3>
+            <hr class="sm-border-blue">
+            <h4><%= book.author %></h4>
+            <p><%= book.num_pages %> pages <br>
+                <%= book.reading_time.to_i / 3600 %> hours of reading, <%= comments.sample(1)[0] %>
+            </p>
+          </div> <!-- end of book details -->
+
+        </div> <!-- end of .book-header -->
+
+        <div class="book-description">
+          <p><%= book.description %></p>
+          <%= link_to "read this book", users_book_path(book), class: "button-peach" %>
+        </div>
+
+      </div> <!-- end of other-results -->
+
+    </div> <!-- end of col-md-6 -->
+  <% end %> <!-- end of iteration in the results -->
+</div> <!-- end of row -->
