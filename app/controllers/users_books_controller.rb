@@ -1,6 +1,7 @@
 require 'open-uri'
 
 class UsersBooksController < ApplicationController
+
   def results
     @categories = Category.find(params[:categories])
     @reading_time = calculate_reading_time(params[:day], params[:hours])
