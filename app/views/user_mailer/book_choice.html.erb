@@ -1,5 +1,5 @@
 This is a test
 
 <p>Hola <%= @user.email.split('@')[0] %>!</p>
-<p>If you can read <%= @final_book.title %> at the pace you just determined, you should end your reading on <%= @final_book.end_readingdate %>.</p>
+<p>If you can read <%= @final_book.title %> at the pace you just determined, you should end your reading on <%= @final_book.end_readingdate.strftime("%B %d") %>.</p>
 <p>Enjoy!</p>
