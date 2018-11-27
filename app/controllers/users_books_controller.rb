@@ -20,10 +20,10 @@ class UsersBooksController < ApplicationController
   end
 
   def show
-    @user_book = UsersBook.find(params[:id])
+    @users_book = UsersBook.find(params[:id])
     @review = Review.new
-    authorize @user_book
-    UserMailer.book_choice(@user_book).deliver_now
+    authorize @users_book
+    UserMailer.book_choice(@users_book).deliver_now
   end
 
   def new
