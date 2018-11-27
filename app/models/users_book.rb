@@ -14,7 +14,7 @@ class UsersBook < ApplicationRecord
     reading_speed = self.user.reading_speed.nil? ? "200" : self.user.reading_speed
     total_words = self.num_pages * 275.0
     total_time_for_a_book = total_words * 60.0 / reading_speed.to_f
-    self.update(reading_time: total_time_for_a_book)
+    update(reading_time: total_time_for_a_book)
   end
 
   def is_valid?(categories)
@@ -24,5 +24,9 @@ class UsersBook < ApplicationRecord
       end
     end
     false
+  end
+
+  def define_reading_date
+    update(end_readingdate: Date.today + (reading_time.to_f / 86400))
   end
 end
