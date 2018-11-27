@@ -11,9 +11,11 @@ $(document).ready(function() {
     multiple: "multiple"
     });
 
-  $('.select2-book-modal').select2({
+  $('.select2-book-modal').each(function() {
+    console.log("hello");
+   $(this).select2({
     multiple: "multiple"
-    });
+   });
+  });
 });
-
 

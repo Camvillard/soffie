@@ -12,7 +12,7 @@
 
         <%= form_tag add_book_path(mood), method: 'patch', id:"add-book-modal-form" do %>
            <h6>add some books to that mood</h6>
-           <%=  select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), class: "select2-book-modal", id: "book-modal" %>
+           <%= select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), class: ".select2-book-modal", id: "book-modal" %>
            <button type="submit" class="button-border-blue">add books</button>
         <% end %>
 
