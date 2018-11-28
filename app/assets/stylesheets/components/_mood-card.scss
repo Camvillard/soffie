@@ -29,6 +29,12 @@
   h6 {
     font-size: 1.6rem;
   }
+  .mood-details {
+    display:none;
+  }
+  &:hover .mood-details {
+    display: flex;
+  }
 }
 
 
@@ -53,7 +59,6 @@
   outline: 2px solid white;
   outline-offset: -10px;
   background: $neon-orange;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

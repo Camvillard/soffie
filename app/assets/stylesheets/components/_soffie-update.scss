@@ -10,55 +10,64 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 2px 2px 2px 1px rgba(222, 222, 222, .9);
 }
 
-  #soffie-update-form {
-    position: fixed;
-    bottom: 9vh;
-    right: 7vw;
+#soffie-update-form {
+  position: fixed;
+  bottom: 9vh;
+  right: 7vw;
+  border-radius: 50%;
+  background-color: $light-gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 310px;
+  height: 310px;
+  padding: 10px;
+}
+
+form#update-book-form {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+
+  .select2-dropdown .select2-dropdown--above {
+    font-size: 1.4rem !important;
+  }
+
+  .select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 0px;
+    font-size: 1.4rem;
+    padding: 3px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 4rem;
+    background: $peach-orange;
+    height: 4rem;
+    border:none;
+    text-align: center;
+    color: $neon-orange;
+    padding-bottom: .2rem;
     border-radius: 50%;
-    background-color: $light-gray;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 310px;
-    height: 310px;
-    overflow-y: scroll;
-    padding: 10px;
   }
 
-  form#update-book-form {
-      width: 100%;
-      margin: auto;
-      text-align: center;
-
-      .select2-container--default .select2-selection--single {
-        background-color: #fff;
-        border: 1px solid #aaa;
-        border-radius: 0px;
-        font-size: 1.4rem;
-        padding: 3px;
-
-      }
-
-      input[type="text"],
-      input[type="number"] {
-        width: 4rem;
-        @include horizontal-border(2px, $neon-orange);
-        text-align: center;
-        color: $neon-orange;
-      }
-      ::placeholder {
-        text-align: center;
-        color: white;
-      }
-      h6, p {
-        padding: 10px 20px 6px;
-      }
-      p {
-        text-transform: uppercase;
-      }
+  ::placeholder {
+    text-align: center;
+    color: white;
   }
+
+  h6, p {
+    padding: 10px 20px 6px;
+  }
+  p {
+    text-transform: uppercase;
+  }
+}
 
 .hidden {
   display: none;
