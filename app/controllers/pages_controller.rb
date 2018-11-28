@@ -9,6 +9,14 @@ class PagesController < ApplicationController
     end
   end
 
+  def search_results
+    # raise
+    PgSearch::Multisearch.rebuild(UsersBook)
+    PgSearch::Multisearch.rebuild(Mood)
+    @results = PgSearch.multisearch(params[:query])
+#
+  end
+
   def about
   end
 
