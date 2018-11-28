@@ -32,18 +32,6 @@ form#update-book-form {
   margin: auto;
   text-align: center;
 
-  .select2-dropdown .select2-dropdown--above {
-    font-size: 1.4rem !important;
-  }
-
-  .select2-container--default .select2-selection--single {
-    background-color: #fff;
-    border: 1px solid #aaa;
-    border-radius: 0px;
-    font-size: 1.4rem;
-    padding: 3px;
-  }
-
   input[type="text"],
   input[type="number"] {
     width: 4rem;
@@ -67,6 +55,18 @@ form#update-book-form {
   p {
     text-transform: uppercase;
   }
+}
+
+body#pages-home > .select2-container--open .select2-dropdown {
+  font-size: 1.2rem !important;
+}
+
+body#pages-home > .select2-container--default .select2-selection--single {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 0px;
+  font-size: 1.4rem;
+  padding: 3px;
 }
 
 .hidden {
