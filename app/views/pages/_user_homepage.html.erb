@@ -70,52 +70,24 @@
 </div> <!-- end of container -->
 
 
-<!-- Modal -->
-<!-- <div class="modal fade" id="pagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <ol>
-          <% @books_in_progress.each do |book| %>
-            <p><%= book.title %></p>
-            <%= simple_form_for book do |f| %>
-              <%= f.input :completed_pages %>
-              <%= f.submit %>
-            <% end %>
-          <% end %>
-        </ol>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
 <div id="soffie-button">
   <%= image_tag "soffie-icon_white.svg", id:"soffie-icon" %>
 </div>
 
 <div id="soffie-update-form" class="hidden">
-    <div>
-      <ol>
-        <% @books_in_progress.each do |book| %>
-          <p><%= book.title %></p>
-          <%= simple_form_for book do |f| %>
-            <%= f.input :completed_pages %>
-            <%= f.submit %>
-          <% end %>
-        <% end %>
-      </ol>
-    </div>
+  <%= form_tag root_path, method: 'patch', id: "update-book-form" do %>
+
+   <h6>chose the book to update</h6>
+   <%=  select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), class: "select2-update-selection", id: "book-selector" %>
+   <p>I've read <input type="number" name='book[completed_pages]' placeholder="2">more pages, yay</p>
+
+  <% end %>
+
 </div>
+
+
+
+
 
 <%= javascript_pack_tag 'soffie-update-form' %>
 <%= javascript_pack_tag 'select2' %>

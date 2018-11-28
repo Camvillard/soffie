@@ -17,5 +17,9 @@ $(document).ready(function() {
     multiple: "multiple"
   });
 
+  $('.select2-update-selection').select2({
+    single: "single"
+  });
+
 });
 
