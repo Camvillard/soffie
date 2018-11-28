@@ -2,7 +2,7 @@
   <div id="new-review-form">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
         <%= simple_form_for [@users_book, @review] do |f| %>
-            <div class="review-modal-form">
+            <div class="review-modal-rating-form">
             <%= f.input :rating, collection: 0..5  %>
             </div>
             <div class="review-modal-content-form">

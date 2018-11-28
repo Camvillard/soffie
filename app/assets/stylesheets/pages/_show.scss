@@ -15,7 +15,7 @@
   padding: 5px;
 }
 
-.review-modal-form {
+.review-modal-rating-form {
   padding: 5px;
 }
 
@@ -37,11 +37,10 @@ list-style-type:none;
   color: $medium-gray;
 }
 
-.review-container {
+.review-modal-form-container {
   display: flex;
   justify-content: center;
 }
-
 
 .modal-accent {
   text-align: center;
