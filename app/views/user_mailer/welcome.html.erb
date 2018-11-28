@@ -1,10 +1,51 @@
 <style>
-  html{
-    font-family:  sans-serif;
+  h5 {
+    font-family: "escrow", serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    font-style: italic;
+    color: #F15156;
+    line-height: 1.625
   }
+  p {
+    font-size: 1.6rem;
+    font-family: "benton-sans", sans-serif;
+  }
+.container-image{
+  text-align: center;
+}
+.container{
+  width: 600px;
+  margin: 0px auto;
+}
+.container-button{
+  text-align: center;
+}
+.button-peach {
+    background: #FFCB96;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    border-color: #FFCB96;
+    border-width: 4px;
+    border-style: solid;
+    padding: 0.6rem 2rem;
+    color: white;
+}
 </style>
-Hi <%= @user.email %>!
-I'm so happy you chose me to help you manage your huge pile of books! But don't worry, I'll make this easy and fun!
-<%= link_to 'Visit me so we can choose together your next reading!', root_url %>
 
+<div class="container-image">
+  <img src="https://raw.githubusercontent.com/Camvillard/soffie/master/app/assets/images/soffie_black%402x.png" alt="Soffie">
+</div>
+<div class="container">
+  <h5>Hola <%= @user.email.split('@')[0].capitalize %>!</h5>
+  <p>I'm so happy you chose me to help you manage your huge pile of books!</p>
+  <p>Don't worry, I'll make this easy and fun!</p>
+  </div>
+<div class="container-button">
+  <p><a class="button-peach" href="http://soffie-app.herokuapp.com">Visit me and choose your next reading!</a></p>
+</div>
 
