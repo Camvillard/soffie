@@ -50,21 +50,23 @@
 
 
  <!-- Review Modal -->
-<div class="container">
+<div class="review-container">
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-body">
           <h3 class="text-center">leave a review</h3>
-          <hr class="md-border-blue">
-          <%= render 'reviews/form', users_book: @users_book, review: @review %>
-        <div class="modal-accent">
 
-          <p class="modal-accent">leaving a review encourages others to read your favorite books. make it a great review!</p>
-        </div>
-        </div>
+          <div class="modal-body">
+            <hr class="md-border-blue">
+            <%= render 'reviews/form', users_book: @users_book, review: @review %>
+          </div>
+
 
         <div class="modal-footer" id="review-button">
+        <div class="modal-accent">
+          <p >leaving a review encourages others to read your favorite books. make it a great review!
+          </p>
+        </div>
           <button type="button" class="cta-neon" data-dismiss="modal">close</button>
         </div>
       </div>
@@ -74,11 +76,12 @@
 </div>
 
     <div class="wrapper">
-      <div class="container">
+      <div class="review-container">
+        <p class="cta-md">reviews</p>
         <div class="list-group">
-          <% @users_book.reviews.each do |review| %>
             <div class="cards">
-              <li class="list-group-item">
+          <% @users_book.reviews.each do |review| %>
+              <ul class="list-group-item">
                 <small>
                   <% count = 0 %>
                   <% 5.times do %>
@@ -91,9 +94,9 @@
                   <% end %>
                 </small>
                 <div class="card">
-                  <p><%= review.content %></p>
+                  <li ><%= review.content %></li>
                 </div>
-              </li>
+              </ul>
             </div> <!-- end of cards -->
           <% end %>
         </div> <!-- end of list-group -->
