@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   def welcome(user)
     @user = user
 
-    mail to: @user.email, subject: "Hi, I'm Soffie. Welcome Claire!"
+    mail to: @user.email, subject: "Hi, I'm Soffie. Welcome #{@user.email.split('@')[0]}!"
   end
 
   def book_choice(final_book)
