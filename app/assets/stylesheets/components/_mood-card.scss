@@ -8,21 +8,18 @@
 
 .mood-card {
   margin: 10px auto 20px;
-  background: lighten($peach-orange, 10%);
   height: 320px;
   position: relative;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-
+  background-size: cover;
 }
 
 .mood-content {
+  position: relative;
   padding: 12px;
+  height: 320px;
+
   display: flex;
   flex-direction: column;
-  // align-items: center;
   justify-content: space-between;
   h4 {
     color: $dark-blue;
@@ -32,11 +29,52 @@
   h6 {
     font-size: 1.6rem;
   }
-  p {
-    font-family: $accent-font;
-    font-style: italic;
+}
+
+
+.mood-title {
+  // position: absolute;
+  // top: 20px;
+  // left: -30px;
+  h4 span.mood-title {
+    background: $dark-blue;
+    color: white;
+    padding: 4px 4px 2px;
+    line-height: 1;
+  }
+}
+.mood-details {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 18px;
+  outline: 2px solid white;
+  outline-offset: -10px;
+  background: $neon-orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .sm-border-white {
+    // border: 3px solid red;
+    width: 80%;
+
+  }
+  h6 {
+    text-align: center;
+    color: white;
+    font-weight: $font-weight-bold;
   }
 
+
+  p {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
 }
 
 .mood-actions {
