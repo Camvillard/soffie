@@ -23,10 +23,14 @@ ul{
 list-style-type:none;
 }
 
-.review-container {
+.review-modal-container {
   -webkit-box-shadow: none;
   box-shadow: none;
   color: $medium-gray;
-  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+
+.review-container {
+  display: flex;
+  justify-content: center;
 }
 

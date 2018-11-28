@@ -50,16 +50,20 @@
 
 
  <!-- Review Modal -->
-<div class="review-container">
+<div class="review-modal-container">
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-          <h3 class="text-center">leave a review</h3>
 
           <div class="modal-body">
+          <h3 class="text-center"><span>leave a review</span></h3>
             <hr class="md-border-blue">
+            <div class="review-container">
+
             <%= render 'reviews/form', users_book: @users_book, review: @review %>
-          </div>
+            </div>
+
+          </div> <!-- end of modal content -->
 
 
         <div class="modal-footer" id="review-button">
