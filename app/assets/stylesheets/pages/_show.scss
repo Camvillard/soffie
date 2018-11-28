@@ -11,6 +11,14 @@
   color: $medium-gray;
 }
 
+.review-modal-content-form{
+  padding: 5px;
+}
+
+.review-modal-form {
+  padding: 5px;
+}
+
 .md-border-blue {
   width: 60%;
   margin: 4px auto 24px;
@@ -32,5 +40,10 @@ list-style-type:none;
 .review-container {
   display: flex;
   justify-content: center;
+}
+
+
+.modal-accent {
+  text-align: center;
 }
 

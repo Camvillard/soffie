@@ -1,18 +1,20 @@
-<div id="new-review-form">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-      <%= simple_form_for [@users_book, @review] do |f| %>
-          <div class="review-modal-form">
-          <%= f.input :rating, collection: 0..5  %>
+<div class="container">
+  <div id="new-review-form">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <%= simple_form_for [@users_book, @review] do |f| %>
+            <div class="review-modal-form">
+            <%= f.input :rating, collection: 0..5  %>
+            </div>
+            <div class="review-modal-content-form">
+
+            <%= f.input :content, label: false, placeholder: 'review goes here' %>
+            </div>
+
+          <div class="review-modal-button">
+          <%= f.submit class: 'btn btn-primary' %>
           </div>
-          <div class="review-modal-content-form">
+        <% end %>
 
-          <%= f.input :content %>
-          </div>
-
-        <div clas="review-modal-button">
-        <%= f.submit class: 'btn btn-primary' %>
-        </div>
-      <% end %>
-
-    </div >
-</div >
+      </div >
+  </div >
+</div>
