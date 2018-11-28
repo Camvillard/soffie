@@ -71,7 +71,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="pagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="pagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -96,9 +96,27 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<div id="soffie-update">
+  <img src="">
 </div>
 
-<%= javascript_pack_tag 'completed-pages-read' %>
+<div id="soffie-update-form" class="hidden">
+    <ol>
+      <% @books_in_progress.each do |book| %>
+        <p><%= book.title %></p>
+        <%= simple_form_for book do |f| %>
+          <%= f.input :completed_pages %>
+          <%= f.submit %>
+        <% end %>
+      <% end %>
+    </ol>
+  </div>
+
+
+
+<%= javascript_pack_tag 'soffie-update-form' %>
 <%= javascript_pack_tag 'select2' %>
 
 

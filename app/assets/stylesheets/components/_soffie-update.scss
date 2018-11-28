@@ -1,0 +1,25 @@
+#soffie-update {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: #FFCB96;
+  font-size:1.2rem;
+  cursor: pointer;
+
+  &-form{
+    position: fixed;
+    bottom:100px;
+    right: 100px;
+    border-radius: 50%;
+    background-color: red;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.hidden {
+  display: none;
+}
