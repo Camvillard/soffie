@@ -3,6 +3,9 @@ class Mood < ApplicationRecord
   has_many :users_books, through: :book_moods
   belongs_to :user
 
+  include PgSearch
+  multisearchable against: [ :name]
+
   def retrieve_categories_in_moods
     categories = []
     self.users_books.each do |book|
