@@ -48,41 +48,58 @@
     </div> <!-- end of #single-book -->
 
 
+
  <!-- Review Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h3>leave a review</h3>
-        <hr class="md-border-blue">
-        <%= render 'reviews/form', users_book: @users_book, review: @review %>
-        <p class="modal-accent">leaving a review encourages others to read your favorite books. make it a great review!</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="cta-neon" data-dismiss="modal">close</button>
+<div class="container">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3 class="text-center">leave a review</h3>
+          <hr class="md-border-blue">
+          <%= render 'reviews/form', users_book: @users_book, review: @review %>
+        <div class="modal-accent">
+
+          <p class="modal-accent">leaving a review encourages others to read your favorite books. make it a great review!</p>
+        </div>
+        </div>
+
+        <div class="modal-footer" id="review-button">
+          <button type="button" class="cta-neon" data-dismiss="modal">close</button>
+        </div>
       </div>
     </div>
   </div>
+
 </div>
 
-<div class="list-group">
-  <% @users_book.reviews.each do |review| %>
-    <li class="list-group-item">
-      <small>
-        <% count = 0 %>
-        <% 5.times do %>
-          <% if review.rating > count %>
-            <i class="fas fa-star"></i>
-          <% else %>
-            <i class="far fa-star"></i>
+    <div class="wrapper">
+      <div class="container">
+        <div class="list-group">
+          <% @users_book.reviews.each do |review| %>
+            <div class="cards">
+              <li class="list-group-item">
+                <small>
+                  <% count = 0 %>
+                  <% 5.times do %>
+                    <% if review.rating > count %>
+                      <i class="fas fa-star"></i>
+                    <% else %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                    <% count += 1 %>
+                  <% end %>
+                </small>
+                <div class="card">
+                  <p><%= review.content %></p>
+                </div>
+              </li>
+            </div> <!-- end of cards -->
           <% end %>
-          <% count += 1 %>
-        <% end %>
-      </small>
-      <p><%= review.content %></p>
-    </li>
-  <% end %>
-</div>
+        </div> <!-- end of list-group -->
+      </div> <!-- end of container -->
+    </div> <!-- end of wrapper -->
+
  </div> <!-- end of container -->
 
 
