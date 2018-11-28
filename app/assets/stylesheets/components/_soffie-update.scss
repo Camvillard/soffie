@@ -1,4 +1,4 @@
-#soffie-update {
+#soffie-button {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -6,20 +6,29 @@
   width: 100px;
   height: 100px;
   background-color: #FFCB96;
-  font-size:1.2rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  &-form{
+  #soffie-update-form {
     position: fixed;
     bottom:100px;
     right: 100px;
     border-radius: 50%;
-    background-color: red;
-    width: 150px;
-    height: 150px;
+    background-color: #F4F4F4;
+    width: 210px;
+    height: 210px;
+    font-size: 0.5rem;
+    overflow-y: scroll;
   }
-}
 
 .hidden {
   display: none;
+  }
+
+#soffie-icon {
+  height: 53px;
+  width: 70px;
 }
