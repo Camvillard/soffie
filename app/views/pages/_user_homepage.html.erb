@@ -38,12 +38,11 @@
             <!-- Reading Progress Bar -->
 
             <p><%=book.completed_pages%> out of <%= book.num_pages%> pages</p>
-              <div id="bar">
-                <div id="progress-bar"></div>
+              <div class="bar">
+                <div class="progress-bar" data-completedpages="<%= book.completed_pages %>" data-bookpages="<%= book.num_pages %>"></div>
               </div>
 
             <% end %> <!-- end of iteration over the categories -->
-            <p>35 out of <%= book.num_pages%> pages</p>
 
           </div>
 
@@ -72,7 +71,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="pagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="pagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -97,9 +96,28 @@
       </div>
     </div>
   </div>
+</div> -->
+
+
+<div id="soffie-button">
+  <%= image_tag "soffie-icon_white.svg", id:"soffie-icon" %>
 </div>
 
-<%= javascript_pack_tag 'completed-pages-read' %>
+<div id="soffie-update-form" class="hidden">
+    <div>
+      <ol>
+        <% @books_in_progress.each do |book| %>
+          <p><%= book.title %></p>
+          <%= simple_form_for book do |f| %>
+            <%= f.input :completed_pages %>
+            <%= f.submit %>
+          <% end %>
+        <% end %>
+      </ol>
+    </div>
+</div>
+
+<%= javascript_pack_tag 'soffie-update-form' %>
 <%= javascript_pack_tag 'select2' %>
 
 

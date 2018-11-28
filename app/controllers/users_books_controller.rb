@@ -77,10 +77,6 @@ class UsersBooksController < ApplicationController
     redirect_to root_path
   end
 
-  def update_completed_pages
-    # TO DO
-  end
-
   private
 
   def add_category_to_a_book(book, categories)
