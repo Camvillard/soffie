@@ -7,7 +7,7 @@
   .select2 {
     width: 100% !important;
     border: none;
-    border-bottom: 3px solid $dark-blue;
+    border-bottom: 6px solid $neon-orange;
   }
 
   .select2 input {
@@ -26,6 +26,44 @@
   }
   .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
     font-size: 3.2rem;
+  }
+
+  ::placeholder {
+    text-align: center;
+    color: white;
+    background: $light-gray;
+
+  }
+
+  h1 input {
+    width: 8rem;
+    margin: 2rem auto;
+    font-family: $headers-font;
+    font-weight: $font-weight-extrabold;
+    background: none;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  input[type="text"]:focus,
+  input[type="text"]:hover,
+  input[type="text"]:visited,
+  input[type="text"]:active {
+    border: none;
+    outline-offset: 0px;
+    @include horizontal-border(6px, $dark-blue);
+    outline: none;
+  }
+
+  input#give-me-a-book {
+    font-size: 4rem;
+    padding: 8px 16px 8px;
+
+
+    &:hover {
+      @include border-big($dark-blue);
+      color: $dark-blue;
+    }
   }
 
 }

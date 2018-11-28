@@ -1,10 +1,12 @@
 /* ------ COMPONENT : NEW MOOD ------ */
 
+
+
 #new-mood-modal {
   .modal-content {
   border-radius: 0px;
   @include border-large($peach-orange);
-
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;
   }
 }
 
@@ -25,4 +27,8 @@ form#mood-modal-form {
     font-size: 3rem;
     font-style: normal !important;
   }
+
 }
+  #mood-modal-form li.select2-search.select2-search--inline {
+    width: 100%;
+  }
