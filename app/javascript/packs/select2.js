@@ -17,9 +17,5 @@ $(document).ready(function() {
     multiple: "multiple"
   });
 
-  // $('.select2-book-modal').each(function() {
-  //  $(this).select2();
-  // });
-
 });
 

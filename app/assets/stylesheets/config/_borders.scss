@@ -11,3 +11,15 @@
 .sm-border-blue {
   @include horizontal-border(4px, $dark-blue);
 }
+
+.lg-border-white {
+  @include horizontal-border(12px, white);
+}
+
+.md-border-white {
+  @include horizontal-border(8px, white);
+}
+
+.sm-border-white {
+  @include horizontal-border(1px, white);
+}

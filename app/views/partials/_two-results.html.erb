@@ -31,7 +31,8 @@
 
         <div class="book-description">
           <p><%= book.description %></p>
-          <%= link_to "read this book", users_book_path(book), class: "button-peach" %>
+          <%= link_to "great soffie, I'll read this one", users_book_path(id: book.id, users_book: {status: "Reading in progress"}), method: :patch, class: "button-peach" %>
+          <%#= link_to "read this book", users_book_path(book), class: "button-peach" %>
         </div>
 
       </div> <!-- end of other-results -->
