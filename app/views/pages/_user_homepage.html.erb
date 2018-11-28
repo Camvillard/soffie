@@ -78,8 +78,9 @@
   <%= form_tag root_path, method: 'patch', id: "update-book-form" do %>
 
    <h6>chose the book to update</h6>
-   <%=  select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), class: "select2-update-selection", id: "mood-modal" %>
-   <input type="text" name='book[completed_pages]' placeholder="pages">
+   <%=  select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), class: "select2-update-selection", id: "book-selector" %>
+   <p>I've read <input type="number" name='book[completed_pages]' placeholder="2">more pages, yay</p>
+
   <% end %>
 
 </div>

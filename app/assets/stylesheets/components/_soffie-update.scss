@@ -14,8 +14,8 @@
 
   #soffie-update-form {
     position: fixed;
-    bottom:12vh;
-    right: 10vw;
+    bottom: 9vh;
+    right: 7vw;
     border-radius: 50%;
     background-color: $light-gray;
     display: flex;
@@ -23,16 +23,41 @@
     justify-content: space-around;
     width: 310px;
     height: 310px;
-    // font-size: 0.5rem;
     overflow-y: scroll;
-    padding: 30px;
+    padding: 10px;
+  }
 
-    form input {
-      width: 80%;
+  form#update-book-form {
+      width: 100%;
       margin: auto;
       text-align: center;
-    }
 
+      .select2-container--default .select2-selection--single {
+        background-color: #fff;
+        border: 1px solid #aaa;
+        border-radius: 0px;
+        font-size: 1.4rem;
+        padding: 3px;
+
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 4rem;
+        @include horizontal-border(2px, $neon-orange);
+        text-align: center;
+        color: $neon-orange;
+      }
+      ::placeholder {
+        text-align: center;
+        color: white;
+      }
+      h6, p {
+        padding: 10px 20px 6px;
+      }
+      p {
+        text-transform: uppercase;
+      }
   }
 
 .hidden {
