@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.164 56.173">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="noun_Smile_495506" transform="translate(-8.38 -14.442)">
+    <path id="Tracé_18" data-name="Tracé 18" class="cls-1" d="M19.256,33.308a23.9,23.9,0,0,0-1.3,4.144C15.672,47.672,17.7,65.232,44.007,64.68c30.406-.636,25.177-24.712,23.822-30.655-.973-4.26-7.388-18.2-22.6-18.081C30.338,16.057,21.571,27.908,19.256,33.308Z" transform="translate(2.198 0)"/>
+    <path id="Tracé_19" data-name="Tracé 19" class="cls-2" d="M36.154,46.353c-.286,1.239.053,2.352.758,2.483s1.507-.767,1.792-2.006-.053-2.353-.757-2.484S36.44,45.113,36.154,46.353Z" transform="translate(-1.956 -6.274)"/>
+    <path id="Tracé_20" data-name="Tracé 20" class="cls-2" d="M63.387,46.353c-.286,1.239.053,2.352.756,2.483s1.51-.767,1.794-2.006-.053-2.353-.758-2.484S63.673,45.113,63.387,46.353Z" transform="translate(-7.974 -6.274)"/>
+    <path id="Tracé_21" data-name="Tracé 21" class="cls-2" d="M43.945,54.945s-1.26,2.363.63,2.743,7.138.756,8.608,0,1.154-2.743,1.154-2.743" transform="translate(-3.609 -8.62)"/>
+    <path id="Tracé_22" data-name="Tracé 22" class="cls-2" d="M38.547,66.228s1.891,3.125,7.608,3.327,10.993-3.327,10.993-3.327" transform="translate(-2.507 -11.113)"/>
+    <path id="Tracé_23" data-name="Tracé 23" class="cls-2" d="M47.42,20.885S40.6,28.8,33.512,32.169c-5.291,2.519-16.22,4.537-16.22,4.537s-3.317-4.034-4.711-2.666c-2.122,2.084,3.534,8.641,3.534,8.641" transform="translate(3.337 -1.092)"/>
+    <path id="Tracé_24" data-name="Tracé 24" class="cls-2" d="M76.406,34.04s-8.146-2.781-11.828-5.487c-2.41-1.772-5.876-6.259-7.139-7.668" transform="translate(-6.682 -1.092)"/>
+    <path id="Tracé_25" data-name="Tracé 25" class="cls-2" d="M80.792,51.661s6.373,5.368,7.768,10c1.3,4.316.99,14.68.99,14.68s-8.387,1.592-13.1-.623a11.32,11.32,0,0,1-5.959-6.23" transform="translate(-9.566 -7.894)"/>
+    <path id="Tracé_26" data-name="Tracé 26" class="cls-2" d="M13.789,51.661s-6.371,5.368-7.767,10c-1.3,4.316-.991,14.68-.991,14.68s8.386,1.592,13.1-.623a11.323,11.323,0,0,0,5.959-6.23" transform="translate(4.907 -7.894)"/>
+    <path id="Tracé_27" data-name="Tracé 27" class="cls-2" d="M83.717,40.266S86.4,37.47,87.3,39.5s-2.959,6.752-2.959,6.752" transform="translate(-12.489 -5.042)"/>
+  </g>
+</svg>

@@ -18,8 +18,6 @@ class UsersBooksController < ApplicationController
     end
     if @final_books.empty?
       render :no_results
-    else
-      UserMailer.book_choice(@final_books.first).deliver_now
     end
 
   end
@@ -73,7 +71,9 @@ class UsersBooksController < ApplicationController
   def update
     @user_book = UsersBook.find(params[:id])
     @user_book.update(strong_params)
+    @user_book.define_reading_date
     authorize @user_book
+    UserMailer.book_choice(@user_book).deliver_now
     redirect_to root_path
   end
 
@@ -112,7 +112,7 @@ class UsersBooksController < ApplicationController
   end
 
   def strong_params
-    params.require(:users_book).permit(:status, :completed_pages)
+    params.require(:users_book).permit(:status, :completed_pages, :end_readingdate)
   end
 
 end

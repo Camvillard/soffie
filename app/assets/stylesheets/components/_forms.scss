@@ -10,14 +10,6 @@
     padding-bottom: 1rem;
   }
 
-  input:focus,
-  input:visited,
-  input:active {
-    border: none;
-    outline-offset: 0px;
-    outline: none;
-  }
-
   input.password {
     display: block;
   }
@@ -42,6 +34,7 @@ input {
 }
 
 input:focus,
+input:hover,
 input:visited,
 input:active {
   border: none;

@@ -12,4 +12,12 @@ class MoodPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def update?
+    true
+  end
+
+  def add_book?
+    true
+  end
 end

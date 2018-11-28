@@ -10,6 +10,13 @@
   border-style: solid;
 }
 
+@mixin border-big($color) {
+  border-color: $color;
+  border-width: 6px;
+  border-style: solid;
+}
+
+
 @mixin border-large($color) {
   border-color: $color;
   border-width: 12px;
