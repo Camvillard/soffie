@@ -9,10 +9,7 @@ User.delete_all
 
 puts 'planting seeds for soffie...'
 
-# esteban = User.create(email: 'esteban@soffie.info', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes', reading_speed: "190")
-# claire = User.create(email: 'claire@soffie.info', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman', reading_speed: "185")
 camille = User.create(email: 'ca.villard@gmail.com', password: 'wagonwagon', first_name: 'camille', last_name: 'villard', reading_speed: "220")
-# serge = User.create(email: 'serge@soffie.info', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc', reading_speed: "210" )
 
 
 Category.create(name: 'fiction')
@@ -36,21 +33,23 @@ Category.create(name: 'science fiction')
 Category.create(name: 'children')
 Category.create(name: 'travel')
 
-Mood.create(name: "relaxing with a glass of whatever you need it to be", description: "pretty self-explanatory.", user: camille)
-Mood.create(name: "reading for after an intense 9 weeks coding bootcamp", description: "perfect for an over-used brain that cries for some light reading.", user: camille)
-Mood.create(name: "learning graphic design things", description: "useful for those you still use Comic Sans MS and actually think it's a good idea.", user: camille)
-Mood.create(name: "paris is always a good idea", description: "bread, cheese & parisian stories", user: camille)
-Mood.create(name: "stories that made you cry", description: "excellent for wintertime", user: camille)
-Mood.create(name: "books for when your brain is fully available", description: "excellent for wintertime", user: camille)
+Mood.create(
+  name: "relaxing with a glass of wine - or whatever you need it to be",
+  image_url: "https://res.cloudinary.com/camvillard/image/upload/v1543358544/soffie/book-2.jpg",
+  description: "pretty self-explanatory.",
+  user: camille
+)
+
+Mood.create(
+  name: "reading for after an intense 9 weeks coding bootcamp",
+  description: "perfect for an over-used brain that cries for some light reading.",
+  image_url: "https://res.cloudinary.com/camvillard/image/upload/v1543452106/soffie/book-6.jpg",
+  user: camille
+)
 
 
-wine = Mood.find_by(name: "relaxing with a glass of whatever you need it to be")
+wine = Mood.find_by(name: "relaxing with a glass of wine - or whatever you need it to be")
 light = Mood.find_by(name: "reading for after an intense 9 weeks coding bootcamp")
-learn = Mood.find_by(name: "learning graphic design things")
-paris = Mood.find_by(name: "paris is always a good idea")
-cry = Mood.find_by(name: "stories that made you cry")
-intense = Mood.find_by(name: "books for when your brain is fully available")
-
 
 
 harry_potter_1 = UsersBook.create(
@@ -60,6 +59,8 @@ harry_potter_1 = UsersBook.create(
     isbn: 9780747532743,
     image_url: "https://images.gr-assets.com/books/1327190600l/72193.jpg",
     num_pages: 223,
+    status: "Reading in progress",
+    completed_pages: 145,
     description:"Harry Potter's life is miserable. His parents are dead and he's stuck with his
 heartless relatives, who force him to live in a tiny closet under the stairs.
 But his fortune changes when he receives a letter that tells him the truth about
@@ -85,56 +86,14 @@ magical world and sets the stage for many high-stakes adventures to come." ,
 harry_potter_1.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
 harry_potter_1.moods = [wine, light]
 
-harry_potter_2 = UsersBook.create(
-    user_id: camille.id,
-    title: "Harry Potter And The Chamber Of Secrets",
-    author: "JK Rowling",
-    isbn: 9780747538486,
-    image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
-    num_pages: 357,
-    description:"The Dursleys were so mean and hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry.
-    But just as he's packing his bags, Harry receives a warning from a strange, impish creature named Dobby who says that if Harry Potter returns to Hogwarts, disaster will strike.
-    And strike it does. For in Harry's second year at Hogwarts, fresh torments and horrors arise, including an outrageously stuck-up new professor,
-    Gilderoy Lockhart, a spirit named Moaning Myrtle who haunts the girls' bathroom, and the unwanted attentions of Ron Weasley's younger sister, Ginny.
-    But each of these seem minor annoyances when the real trouble begins, and someone -- or something -- starts turning Hogwarts students to stone.
-    Could it be Draco Malfoy, a more poisonous rival than ever? Could it possibly be Hagrid, whose mysterious past is finally told? Or could it be the one everyone at Hogwarts most suspects . . . Harry Potter himself?" ,
-    )
-harry_potter_2.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-harry_potter_2.moods = [wine, light]
-
-harry_potter_3 = UsersBook.create(
-    user_id: camille.id,
-    title: "Harry Potter and the Prisoner of Azkaban",
-    author: "JK Rowling",
-    isbn: 9780747532743,
-    image_url: "https://images.gr-assets.com/books/1499277281l/5.jpg",
-    num_pages: 435,
-    description:"Harry Potter's third year at Hogwarts is full of new dangers. A convicted
-murderer, Sirius Black, has broken out of Azkaban prison, and it seems he's
-after Harry. Now Hogwarts is being patrolled by the dementors, the Azkaban
-guards who are hunting Sirius. But Harry can't imagine that Sirius or, for that
-matter, the evil Lord Voldemort could be more frightening than the dementors
-themselves, who have the terrible power to fill anyone they come across with
-aching loneliness and despair. Meanwhile, life continues as usual at Hogwarts. A
-top-of-the-line broom takes Harry's success at Quidditch, the sport of the
-Wizarding world, to new heights. A cute fourth-year student catches his eye. And
-he becomes close with the new Defense of the Dark Arts teacher, who was a
-childhood friend of his father. Yet despite the relative safety of life at
-Hogwarts and the best efforts of the dementors, the threat of Sirius Black grows
-ever closer. But if Harry has learned anything from his education in wizardry,
-it is that things are often not what they seem. Tragic revelations, heartwarming
-surprises, and high-stakes magical adventures await the boy wizard in this funny
-and poignant third installment of the beloved series.
-"
-)
-harry_potter_3.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-harry_potter_3.moods = [wine, light]
 
 harry_potter_4 = UsersBook.create(
     user_id: camille.id,
     title: "Harry Potter and the Goblet of Fire",
     author: "JK Rowling",
     isbn: 9780439139601,
+    completed_pages: 15,
+    status: "Reading in progress",
     image_url: "https://images.gr-assets.com/books/1361482611l/6.jpg",
     num_pages: 734,
     description:"Harry Potter is midway through his training as a wizard and his coming of age.
@@ -175,47 +134,6 @@ harry_potter_5.categories = [Category.find_by(name: "fiction"),Category.find_by(
 harry_potter_5.moods = [wine, light]
 
 
-harry_potter_6 = UsersBook.create(
-    user_id: camille.id,
-    title: "Harry Potter and the Half-Blood Prince",
-    author: "JK Rowling",
-    isbn: 9780439785969,
-    image_url: "https://images.gr-assets.com/books/1361039191l/1.jpg",
-    num_pages: 652,
-    description:"There is a door at the end of a silent corridor. And it’s haunting Harry
-Pottter’s dreams. Why else would he be waking in the middle of the night,
-screaming in terror?
-Harry has a lot on his mind for this, his fifth year at Hogwarts: a Defense
-Against the Dark Arts teacher with a personality like poisoned honey; a big
-surprise on the Gryffindor Quidditch team; and the looming terror of the
-Ordinary Wizarding Level exams. But all these things pale next to the growing
-threat of He-Who-Must-Not-Be-Named---a threat that neither the magical
-government nor the authorities at Hogwarts can stop.
-As the grasp of darkness tightens, Harry must discover the true depth and
-strength of his friends, the importance of boundless loyalty, and the shocking
-price of unbearable sacrifice.
-
-His fate depends on them all."
-)
-harry_potter_6.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-harry_potter_6.moods = [wine, light]
-
-
-harry_potter_7 = UsersBook.create(
-    user_id: camille.id,
-    title: 'Harry Potter and the Deathly Hallows',
-    author: 'JK Rowling',
-    isbn: 9780747538486,
-    image_url: "https://images.gr-assets.com/books/1474171184l/136251.jpg",
-    num_pages: 784,
-    description: "Harry Potter is leaving Privet Drive for the last time. But as he climbs into the sidecar of Hagrid’s motorbike and they take to the skies, he knows Lord Voldemort and the Death Eaters will not be far behind.
-    The protective charm that has kept him safe until now is broken. But the Dark Lord is breathing fear into everything he loves.
-    And he knows he can’t keep hiding. To stop Voldemort, Harry knows he must find the remaining Horcruxes and destroy them.
-    He will have to face his enemy in one final battle."
-    )
-harry_potter_7.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult") ]
-
-
 rien_ne_soppose = UsersBook.create(
     user_id: camille.id,
     title: "Rien ne soppose à la nuit",
@@ -241,7 +159,7 @@ inabouti.
 "
     )
 rien_ne_soppose.categories = [Category.find_by(name: "fiction"), Category.find_by(name: "tragedy")]
-rien_ne_soppose.moods = [cry, intense]
+
 
 heures_souterraines = UsersBook.create(
     user_id: camille.id,
@@ -273,23 +191,7 @@ où l'on risque de se perdre sans aucun bruit.
 "
 )
 heures_souterraines.categories = [Category.find_by(name: "fiction")]
-heures_souterraines.moods = [cry]
 
-
-les_chaussures_italiennes = UsersBook.create(
-    user_id: camille.id,
-    title: 'Les Chaussures italiennes',
-    author: 'Henning Mankell',
-    isbn: 9782757821626,
-    image_url: "https://images.gr-assets.com/books/1329585015l/7145210.jpg",
-    num_pages: 352,
-    description: "Living on a tiny island that is surrounded by ice during the long winter months, Fredrik Welin is so lost to the world that he cuts a hole in the ice every morning and lowers himself into the freezing water to remind himself that he is alive.
-    Haunted by memories of the terrible mistake that drove him to this island and away from a successful career as a surgeon, he lives in a stasis so complete that an anthill grows undisturbed in his living room.
-    When an unexpected visitor disrupts this frigid existence, Frederik begins an eccentric, elegiac journey—one that displays the full height of Henning Mankell’s storytelling powers.
-    A deeply human tale of loss and redemption, Italian Shoes is “a voyage into the soul of a man” expertly crafted with “snares that Mankell has hidden with a hunter’s skill inside this spectral landscape."
-    )
-les_chaussures_italiennes.categories = [Category.find_by(name: "fiction"), Category.find_by(name: "tragedy")]
-les_chaussures_italiennes.moods = [cry]
 
 
 singuliere_tristesse = UsersBook.create(
@@ -329,49 +231,11 @@ friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts
 School of Witchcraft and Wizardry. The main story arc concerns Harry's struggle
 against Lord Voldemort, a dark wizard who intends to become immortal, overthrow
 the wizard governing body known as the Ministry of Magic, and subjugate all
-wizards and Muggles (non-magical people).
+wizards and Muggles (non-magical people)."
+)
 
-The series was originally published in English by two major publishers,
-Bloomsbury in the United Kingdom and Scholastic Press in the United States. The
-original seven books were adapted into an eight- part film series by Warner
-Bros. Pictures, which is the third highest-grossing film series of all time as
-of February 2018. In 2016, the total value of the Harry Potter franchise was
-estimated at $25 billion, making Harry Potter one of the highest-grossing media
-franchises of all time.
-
-A series of many genres, including fantasy, drama, coming of age, and the
-British school story (which includes elements of mystery, thriller, adventure,
-horror, and romance), the world of Harry Potter explores numerous themes and
-includes many cultural meanings and references. According to Rowling, the main
-theme is death. Other major themes in the series include prejudice, corruption,
-and madness.
-
-The success of the books and films has allowed the Harry Potter franchise to
-expand, with numerous derivative works, a travelling exhibition that premiered
-in Chicago in 2009, a studio tour in London that opened in 2012, a digital
-platform on which J.K. Rowling updates the series with new information and
-insight, and a pentalogy of spin-off films premiering in November 2016 with
-Fantastic Beasts and Where to Find Them, among many other developments. Most
-recently, themed attractions, collectively known as The Wizarding World of Harry
-Potter, have been built at several Universal Parks & Resorts amusement parks
-around the world.
-"
-    )
 saga_harry_potter.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
 saga_harry_potter.moods = [wine, light]
-
-
-my_brilliant_friend = UsersBook.create(
-    user_id: camille.id,
-    title: 'My Brilliant Friend',
-    author: 'Elena Ferrante',
-    isbn: 9781609450786,
-    image_url: "https://images.gr-assets.com/books/1343064947l/13586707.jpg",
-    num_pages: 336,
-    description: "Book one in the series follows Lila and Elena from their first fateful meeting as ten-year-olds through their school years and adolescence.",
-    )
-my_brilliant_friend.categories = [Category.find_by(name: "fiction")]
-my_brilliant_friend.moods = [wine]
 
 
 
@@ -382,69 +246,13 @@ to_kill_a_mockingbird = UsersBook.create(
     isbn: 9780062369635,
     image_url: "https://images.gr-assets.com/books/1361975680l/2657.jpg",
     num_pages: 336,
+    completed_pages: 210,
+    status: "Reading in progress",
     description: "Nominated as one of America’s best-loved novels by PBS’s The Great American Read Harper Lee's Pulitzer Prize-winning masterwork of honor and injustice in the deep South—and the heroism of one man in the face of blind and violent hatred One of the best-loved stories of all time, To Kill a Mockingbird has been translated into more than forty languages, sold more than forty million copies worldwide, served as the basis for an enormously popular motion picture, and was voted one of the best novels of the twentieth century by librarians across the country. A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice, it views a world of great beauty and savage inequities through the eyes of a young girl, as her father—a crusading local lawyer—risks everything to defend a black man unjustly accused of a terrible crime."
     )
 to_kill_a_mockingbird.categories = [Category.find_by(name: "fiction"), Category.find_by(name: "classic")]
 
 
-farenheit_451 = UsersBook.create(
-    user_id: camille.id,
-    title: "Fahrenheit 451",
-    author: "Ray Bradbury",
-    isbn: 9780743247221,
-    image_url: "https://images.gr-assets.com/books/1383718290l/13079982.jpg",
-    num_pages: 190,
-    description: "A totalitarian regime has ordered all books to be destroyed, but one of the book burners suddenly realizes their merit.",
-    )
-farenheit_451.categories = [Category.find_by(name: "fiction"), Category.find_by(name: "science fiction"), Category.find_by(name: "dystopia")]
-
-beaux_quartiers = UsersBook.create(
-    user_id: camille.id,
-    title: "Les beaux quartiers",
-    author: "Louis Aragon",
-    isbn: 9782070362417,
-    image_url: "https://images.gr-assets.com/books/1186082926l/1628807.jpg",
-    num_pages: 624,
-    description:"Ce roman est l'histoire de deux frères, Edmond et Armand Barbentane. Le premier
-devra sa fortune à l'abandon qu'un homme riche lui fait de sa maîtresse. Armand,
-lui, abandonnant les siens, est devenu ouvrier dans une usine de Levallois-
-Perret : son avenir s'en trouvera changé."
-)
-
-beaux_quartiers.categories = [Category.find_by(name: "classic"),Category.find_by(name: "fiction")]
-beaux_quartiers.moods = [paris, wine, intense]
-
-
-shining = UsersBook.create(
-    user_id: camille.id,
-    title: 'The Shining',
-    author: 'Stephen King',
-    isbn: 9780450040184,
-    image_url: "https://images.gr-assets.com/books/1353277730l/11588.jpg",
-    num_pages: 447,
-    description: "Jack Torrance's new job at the Overlook Hotel is the perfect chance for a fresh
-start. As the off-season caretaker at the atmospheric old hotel, he'll have
-plenty of time to spend reconnecting with his family and working on his writing.
-But as the harsh winter weather sets in, the idyllic location feels ever more
-remote...and more sinister. And the only one to notice the strange and terrible
-forces gathering around the Overlook is Danny Torrance, a uniquely gifted five-
-year-old."
-)
-shining.categories = [Category.find_by(name: "horror"), Category.find_by(name: "thriller"), Category.find_by(name: "classic")]
-shining.moods = [intense]
-
-
-where_the_wild_things_are = UsersBook.create(
-    user_id: camille.id,
-    title: "Where the Wild Things Are",
-    author: "Maurice Sendak",
-    isbn: 9780060254926,
-    image_url: "https://images.gr-assets.com/books/1384434560l/19543.jpg",
-    num_pages: 48,
-    description: "Maurice Sendak′s classic book Where the Wild Things Are follows the adventures of Max, a headstrong young boy who leaves home after having a fight with his mother, only to find himself in a mysterious forest bordering a vast sea. Misunderstood and rebellious, Max sets sail to the land of the Wild Things, where mischief reigns. But how do you turn one of the world′s favorite children′s books into a movie? This film incorporates the most dynamic elements of voice performance, live-action puppetry, and computer animation into a live-action adventure story that captures the magic of the book-and takes it to a new dimension. In order to preserve the realistic nature of the film, the Wild Things are not created digitally. Instead, Spike Jonze brings these characters to life in the form of physical suits built by the Jim Henson Company. These creatures, operated by a suit performer, interact with the live actor playing Max on set in front of the camera. After principal photography is finished, CGI is being used to make the creatures completely lifelike and convincing. HEADS ON AND WE SHOOT unveils the unique collaboration behind this highly anticipated film-the combined work of Maurice Sendak, Spike Jonze, Dave Eggers, and all the cast and crew. The book design is heavily image-based, a mix of early sketches, storyboards, character designs, and extensive behind-the-scenes photographs that show both incredible live-action puppetry and computer animation. The text includes forewords by Jonze and Eggers, interviews with the cast and crew, stories from on and off the set, and early drafts of the screenplay. The resulting book will be simultaneously a beautiful object for collectors, an insider′s guide for devotees, and an intimate window into the creative process.",
-    )
-where_the_wild_things_are.categories = [Category.find_by(name: "children")]
-where_the_wild_things_are.moods = [light]
 
 vie_devant_soi = UsersBook.create(
     user_id: camille.id,
@@ -464,21 +272,7 @@ médecins. Il lui tiendra compagnie jusqu'à ce qu'elle meure et même au-delà 
 la mort.."
 )
 vie_devant_soi.categories = [Category.find_by(name: "fiction")]
-vie_devant_soi.moods = [paris, wine]
-
-
-the_phantom_tollbooth = UsersBook.create(
-    user_id: camille.id,
-    title: "The Phantom Tollbooth",
-    author: "Norton Juster",
-    isbn: 9780394820378,
-    image_url: "https://images.gr-assets.com/books/1438887022l/378.jpg",
-    num_pages: 256,
-    description: "For Milo, everything’s a bore. When a tollbooth mysteriously appears in his room, he drives through only because he’s got nothing better to do. But on the other side, things seem different. Milo visits the Island of Conclusions (you get there by jumping), learns about time from a ticking watchdog named Tock, and even embarks on a quest to rescue Rhyme and Reason! Somewhere along the way, Milo realizes something astonishing.
-    Life is far from dull. In fact, it’s exciting beyond his wildest dreams. . . ",
-    )
-the_phantom_tollbooth.categories = [Category.find_by(name: "children"), Category.find_by(name: "young adult")]
-the_phantom_tollbooth.moods = [wine]
+vie_devant_soi.moods = [wine]
 
 
 the_hate_you_give = UsersBook.create(
@@ -492,18 +286,6 @@ the_hate_you_give = UsersBook.create(
     )
 the_hate_you_give.categories = [Category.find_by(name: "young adult")]
 the_hate_you_give.moods = [wine]
-
-
-miss_peregrines_home_for_peculiar_children = UsersBook.create(
-    user_id: camille.id,
-    title: "Miss Peregrine's Home for Peculiar Children",
-    author: "Ransom Riggs",
-    isbn: 9781594745133,
-    image_url: "https://images.gr-assets.com/books/1472782916l/9460487.jpg",
-    num_pages: 352,
-    description: "Ten peculiar children flee an army of deadly monsters. And only one person can help them—but she’s trapped in the body of a bird. The extraordinary journey that began in Miss Peregrine’s Home for Peculiar Children continues as Jacob Portman and his newfound friends journey to London, the peculiar capital of the world. There, they hope to find a cure for their beloved headmistress, Miss Peregrine. But in this war-torn city, hideous surprises lurk around every corner. And before Jacob can deliver the peculiar children to safety, he must make an important decision about his love for Emma Bloom.",
-    )
-miss_peregrines_home_for_peculiar_children.categories = [Category.find_by(name: "young adult")]
 
 
 an_abundance_of_katherines = UsersBook.create(
@@ -531,55 +313,6 @@ the_girl_on_the_train = UsersBook.create(
 the_girl_on_the_train.categories = [Category.find_by(name: "thriller"), Category.find_by(name: "mystery")]
 the_girl_on_the_train.moods = [light]
 
-gone_girl = UsersBook.create(
-    user_id: camille.id,
-    title: "Gone Girl",
-    author: "Gillian Flynn",
-    isbn: 9780606270175,
-    image_url: "https://images.gr-assets.com/books/1397056917l/19288043.jpg",
-    num_pages: 422,
-    description: "When a woman goes missing on her fifth wedding anniversary, her diary reveals hidden turmoil in her marriage, while her husband, desperate to clear himself of suspicion, realizes that something more disturbing than murder may have occurred.",
-    )
-gone_girl.categories = [Category.find_by(name: "thriller")]
-gone_girl.moods = [intense]
-
-
-
-big_little_lies = UsersBook.create(
-    user_id: camille.id,
-    title: "Big Little Lies",
-    author: "Liane Moriarty",
-    isbn: 9781101636237,
-    image_url: "https://images.gr-assets.com/books/1492239430l/19486412.jpg",
-    num_pages: 416,
-    description: "Sometimes it's the little lies that turn out to be the most lethal. . . . A murder... . . . a tragic accident... . . . or just parents behaving badly? What's indisputable is that someone is dead. But who did what ? Big Little Lies follows three women, each at a crossroads: Madeline is a force to be reckoned with. She's funny and biting, passionate, she remembers everything and forgives no one. She's just turned forty—forty?! Her ex-husband and his yogi new wife have moved into her beloved beachside community, and their daughter is in the same kindergarten class as Madeline's youngest (how is this possible?). And to top it all off, Madeline's teenage daughter seems to be choosing...",
-    )
-big_little_lies.categories = [Category.find_by(name: "thriller")]
-
-
-city_of_ice = UsersBook.create(
-    user_id: camille.id,
-    title: "City Of Ice",
-    author: "John Farrow",
-    isbn: 9781443402996,
-    image_url: "http://books.google.com/books/content?id=MlSDqMcY58EC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-    num_pages: 544,
-    description: "Montreal has been damaged by political uncertainty over separatism, and violent turf wars leave the police force struggling to keep the city safe. Even Sergeant-Detective Émile Cinq-Mars appears to have been compromised. How has he managed to penetrate Montreal’s criminal elite? Who are his informants? And who is the young female operative he seems so desperate to save from the clutches of the mob?",
-    )
-city_of_ice.categories = [Category.find_by(name: "thriller")]
-
-
-the_couple_next_door = UsersBook.create(
-    user_id: camille.id,
-    title: "The Couple Next Door",
-    author: "Shari Lapena",
-    isbn: 9780735221086,
-    image_url: "http://books.google.com/books/content?id=669ZjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
-    num_pages: 320,
-    description: "A domestic suspense debut about a young couple and their apparently friendly neighbors a twisty, rollercoaster ride of lies, betrayal, and the secrets between husbands and wives. . .\" Anne and Marco Conti seem to have it all a loving relationship, a wonderful home, and their beautiful baby, Cora. But one night when they are at a dinner party next door, a terrible crime is committed. Suspicion immediately focuses on the parents. But the truth is a much more complicated story. Inside the curtained house, an unsettling account of what actually happened unfolds. Detective Rasbach knows that the panicked couple is hiding something. Both Anne and Marco soon discover that the other is keeping secrets, secrets they've kept for years. What follows is the nerve-racking unraveling of a family a chilling tale of deception, duplicity, and unfaithfulness that will keep you breathless until the final shocking twist.",
-    )
-the_couple_next_door.categories = [Category.find_by(name: "thriller")]
-
 
 pride_and_prejudice = UsersBook.create(
     user_id: camille.id,
@@ -592,69 +325,6 @@ pride_and_prejudice = UsersBook.create(
     )
 pride_and_prejudice.categories = [Category.find_by(name: "romance"), Category.find_by(name: "classic")]
 pride_and_prejudice.moods = [light, wine]
-
-
-sense_and_sensibility = UsersBook.create(
-    user_id: camille.id,
-    title: "Sense and Sensibility",
-    author: "Jane Austen",
-    isbn: 9780141439662,
-    image_url: "https://images.gr-assets.com/books/1397245675l/14935.jpg",
-    num_pages: 409,
-    description: "Marianne Dashwood wears her heart on her sleeve, and when she falls in love with the dashing but unsuitable John Willoughby she ignores her sister Elinor's warning that her impulsive behaviour leaves her open to gossip and innuendo. Meanwhile Elinor, always sensitive to social convention, is struggling to conceal her own romantic disappointment, even from those closest to her. Through their parallel experience of love—and its threatened loss—the sisters learn that sense must mix with sensibility if they are to find personal happiness in a society where status and money govern the rules of love.",
-    )
-sense_and_sensibility.categories = [Category.find_by(name: "romance"), Category.find_by(name: "classic")]
-sense_and_sensibility.moods = [light, wine]
-
-jane_eyre = UsersBook.create(
-    user_id: camille.id,
-    title: "Jane Eyre",
-    author: "Charlotte Bronte",
-    isbn: 9780142437209,
-    image_url: "https://images.gr-assets.com/books/1327867269l/10210.jpg",
-    num_pages: 507,
-    description: "Orphaned as a child, Jane has felt an outcast her whole young life. Her courage is tested once again when she arrives at Thornfield Hall, where she has been hired by the brooding, proud Edward Rochester to care for his ward Adèle. Jane finds herself drawn to his troubled yet kind spirit. She falls in love. Hard.
-But there is a terrifying secret inside the gloomy, forbidding Thornfield Hall. Is Rochester hiding from Jane? Will Jane be left heartbroken and exiled once again?"
-    )
-jane_eyre.categories = [Category.find_by(name: "romance"), Category.find_by(name: "classic")]
-jane_eyre.moods = [cry]
-
-nana = UsersBook.create(
-    user_id: camille.id,
-    title: "Nana",
-    author: "Emile Zola",
-    isbn: 9780140442632,
-    image_url: "https://images.gr-assets.com/books/1468320326l/448908.jpg",
-    num_pages: 470,
-    description: "Nana opens in 1867, the year of the World Fair, when Paris, thronged by a
-cosmopolitan elite, was a perfect target for Zola's scathing denunciation of
-hypocrisy and fin-de-siecle moral corruption. In this new translation, the fate
-of Nana—the Helen of Troy of the second Empire, and daughter of the laundress in
-L'Assommoir—is now rendered in racy, stylish English.
-")
-nana.categories = [Category.find_by(name: "classic")]
-nana.moods = [intense, paris]
-
-germinal = UsersBook.create(
-    user_id: camille.id,
-    title: "Germinal",
-    author: "Emile Zola",
-    isbn: 9780140447422,
-    image_url: "https://images.gr-assets.com/books/1388208755l/28407.jpg",
-    num_pages: 592,
-    description: "The thirteenth novel in Émile Zola’s great Rougon-Macquart sequence, Germinal
-expresses outrage at the exploitation of the many by the few, but also shows
-humanity’s capacity for compassion and hope.
-
-Etienne Lantier, an unemployed railway worker, is a clever but uneducated young
-man with a dangerous temper. Forced to take a back-breaking job at Le Voreux
-mine when he cannot get other work, he discovers that his fellow miners are ill,
-hungry, and in debt, unable to feed and clothe their families. When conditions
-in the mining community deteriorate even further, Lantier finds himself leading
-a strike that could mean starvation or salvation for all.
-")
-germinal.categories = [Category.find_by(name: "classic")]
-germinal.moods = [intense, paris]
 
 
 
