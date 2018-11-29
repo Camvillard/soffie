@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>i want to read something</h1>
+  <h1>i want to read a</h1>
 
    <%= form_tag results_path, method: 'get', id: "search-form" do %>
       <%=  select_tag "categories[]", options_from_collection_for_select(Category.all, "id", "name"), class: "js-example-basic-multiple" %>
