@@ -17,7 +17,7 @@
   position: relative;
   padding: 12px;
   height: 320px;
-
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -89,5 +89,33 @@
   a {
     margin: 0px auto;
     border-bottom: none;
+  }
+}
+
+.mood-actions {
+  display:none;
+}
+.mood-card:hover .mood-actions {
+  display: inline;
+}
+
+#last-mood-card {
+  background: $dark-blue;
+  margin: 10px auto 20px;
+  height: 320px;
+  position: relative;
+  background-size: cover;
+}
+
+#last-mood-content {
+  position: relative;
+  padding: 12px;
+  height: 320px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .cta-md {
+    color: white;
   }
 }
