@@ -68,7 +68,7 @@
   <h4> books to match your reading mood</h4>
 
   <div class="row">
-    <% @moods[-3..-1].each do |mood| %>
+    <% @moods.each do |mood| %>
 
     <%= render "partials/mood-card", mood: mood %>
 
