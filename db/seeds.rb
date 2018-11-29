@@ -48,6 +48,7 @@ light = Mood.find_by(name: "reading for after an intense 9 weeks coding bootcamp
 learn = Mood.find_by(name: "learning graphic design things")
 paris = Mood.find_by(name: "paris is always a good idea")
 cry = Mood.find_by(name: "stories that made you cry")
+intense = Mood.find_by(name: "stories that made you cry")
 
 
 harry_potter_1 = UsersBook.create(
