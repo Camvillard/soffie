@@ -35,3 +35,28 @@
 
 // logged in user
 
+#all-moods {
+  margin: 90px auto 30px;
+}
+
+#homepage-title{
+  h1 {
+    font-size: 8rem;
+  }
+  h4 {
+    color: $dark-blue;
+    font-size: 3.5rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+}
+
+#carousel-container {
+  .container p {
+    color: $medium-gray;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+  }
+}
+

@@ -89,10 +89,10 @@ ActiveRecord::Schema.define(version: 2018_11_29_004255) do
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "isbn"
     t.integer "num_pages"
     t.text "description"
     t.string "image_url"
+    t.bigint "isbn"
     t.bigint "user_id"
     t.integer "completed_pages", default: 0
     t.string "status"

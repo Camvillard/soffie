@@ -54,6 +54,7 @@
     </div> <!-- end of #single-book -->
 
 
+ </div> <!-- end of container -->
 
  <!-- Review Modal -->
 <div class="review-modal-container">
@@ -85,35 +86,4 @@
     </div>
   </div>
 
-</div>
-
-    <div class="wrapper">
-      <div class="review-container">
-        <p class="cta-md">reviews</p>
-        <div class="list-group">
-            <div class="cards">
-          <% @users_book.reviews.each do |review| %>
-              <ul class="list-group-item">
-                <small>
-                  <% count = 0 %>
-                  <% 5.times do %>
-                    <% if review.rating > count %>
-                      <i class="fas fa-star"></i>
-                    <% else %>
-                      <i class="far fa-star"></i>
-                    <% end %>
-                    <% count += 1 %>
-                  <% end %>
-                </small>
-                <div class="card">
-                  <li ><%= review.content %></li>
-                </div>
-              </ul>
-            </div> <!-- end of cards -->
-          <% end %>
-        </div> <!-- end of list-group -->
-      </div> <!-- end of container -->
-    </div> <!-- end of wrapper -->
-
- </div> <!-- end of container -->
-
+</div> <!-- end of review modal -->

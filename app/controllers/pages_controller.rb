@@ -38,5 +38,13 @@ class PagesController < ApplicationController
     user.save
     redirect_to root_path # TODO: redirect somewhere else
   end
+
+  def calculate_total_pages
+    all_books = UsersBook.all
+    @pages_to_read = 0
+    all_books.each do |book|
+      @pages_to_read += book.num_pages
+    end
+  end
 end
 #
