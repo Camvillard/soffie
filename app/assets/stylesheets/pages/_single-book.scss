@@ -37,6 +37,9 @@
     margin-bottom: 4px;
     text-align: right;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 a.book-extra-actions {

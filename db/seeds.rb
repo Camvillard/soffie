@@ -237,7 +237,8 @@ tant d’autres familles, le pouvoir de destruction du Verbe, et celui du silenc
 Le livre, peut-être, ne serait rien d’autre que ça, le récit de cette quête,
 contiendrait en lui-même sa propre genèse, ses errances narratives, ses
 tentatives inachevées. Mais il serait cet élan, de moi vers elle, hésitant et
-inabouti."
+inabouti.
+"
     )
 rien_ne_soppose.categories = [Category.find_by(name: "fiction"), Category.find_by(name: "tragedy")]
 rien_ne_soppose.moods = [cry, intense]
