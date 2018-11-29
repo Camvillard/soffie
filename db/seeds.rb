@@ -44,7 +44,7 @@ Mood.create(name: "stories that made you cry", description: "excellent for winte
 Mood.create(name: "books for when your brain is fully available", description: "excellent for wintertime", user: camille)
 
 
-relax = Mood.find_by(name: "relaxing with a glass of whatever you need it to be")
+wine = Mood.find_by(name: "relaxing with a glass of whatever you need it to be")
 light = Mood.find_by(name: "reading for after an intense 9 weeks coding bootcamp")
 learn = Mood.find_by(name: "learning graphic design things")
 paris = Mood.find_by(name: "paris is always a good idea")
@@ -83,7 +83,7 @@ exciting details, the first installment in the series assembles an unforgettable
 magical world and sets the stage for many high-stakes adventures to come." ,
     )
 harry_potter_1.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-harry_potter_1.moods = [relax, light]
+harry_potter_1.moods = [wine, light]
 
 harry_potter_2 = UsersBook.create(
     user_id: camille.id,
@@ -100,7 +100,7 @@ harry_potter_2 = UsersBook.create(
     Could it be Draco Malfoy, a more poisonous rival than ever? Could it possibly be Hagrid, whose mysterious past is finally told? Or could it be the one everyone at Hogwarts most suspects . . . Harry Potter himself?" ,
     )
 harry_potter_2.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-harry_potter_2.moods = [relax, light]
+harry_potter_2.moods = [wine, light]
 
 harry_potter_3 = UsersBook.create(
     user_id: camille.id,
@@ -128,7 +128,7 @@ and poignant third installment of the beloved series.
 "
 )
 harry_potter_3.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-harry_potter_3.moods = [relax, light]
+harry_potter_3.moods = [wine, light]
 
 harry_potter_4 = UsersBook.create(
     user_id: camille.id,
@@ -147,7 +147,7 @@ he's not normal - even by wizarding standards. And in his case, different can be
 deadly."
 )
 harry_potter_4.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-harry_potter_4.moods = [relax, light]
+harry_potter_4.moods = [wine, light]
 
 harry_potter_5 = UsersBook.create(
     user_id: camille.id,
@@ -172,7 +172,7 @@ price of unbearable sacrifice.
 His fate depends on them all."
 )
 harry_potter_5.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-harry_potter_5.moods = [relax, light]
+harry_potter_5.moods = [wine, light]
 
 
 harry_potter_6 = UsersBook.create(
@@ -198,7 +198,7 @@ price of unbearable sacrifice.
 His fate depends on them all."
 )
 harry_potter_6.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-harry_potter_6.moods = [relax, light]
+harry_potter_6.moods = [wine, light]
 
 
 harry_potter_7 = UsersBook.create(
@@ -312,7 +312,7 @@ impossibles ? Comment supporter le monde lorsqu’une simple bouchée provoque u
 séisme intérieur ?",
     )
 singuliere_tristesse.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-singuliere_tristesse.moods = [relax, light]
+singuliere_tristesse.moods = [wine, light]
 
 
 saga_harry_potter = UsersBook.create(
@@ -357,7 +357,7 @@ around the world.
 "
     )
 saga_harry_potter.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
-saga_harry_potter.moods = [relax, light]
+saga_harry_potter.moods = [wine, light]
 
 
 my_brilliant_friend = UsersBook.create(
@@ -370,7 +370,7 @@ my_brilliant_friend = UsersBook.create(
     description: "Book one in the series follows Lila and Elena from their first fateful meeting as ten-year-olds through their school years and adolescence.",
     )
 my_brilliant_friend.categories = [Category.find_by(name: "fiction")]
-my_brilliant_friend.moods = [relax]
+my_brilliant_friend.moods = [wine]
 
 
 
@@ -463,7 +463,7 @@ médecins. Il lui tiendra compagnie jusqu'à ce qu'elle meure et même au-delà 
 la mort.."
 )
 vie_devant_soi.categories = [Category.find_by(name: "fiction")]
-vie_devant_soi.moods = [paris, relax]
+vie_devant_soi.moods = [paris, wine]
 
 
 the_phantom_tollbooth = UsersBook.create(
@@ -477,7 +477,7 @@ the_phantom_tollbooth = UsersBook.create(
     Life is far from dull. In fact, it’s exciting beyond his wildest dreams. . . ",
     )
 the_phantom_tollbooth.categories = [Category.find_by(name: "children"), Category.find_by(name: "young adult")]
-the_phantom_tollbooth.moods = [relax]
+the_phantom_tollbooth.moods = [wine]
 
 
 the_hate_you_give = UsersBook.create(
@@ -490,7 +490,7 @@ the_hate_you_give = UsersBook.create(
     description: "Sixteen-year-old Starr Carter moves between two worlds: the poor neighborhood where she lives and the fancy suburban prep school she attends. The uneasy balance between these worlds is shattered when Starr witnesses the fatal shooting of her childhood best friend Khalil at the hands of a police officer. Khalil was unarmed. Soon afterward, his death is a national headline. Some are calling him a thug, maybe even a drug dealer and a gangbanger. Protesters are taking to the streets in Khalil’s name. Some cops and the local drug lord try to intimidate Starr and her family. What everyone wants to know is: what really went down that night? And the only person alive who can answer that is Starr. But what Starr does—or does not—say could upend her community. It could also endanger her life. And don't miss On the Come Up, Angie Thomas's powerful follow-up to The Hate U Give.",
     )
 the_hate_you_give.categories = [Category.find_by(name: "young adult")]
-the_hate_you_give.moods = [relax]
+the_hate_you_give.moods = [wine]
 
 
 miss_peregrines_home_for_peculiar_children = UsersBook.create(
@@ -590,7 +590,7 @@ pride_and_prejudice = UsersBook.create(
     description: "Austen’s most celebrated novel tells the story of Elizabeth Bennet, a bright, lively young woman with four sisters, and a mother determined to marry them to wealthy men. At a party near the Bennets’ home in the English countryside, Elizabeth meets the wealthy, proud Fitzwilliam Darcy. Elizabeth initially finds Darcy haughty and intolerable, but circumstances continue to unite the pair. Mr. Darcy finds himself captivated by Elizabeth’s wit and candor, while her reservations about his character slowly vanish. The story is as much a social critique as it is a love story, and the prose crackles with Austen’s wry wit.",
     )
 pride_and_prejudice.categories = [Category.find_by(name: "romance"), Category.find_by(name: "classic")]
-pride_and_prejudice.moods = [light, relax]
+pride_and_prejudice.moods = [light, wine]
 
 
 sense_and_sensibility = UsersBook.create(
@@ -603,7 +603,7 @@ sense_and_sensibility = UsersBook.create(
     description: "Marianne Dashwood wears her heart on her sleeve, and when she falls in love with the dashing but unsuitable John Willoughby she ignores her sister Elinor's warning that her impulsive behaviour leaves her open to gossip and innuendo. Meanwhile Elinor, always sensitive to social convention, is struggling to conceal her own romantic disappointment, even from those closest to her. Through their parallel experience of love—and its threatened loss—the sisters learn that sense must mix with sensibility if they are to find personal happiness in a society where status and money govern the rules of love.",
     )
 sense_and_sensibility.categories = [Category.find_by(name: "romance"), Category.find_by(name: "classic")]
-sense_and_sensibility.moods = [light, relax]
+sense_and_sensibility.moods = [light, wine]
 
 jane_eyre = UsersBook.create(
     user_id: camille.id,
