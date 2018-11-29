@@ -68,7 +68,7 @@
   <h4>oh, all the moods that you have!</h4>
 
   <div class="row">
-    <% @moods.sample(3).each do |mood| %>
+    <% @moods[-3..-1].each do |mood| %>
 
     <%= render "partials/mood-card", mood: mood %>
 

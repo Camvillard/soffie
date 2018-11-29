@@ -4,7 +4,7 @@
   background: white;
   width: 90% !important;
   margin: auto;
-  height: 360px;
+  height: 300px;
   display: flex !important;
   flex-direction: column;
   justify-content: center !important;
@@ -12,9 +12,11 @@
 }
 
 .book-image {
+  padding: 10px;
   align-self: center;
   flex: 0 1 40%;
   img {
+      padding: 10px;
     width: 100%;
   }
 }
