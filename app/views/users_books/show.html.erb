@@ -35,6 +35,12 @@
           <h4><%= @users_book.author %></h4>
           <p><%= simple_format(@users_book.description) %></p>
           <p>you've just started the book, <%= @users_book.num_pages %> pages left to read</p>
+
+          <!-- Reading Progress Bar -->
+         <p><%= @user_book.completed_pages%> out of <%=  @user_book.num_pages%> pages</p>
+            <div class="bar">
+              <div class="progress-bar" data-completedpages="<%=  @user_book.completed_pages %>" data-bookpages="<%=  @user_book.num_pages %>"></div>
+            </div>
         </div>
 
         <div id="single-book-actions">
