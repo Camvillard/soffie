@@ -1,7 +1,8 @@
 <div class="container">
 
   <h1>Add a new mood</h1>
-  <h6>Choose within your books </h6>
+  <h6>A « mood » describes, in your own words, a state of mind you’re in.
+Add your own moods here and associate them to relevant books in your pile.</h6>
 
   <%= form_tag moods_path, method: 'post', id: "new-mood" do %>
      <input type="text" name='mood[name]' placeholder="name of the mood">
