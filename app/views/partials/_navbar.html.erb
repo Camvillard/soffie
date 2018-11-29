@@ -14,34 +14,38 @@
        <span class="menu-bars"><i class="fas fa-times"></i></span>
     </button>
 
-    <div id="menu-content">
+    <div class="container">
 
-      <div id="menu-header">
-        <h1>hello <%= current_user.first_name %>!</h1>
-        <h4>nice to see you</h4>
-        <p>your last finished book was: <span class="accent-text">Harry Potter and the Philosopher's Stone</span></p>
-      </div>
+      <div id="menu-content">
 
-      <div id="menu-actions">
-        <ul>
-          <li><%= link_to 'update my profile', edit_user_registration_path, class: 'cta-big-white' %></li>
-          <li><%= link_to 'take the reading test', speed_test_path, class: 'cta-big-white' %>
-            <p>Your average reading time is now: <%= current_user.reading_speed %> words per minute. <span class="accent-text">How do we calculate that?</span></p>
-          </li>
-          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'cta-big-white' %></li>
-        </ul>
-      </div>
+        <div id="menu-header">
+          <h1>hello <%= current_user.first_name %>!</h1>
+          <h4>nice to see you</h4>
+          <p>your last finished book was: <span class="accent-text">Harry Potter and the Philosopher's Stone</span></p>
+        </div>
 
-      <div id="menu-footer">
-        <%= link_to 'contact', '#' %>
-        <%= link_to 'about', '#' %>
-      </div>
+        <div id="menu-actions">
+          <ul>
+            <li><%= link_to 'update my profile', edit_user_registration_path, class: 'cta-big-white' %></li>
+            <li><%= link_to 'take the reading test', speed_test_path, class: 'cta-big-white' %>
+              <p>Your average reading time is now: <%= current_user.reading_speed %> words per minute. <span class="accent-text">How do we calculate that?</span></p>
+            </li>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'cta-big-white' %></li>
+          </ul>
+        </div>
+      </div> <!-- end of #menu-content -->
 
-    </div> <!-- end of #menu-content -->
+    </div> <!-- end of container -->
 
-  </div>
 
-</div>
+    <div id="menu-footer">
+      <%= link_to 'contact', '#' %>
+      <%= link_to 'about', '#' %>
+    </div> <!-- end of menu-footer -->
+
+  </div> <!-- end of menu-container -->
+
+</div> <!-- end of #menu-container -->
 
 
 

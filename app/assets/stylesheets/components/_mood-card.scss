@@ -21,28 +21,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   h4 {
     color: $dark-blue;
     font-size: 2rem;
     font-weight: $font-weight-bold;
-
   }
+
   h6 {
     font-size: 1.6rem;
   }
-  .mood-details {
+
+  .mood-details,
+  .home-mood-details {
     display:none;
   }
+
   &:hover .mood-details {
     display: flex;
+  }
+  &:hover .home-mood-details {
+    display: inline;
   }
 }
 
 
 .mood-title {
-  // position: absolute;
-  // top: 20px;
-  // left: -30px;
   h4 span.mood-title {
     background: $dark-blue;
     color: white;
@@ -83,10 +87,17 @@
   }
 }
 
+.home-mood-details {
+  background: white;
+  p {
+    color: $dark-blue;
+    font-family: $accent-font;
+    font-style: italic;
+    margin: 2px 0px;
+  }
+}
+
 .mood-actions {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
   a {
     margin: 0px auto;
     border-bottom: none;

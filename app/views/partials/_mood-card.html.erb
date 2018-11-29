@@ -23,35 +23,38 @@
 </div> <!-- end of modal -->
 
 <div class="col-xs-12 col-md-6 col-lg-3">
-  <%= link_to mood_path(mood) do %>
     <div class="mood-card">
 
       <div class="mood-content" style="background-image: linear-gradient(-225deg, rgba(16,19,28,0.4) 0%, rgba(16,19,28,0.4) 50%), url(<%= mood.image_url %>)">
 
         <div class="mood-title">
+          <%= link_to mood_path(mood) do %>
           <h4> <span class="mood-title"><%= mood.name %></span></h4>
+          <% end %>
         </div>
 
-        <% if mood.users_books.size != 0 %>
-          <p><%= mood.users_books.size %> books in that mood</p>
-        <% else %>
-          <p>seems that there is no book yet in your mood!</p>
-        <% end %>
+        <div class="home-mood-details">
+          <!-- displays the number of books if there is books in the mood -->
+          <% if mood.users_books.size != 0 %>
+            <p>
+              <%= pluralize(mood.users_books.size, 'book') %> in that mood
+            </p>
+          <% else %>
+            <p>seems that there is no book yet in your mood!</p>
+          <% end %>
+
+          <div class="mood-actions">
+            <!-- Button trigger modal -->
+            <button type="button" class="share-icons" data-toggle="modal" data-target="#add-book-modal-<%= mood.id %>">add a book</button>
+
+          </div> <!-- end of mood actions -->
+
+        </div> <!-- end of mood details -->
+
       </div> <!-- end of mood-content -->
 
-      <div class="mood-actions">
-        <!-- Button trigger modal -->
-        <button type="button" class="share-icons" data-toggle="modal" data-target="#add-book-modal-<%= mood.id %>">
-          <i class="fas fa-plus-circle"></i>
-        </button>
-
-        <%= link_to '#', class: 'share-icons' do %>
-          <i class="fas fa-share"></i>
-        <% end %>
-      </div> <!-- end of mood actions -->
 
     </div> <!-- end of mood-card -->
-  <% end %>
 
 </div> <!-- end of col -->
 
