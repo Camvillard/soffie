@@ -540,7 +540,7 @@ gone_girl = UsersBook.create(
     description: "When a woman goes missing on her fifth wedding anniversary, her diary reveals hidden turmoil in her marriage, while her husband, desperate to clear himself of suspicion, realizes that something more disturbing than murder may have occurred.",
     )
 gone_girl.categories = [Category.find_by(name: "thriller")]
-gone_girl.categories = [intense]
+gone_girl.moods = [intense]
 
 
 
