@@ -2,14 +2,19 @@
   <div class="row">
     <h1> Welcome, <%= current_user.first_name if current_user.first_name.present? %>!</h1>
     <h4>you have <%= pluralize(current_user.users_books.size, "book") %> in your pile.</h4>
-    <%#= link_to "add a new book", new_users_book_path, class: 'cta-big' %>
   </div>
 </div>  <!-- end of container -->
 
 <div id="carousel-container">
-  <div class="container">
+  <div class="container" id="books-stats">
 
-  <p>currently reading: <%= pluralize(@books_in_progress.size, "book") %></p>
+    <ul>
+      <li>currently reading <%= pluralize(@books_in_progress.size, "book") %></li>
+      <li>there are <%= @pages_to_read %> pages to read in your pile</li>
+      <li>that means <%= (@pages_to_read * current_user.reading_speed.to_i) / 3600 %> hours of reading </li>
+      <li></li>
+    </ul>
+
   </div>
 
 

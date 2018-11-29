@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     @users_books = UsersBook.where(user_id: current_user.id)
     @books_in_progress = @users_books.where(status: "Reading in progress")
     @moods = Mood.all
+    @pages_to_read = calculate_total_pages(UsersBook.all)
     end
   end
 
@@ -39,12 +40,12 @@ class PagesController < ApplicationController
     redirect_to root_path # TODO: redirect somewhere else
   end
 
-  def calculate_total_pages
-    all_books = UsersBook.all
-    @pages_to_read = 0
-    all_books.each do |book|
-      @pages_to_read += book.num_pages
+  def calculate_total_pages(books)
+    pages_to_read = 0
+    books.each do |book|
+      pages_to_read += book.num_pages
     end
+    pages_to_read
   end
 end
 #
