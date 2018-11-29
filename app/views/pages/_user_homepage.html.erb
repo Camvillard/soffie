@@ -1,23 +1,26 @@
-<div class="container">
-
-  <h1> welcome, <%= current_user.first_name%></h1>
-  <h4>you have <%= pluralize(current_user.users_books.size, "book") %> in your pile.</h4>
-  <p>you are currently reading (...) books and you have <%= pluralize(@moods.size, "mood") %> created.</p>
-
+<div class="container" id="homepage-title">
+  <div class="row">
+    <h1> Welcome, <%= current_user.first_name if current_user.first_name.present? %>!</h1>
+    <h4>you have <%= pluralize(current_user.users_books.size, "book") %> in your pile.</h4>
+    <%#= link_to "add a new book", new_users_book_path, class: 'cta-big' %>
+  </div>
 </div>  <!-- end of container -->
 
 <div id="carousel-container">
+  <div class="container">
 
-  <!-- <div class="container"> -->
+  <p>currently reading: <%= pluralize(@books_in_progress.size, "book") %></p>
+  </div>
+
 
   <div class="book-carousel">
     <% @users_books.each do |book| %>
       <div class="book-card">
 
         <div class="book-image">
-        <% if book.image_url.present? %>
-          <%= image_tag book.image_url %>
-        <% end %>
+          <% if book.image_url.present? %>
+            <%= image_tag book.image_url %>
+          <% end %>
         </div>
 
         <div class="book-carousel-description">
@@ -49,12 +52,13 @@
         </div> <!-- end of book carousel description -->
       </div>
     <% end %>
-  </div>
+  </div> <!-- end of book-carousel -->
 
 </div> <!-- end of carousel container -->
 
 
-<div class="container">
+
+<div class="container" id="all-moods">
 
   <h4>oh, all the moods that you have!</h4>
 
@@ -72,7 +76,6 @@
 
           </div> <!-- end of mood-card -->
         <% end %>
-
 
     </div> <!-- end of col -->
 
@@ -95,6 +98,7 @@
   <% end %>
 
 </div>
+
 
 <%= javascript_pack_tag 'soffie-update-form' %>
 <%= javascript_pack_tag 'select2' %>
