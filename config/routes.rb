@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   patch '/updating_users_reading_time', to: 'pages#updating_users_reading_time'
 
   get '/search_results', to: 'pages#search_results'
+  get '/about', to: 'pages#about'
+  get '/contact', to: 'pages#contact'
 
   patch '/update_completed_pages', to: 'users_books#update_completed_pages'
 

@@ -44,12 +44,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    algoliasearch (1.24.0)
-      httpclient (~> 2.8, >= 2.8.3)
-      json (>= 1.5.1)
-    algoliasearch-rails (1.20.4)
-      algoliasearch (>= 1.17.0, < 2.0.0)
-      json (>= 1.5.1)
     arel (9.0.0)
     autoprefixer-rails (9.3.1)
       execjs
@@ -93,7 +87,6 @@ GEM
     hashie (2.1.2)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    httpclient (2.8.3)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
@@ -257,7 +250,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  algoliasearch-rails
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)

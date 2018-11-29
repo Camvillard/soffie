@@ -17,25 +17,36 @@
   position: relative;
   padding: 12px;
   height: 320px;
-
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   h4 {
     color: $dark-blue;
     font-size: 2rem;
     font-weight: $font-weight-bold;
   }
+
   h6 {
     font-size: 1.6rem;
+  }
+
+  .mood-details,
+  .home-mood-details {
+    display:none;
+  }
+
+  &:hover .mood-details {
+    display: flex;
+  }
+  &:hover .home-mood-details {
+    display: inline;
   }
 }
 
 
 .mood-title {
-  // position: absolute;
-  // top: 20px;
-  // left: -30px;
   h4 span.mood-title {
     background: $dark-blue;
     color: white;
@@ -53,7 +64,6 @@
   outline: 2px solid white;
   outline-offset: -10px;
   background: $neon-orange;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -77,12 +87,44 @@
   }
 }
 
+.home-mood-details {
+  background: white;
+  p {
+    color: $dark-blue;
+    font-family: $accent-font;
+    font-style: italic;
+    margin: 2px 0px;
+  }
+}
+
 .mood-actions {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
   a {
     margin: 0px auto;
     border-bottom: none;
   }
 }
+
+.mood-actions {
+  display:none;
+}
+.mood-card:hover .mood-actions {
+  display: inline;
+}
+
+#last-mood-card {
+  background: $dark-blue;
+  margin: 10px auto 20px;
+  height: 320px;
+  outline-offset: -12px;
+  offset: 2px solid white;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  h6 {
+    color: white;
+    font-family: $body-font;
+    text-transform: uppercase;
+  }
+}
+
+

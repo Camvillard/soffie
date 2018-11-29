@@ -18,7 +18,8 @@ $(document).ready(function() {
   });
 
   $('.select2-update-selection').select2({
-    single: "single"
+    single: "single",
+    "id": "test-id"
   });
 
 });

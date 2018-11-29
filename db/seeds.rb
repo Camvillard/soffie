@@ -9,10 +9,10 @@ User.delete_all
 
 puts 'planting seeds for soffie...'
 
-esteban = User.create(email: 'esteban@soffie.info', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes', reading_speed: "190")
-claire = User.create(email: 'claire@soffie.info', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman', reading_speed: "185")
-camille = User.create(email: 'camille@soffie.info', password: 'wagonwagon', first_name: 'camille', last_name: 'villard', reading_speed: "220")
-serge = User.create(email: 'serge@soffie.info', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc', reading_speed: "210" )
+# esteban = User.create(email: 'esteban@soffie.info', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes', reading_speed: "190")
+# claire = User.create(email: 'claire@soffie.info', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman', reading_speed: "185")
+camille = User.create(email: 'ca.villard@gmail.com', password: 'wagonwagon', first_name: 'camille', last_name: 'villard', reading_speed: "220")
+# serge = User.create(email: 'serge@soffie.info', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc', reading_speed: "210" )
 
 
 Category.create(name: 'fiction')
@@ -36,11 +36,12 @@ Category.create(name: 'science fiction')
 Category.create(name: 'children')
 Category.create(name: 'travel')
 
-Mood.create(name: "relaxing with a glass of whatever you need it to be", description: "pretty self-explanatory.")
-Mood.create(name: "reading for after an intense 9 weeks coding bootcamp", description: "perfect for an over-used brain that cries for some light reading.")
-Mood.create(name: "learning graphic design things", description: "useful for those you still use Comic Sans MS and actually think it's a good idea.")
-Mood.create(name: "paris is always a good idea", description: "bread, cheese & parisian stories")
-Mood.create(name: "stories that made you cry", description: "excellent for wintertime")
+Mood.create(name: "relaxing with a glass of whatever you need it to be", description: "pretty self-explanatory.", user: camille)
+Mood.create(name: "reading for after an intense 9 weeks coding bootcamp", description: "perfect for an over-used brain that cries for some light reading.", user: camille)
+Mood.create(name: "learning graphic design things", description: "useful for those you still use Comic Sans MS and actually think it's a good idea.", user: camille)
+Mood.create(name: "paris is always a good idea", description: "bread, cheese & parisian stories", user: camille)
+Mood.create(name: "stories that made you cry", description: "excellent for wintertime", user: camille)
+Mood.create(name: "books for when your brain is fully available", description: "excellent for wintertime", user: camille)
 
 
 relax = Mood.find_by(name: "relaxing with a glass of whatever you need it to be")
@@ -48,6 +49,8 @@ light = Mood.find_by(name: "reading for after an intense 9 weeks coding bootcamp
 learn = Mood.find_by(name: "learning graphic design things")
 paris = Mood.find_by(name: "paris is always a good idea")
 cry = Mood.find_by(name: "stories that made you cry")
+intense = Mood.find_by(name: "books for when your brain is fully available")
+
 
 
 harry_potter_1 = UsersBook.create(
@@ -127,6 +130,76 @@ and poignant third installment of the beloved series.
 harry_potter_3.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
 harry_potter_3.moods = [relax, light]
 
+harry_potter_4 = UsersBook.create(
+    user_id: camille.id,
+    title: "Harry Potter and the Goblet of Fire",
+    author: "JK Rowling",
+    isbn: 9780439139601,
+    image_url: "https://images.gr-assets.com/books/1361482611l/6.jpg",
+    num_pages: 734,
+    description:"Harry Potter is midway through his training as a wizard and his coming of age.
+Harry wants to get away from the pernicious Dursleys and go to the International
+Quidditch Cup. He wants to find out about the mysterious event that's supposed
+to take place at Hogwarts this year, an event involving two other rival schools
+of magic, and a competition that hasn't happened for a hundred years. He wants
+to be a normal, fourteen-year-old wizard. But unfortunately for Harry Potter,
+he's not normal - even by wizarding standards. And in his case, different can be
+deadly."
+)
+harry_potter_4.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
+harry_potter_4.moods = [relax, light]
+
+harry_potter_5 = UsersBook.create(
+    user_id: camille.id,
+    title: "Harry Potter and the Goblet of Fire",
+    author: "JK Rowling",
+    isbn: 9780439358071,
+    image_url: "https://images.gr-assets.com/books/1542550214l/2.jpg",
+    num_pages: 870,
+    description:"There is a door at the end of a silent corridor. And it’s haunting Harry
+Pottter’s dreams. Why else would he be waking in the middle of the night,
+screaming in terror?
+Harry has a lot on his mind for this, his fifth year at Hogwarts: a Defense
+Against the Dark Arts teacher with a personality like poisoned honey; a big
+surprise on the Gryffindor Quidditch team; and the looming terror of the
+Ordinary Wizarding Level exams. But all these things pale next to the growing
+threat of He-Who-Must-Not-Be-Named---a threat that neither the magical
+government nor the authorities at Hogwarts can stop.
+As the grasp of darkness tightens, Harry must discover the true depth and
+strength of his friends, the importance of boundless loyalty, and the shocking
+price of unbearable sacrifice.
+
+His fate depends on them all."
+)
+harry_potter_5.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
+harry_potter_5.moods = [relax, light]
+
+
+harry_potter_6 = UsersBook.create(
+    user_id: camille.id,
+    title: "Harry Potter and the Half-Blood Prince",
+    author: "JK Rowling",
+    isbn: 9780439785969,
+    image_url: "https://images.gr-assets.com/books/1361039191l/1.jpg",
+    num_pages: 652,
+    description:"There is a door at the end of a silent corridor. And it’s haunting Harry
+Pottter’s dreams. Why else would he be waking in the middle of the night,
+screaming in terror?
+Harry has a lot on his mind for this, his fifth year at Hogwarts: a Defense
+Against the Dark Arts teacher with a personality like poisoned honey; a big
+surprise on the Gryffindor Quidditch team; and the looming terror of the
+Ordinary Wizarding Level exams. But all these things pale next to the growing
+threat of He-Who-Must-Not-Be-Named---a threat that neither the magical
+government nor the authorities at Hogwarts can stop.
+As the grasp of darkness tightens, Harry must discover the true depth and
+strength of his friends, the importance of boundless loyalty, and the shocking
+price of unbearable sacrifice.
+
+His fate depends on them all."
+)
+harry_potter_6.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
+harry_potter_6.moods = [relax, light]
+
 
 harry_potter_7 = UsersBook.create(
     user_id: camille.id,
@@ -167,7 +240,7 @@ tentatives inachevées. Mais il serait cet élan, de moi vers elle, hésitant et
 inabouti."
     )
 rien_ne_soppose.categories = [Category.find_by(name: "fiction"), Category.find_by(name: "tragedy")]
-rien_ne_soppose.moods = [cry]
+rien_ne_soppose.moods = [cry, intense]
 
 heures_souterraines = UsersBook.create(
     user_id: camille.id,
@@ -236,10 +309,7 @@ point de disparaître. Pour ces superhéros du quotidien, ce don est un fardeau.
 Chacun pense être affligé d’un mal unique, d’un pouvoir qu’il faut passer sous
 silence. Comment vivre lorsque les petits arrangements avec la vérité sont
 impossibles ? Comment supporter le monde lorsqu’une simple bouchée provoque un
-séisme intérieur ? Dans ce texte original, proche des films de Wes Anderson ou
-de Michel Gondry, Aimee Bender met une fois de plus l’imagination au pouvoir.
-Comme le singulier gâteau de Rose, les romans d’Aimee Bender sont recouverts
-d’un succulent glaçage, fait d’humour et de fantaisie.",
+séisme intérieur ?",
     )
 singuliere_tristesse.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
 singuliere_tristesse.moods = [relax, light]
@@ -252,10 +322,42 @@ saga_harry_potter = UsersBook.create(
     isbn: 9780747538486,
     image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
     num_pages: 3407,
-    # reading_time: "312308.4",
-    description: "The whole Harry Potter saga."
+    description: "Harry Potter is a series of fantasy novels written by British author J. K.
+Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his
+friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts
+School of Witchcraft and Wizardry. The main story arc concerns Harry's struggle
+against Lord Voldemort, a dark wizard who intends to become immortal, overthrow
+the wizard governing body known as the Ministry of Magic, and subjugate all
+wizards and Muggles (non-magical people).
+
+The series was originally published in English by two major publishers,
+Bloomsbury in the United Kingdom and Scholastic Press in the United States. The
+original seven books were adapted into an eight- part film series by Warner
+Bros. Pictures, which is the third highest-grossing film series of all time as
+of February 2018. In 2016, the total value of the Harry Potter franchise was
+estimated at $25 billion, making Harry Potter one of the highest-grossing media
+franchises of all time.
+
+A series of many genres, including fantasy, drama, coming of age, and the
+British school story (which includes elements of mystery, thriller, adventure,
+horror, and romance), the world of Harry Potter explores numerous themes and
+includes many cultural meanings and references. According to Rowling, the main
+theme is death. Other major themes in the series include prejudice, corruption,
+and madness.
+
+The success of the books and films has allowed the Harry Potter franchise to
+expand, with numerous derivative works, a travelling exhibition that premiered
+in Chicago in 2009, a studio tour in London that opened in 2012, a digital
+platform on which J.K. Rowling updates the series with new information and
+insight, and a pentalogy of spin-off films premiering in November 2016 with
+Fantastic Beasts and Where to Find Them, among many other developments. Most
+recently, themed attractions, collectively known as The Wizarding World of Harry
+Potter, have been built at several Universal Parks & Resorts amusement parks
+around the world.
+"
     )
 saga_harry_potter.categories = [Category.find_by(name: "fiction"),Category.find_by(name: "young adult")]
+saga_harry_potter.moods = [relax, light]
 
 
 my_brilliant_friend = UsersBook.create(
@@ -295,6 +397,21 @@ farenheit_451 = UsersBook.create(
     )
 farenheit_451.categories = [Category.find_by(name: "fiction"), Category.find_by(name: "science fiction"), Category.find_by(name: "dystopia")]
 
+beaux_quartiers = UsersBook.create(
+    user_id: camille.id,
+    title: "Les beaux quartiers",
+    author: "Louis Aragon",
+    isbn: 9782070362417,
+    image_url: "https://images.gr-assets.com/books/1186082926l/1628807.jpg",
+    num_pages: 624,
+    description:"Ce roman est l'histoire de deux frères, Edmond et Armand Barbentane. Le premier
+devra sa fortune à l'abandon qu'un homme riche lui fait de sa maîtresse. Armand,
+lui, abandonnant les siens, est devenu ouvrier dans une usine de Levallois-
+Perret : son avenir s'en trouvera changé."
+)
+
+beaux_quartiers.categories = [Category.find_by(name: "classic"),Category.find_by(name: "fiction")]
+beaux_quartiers.moods = [paris, wine, intense]
 
 
 shining = UsersBook.create(
@@ -313,7 +430,7 @@ forces gathering around the Overlook is Danny Torrance, a uniquely gifted five-
 year-old."
 )
 shining.categories = [Category.find_by(name: "horror"), Category.find_by(name: "thriller"), Category.find_by(name: "classic")]
-
+shining.moods = [intense]
 
 
 where_the_wild_things_are = UsersBook.create(
@@ -328,6 +445,25 @@ where_the_wild_things_are = UsersBook.create(
 where_the_wild_things_are.categories = [Category.find_by(name: "children")]
 where_the_wild_things_are.moods = [light]
 
+vie_devant_soi = UsersBook.create(
+    user_id: camille.id,
+    title: "La vie devant soi",
+    author: "Romain Gary",
+    isbn: 9782070373628,
+    image_url: "https://images.gr-assets.com/books/1327936672l/635150.jpg",
+    num_pages: 273,
+    description: "Signé Ajar, ce roman reçut le prix Goncourt en 1975. Histoire d'amour d'un petit
+garçon arabe pour une très vieille femme juive : Momo se débat contre les six
+étages que Madame Rosa ne veut plus monter et contre la vie parce que ' ça ne
+pardonne pas ' et parce qu'il n'est ' pas nécessaire d'avoir des raisons pour
+avoir peur '. Le petit garçon l'aidera à se cacher dans son ' trou juif ', elle
+n'ira pas mourir à l'hôpital et pourra ainsi bénéficier du droit sacré ' des
+peuples à disposer d'eux-mêmes ' qui n'est pas respecté par l'Ordre des
+médecins. Il lui tiendra compagnie jusqu'à ce qu'elle meure et même au-delà de
+la mort.."
+)
+vie_devant_soi.categories = [Category.find_by(name: "fiction")]
+vie_devant_soi.moods = [paris, relax]
 
 
 the_phantom_tollbooth = UsersBook.create(
@@ -340,6 +476,8 @@ the_phantom_tollbooth = UsersBook.create(
     description: "For Milo, everything’s a bore. When a tollbooth mysteriously appears in his room, he drives through only because he’s got nothing better to do. But on the other side, things seem different. Milo visits the Island of Conclusions (you get there by jumping), learns about time from a ticking watchdog named Tock, and even embarks on a quest to rescue Rhyme and Reason! Somewhere along the way, Milo realizes something astonishing.
     Life is far from dull. In fact, it’s exciting beyond his wildest dreams. . . ",
     )
+the_phantom_tollbooth.categories = [Category.find_by(name: "children"), Category.find_by(name: "young adult")]
+the_phantom_tollbooth.moods = [relax]
 
 
 the_hate_you_give = UsersBook.create(
@@ -352,6 +490,7 @@ the_hate_you_give = UsersBook.create(
     description: "Sixteen-year-old Starr Carter moves between two worlds: the poor neighborhood where she lives and the fancy suburban prep school she attends. The uneasy balance between these worlds is shattered when Starr witnesses the fatal shooting of her childhood best friend Khalil at the hands of a police officer. Khalil was unarmed. Soon afterward, his death is a national headline. Some are calling him a thug, maybe even a drug dealer and a gangbanger. Protesters are taking to the streets in Khalil’s name. Some cops and the local drug lord try to intimidate Starr and her family. What everyone wants to know is: what really went down that night? And the only person alive who can answer that is Starr. But what Starr does—or does not—say could upend her community. It could also endanger her life. And don't miss On the Come Up, Angie Thomas's powerful follow-up to The Hate U Give.",
     )
 the_hate_you_give.categories = [Category.find_by(name: "young adult")]
+the_hate_you_give.moods = [relax]
 
 
 miss_peregrines_home_for_peculiar_children = UsersBook.create(
@@ -389,7 +528,7 @@ the_girl_on_the_train = UsersBook.create(
     description: "Three women, three men, connected through marriage or infidelity. Each is to blame for something. But only one is a killer in this #1 New York Times bestselling psychological thriller about human frailty and obsession. Just what goes on in the houses you pass by every day? Rachel takes the same commuter train every morning and evening, rattling over the same junctions, flashing past the same townhouses.The train stops at the same signal every day, and she sees the same couple, breakfasting on their roof terrace. Jason and Jess, as she calls them, seem so happy. Then one day Rachel sees someone new in their garden. Soon after, Rachel sees the woman she calls Jess on the news. Jess has disappeared. Through the ensuing police investigation, Rachel is drawn deeper into the lives of the couple she learns are really Megan and Scott Hipwell. As she befriends Scott, Rachel pieces together what really happened the day Megan disappeared. But when Megan's body is found, Rachel finds herself the chief suspect in the case. Plunged into a world of betrayals, secrets and deceptions, Rachel must confront the facts about her own past and her own failed marriage. A sinister and twisting story that will keep you guessing at every turn, The Girl on the Train is a high-speed chase for the truth.",
     )
 the_girl_on_the_train.categories = [Category.find_by(name: "thriller"), Category.find_by(name: "mystery")]
-
+the_girl_on_the_train.moods = [light]
 
 gone_girl = UsersBook.create(
     user_id: camille.id,
@@ -401,6 +540,8 @@ gone_girl = UsersBook.create(
     description: "When a woman goes missing on her fifth wedding anniversary, her diary reveals hidden turmoil in her marriage, while her husband, desperate to clear himself of suspicion, realizes that something more disturbing than murder may have occurred.",
     )
 gone_girl.categories = [Category.find_by(name: "thriller")]
+gone_girl.categories = [intense]
+
 
 
 big_little_lies = UsersBook.create(
@@ -449,7 +590,7 @@ pride_and_prejudice = UsersBook.create(
     description: "Austen’s most celebrated novel tells the story of Elizabeth Bennet, a bright, lively young woman with four sisters, and a mother determined to marry them to wealthy men. At a party near the Bennets’ home in the English countryside, Elizabeth meets the wealthy, proud Fitzwilliam Darcy. Elizabeth initially finds Darcy haughty and intolerable, but circumstances continue to unite the pair. Mr. Darcy finds himself captivated by Elizabeth’s wit and candor, while her reservations about his character slowly vanish. The story is as much a social critique as it is a love story, and the prose crackles with Austen’s wry wit.",
     )
 pride_and_prejudice.categories = [Category.find_by(name: "romance"), Category.find_by(name: "classic")]
-pride_and_prejudice.moods = [light]
+pride_and_prejudice.moods = [light, relax]
 
 
 sense_and_sensibility = UsersBook.create(
@@ -462,7 +603,7 @@ sense_and_sensibility = UsersBook.create(
     description: "Marianne Dashwood wears her heart on her sleeve, and when she falls in love with the dashing but unsuitable John Willoughby she ignores her sister Elinor's warning that her impulsive behaviour leaves her open to gossip and innuendo. Meanwhile Elinor, always sensitive to social convention, is struggling to conceal her own romantic disappointment, even from those closest to her. Through their parallel experience of love—and its threatened loss—the sisters learn that sense must mix with sensibility if they are to find personal happiness in a society where status and money govern the rules of love.",
     )
 sense_and_sensibility.categories = [Category.find_by(name: "romance"), Category.find_by(name: "classic")]
-sense_and_sensibility.moods = [light]
+sense_and_sensibility.moods = [light, relax]
 
 jane_eyre = UsersBook.create(
     user_id: camille.id,
@@ -476,6 +617,44 @@ But there is a terrifying secret inside the gloomy, forbidding Thornfield Hall. 
     )
 jane_eyre.categories = [Category.find_by(name: "romance"), Category.find_by(name: "classic")]
 jane_eyre.moods = [cry]
+
+nana = UsersBook.create(
+    user_id: camille.id,
+    title: "Nana",
+    author: "Emile Zola",
+    isbn: 9780140442632,
+    image_url: "https://images.gr-assets.com/books/1468320326l/448908.jpg",
+    num_pages: 470,
+    description: "Nana opens in 1867, the year of the World Fair, when Paris, thronged by a
+cosmopolitan elite, was a perfect target for Zola's scathing denunciation of
+hypocrisy and fin-de-siecle moral corruption. In this new translation, the fate
+of Nana—the Helen of Troy of the second Empire, and daughter of the laundress in
+L'Assommoir—is now rendered in racy, stylish English.
+")
+nana.categories = [Category.find_by(name: "classic")]
+nana.moods = [intense, paris]
+
+germinal = UsersBook.create(
+    user_id: camille.id,
+    title: "Germinal",
+    author: "Emile Zola",
+    isbn: 9780140447422,
+    image_url: "https://images.gr-assets.com/books/1388208755l/28407.jpg",
+    num_pages: 592,
+    description: "The thirteenth novel in Émile Zola’s great Rougon-Macquart sequence, Germinal
+expresses outrage at the exploitation of the many by the few, but also shows
+humanity’s capacity for compassion and hope.
+
+Etienne Lantier, an unemployed railway worker, is a clever but uneducated young
+man with a dangerous temper. Forced to take a back-breaking job at Le Voreux
+mine when he cannot get other work, he discovers that his fellow miners are ill,
+hungry, and in debt, unable to feed and clothe their families. When conditions
+in the mining community deteriorate even further, Lantier finds himself leading
+a strike that could mean starvation or salvation for all.
+")
+germinal.categories = [Category.find_by(name: "classic")]
+germinal.moods = [intense, paris]
+
 
 
 puts 'soffie is ready to search ^_^-b'
