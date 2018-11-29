@@ -8,43 +8,123 @@
 
 .mood-card {
   margin: 10px auto 20px;
-  background: lighten($peach-orange, 10%);
   height: 320px;
   position: relative;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-
+  background-size: cover;
 }
 
 .mood-content {
+  position: relative;
   padding: 12px;
+  height: 320px;
+  background-size: cover;
   display: flex;
   flex-direction: column;
-  // align-items: center;
   justify-content: space-between;
+
   h4 {
     color: $dark-blue;
     font-size: 2rem;
     font-weight: $font-weight-bold;
   }
+
   h6 {
     font-size: 1.6rem;
   }
-  p {
-    font-family: $accent-font;
-    font-style: italic;
+
+  .mood-details,
+  .home-mood-details {
+    display:none;
   }
 
+  &:hover .mood-details {
+    display: flex;
+  }
+  &:hover .home-mood-details {
+    display: inline;
+  }
+}
+
+
+.mood-title {
+  h4 span.mood-title {
+    background: $dark-blue;
+    color: white;
+    padding: 4px 4px 2px;
+    line-height: 1;
+  }
+}
+.mood-details {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 18px;
+  outline: 2px solid white;
+  outline-offset: -10px;
+  background: $neon-orange;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .sm-border-white {
+    // border: 3px solid red;
+    width: 80%;
+
+  }
+  h6 {
+    text-align: center;
+    color: white;
+    font-weight: $font-weight-bold;
+  }
+
+
+  p {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.home-mood-details {
+  background: white;
+  p {
+    color: $dark-blue;
+    font-family: $accent-font;
+    font-style: italic;
+    margin: 2px 0px;
+  }
 }
 
 .mood-actions {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
   a {
     margin: 0px auto;
     border-bottom: none;
   }
 }
+
+.mood-actions {
+  display:none;
+}
+.mood-card:hover .mood-actions {
+  display: inline;
+}
+
+#last-mood-card {
+  background: $dark-blue;
+  margin: 10px auto 20px;
+  height: 320px;
+  outline-offset: -12px;
+  offset: 2px solid white;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  h6 {
+    color: white;
+    font-family: $body-font;
+    text-transform: uppercase;
+  }
+}
+
+

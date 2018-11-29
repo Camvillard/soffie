@@ -1,0 +1,10 @@
+<h1>hello from search results</h1>
+
+
+<% @results.each do |result| %>
+  <% if result.searchable_type == "UsersBook" %>
+      <p><%= result.searchable.title %></p>
+  <% elsif result.searchable_type == "Mood" %>
+    <p><%= result.searchable.name %></p>
+  <% end %>
+<% end %>

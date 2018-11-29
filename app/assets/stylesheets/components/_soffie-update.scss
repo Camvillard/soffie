@@ -1,0 +1,81 @@
+#soffie-button {
+  position: fixed;
+  bottom: 6vh;
+  right: 4vw;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: $peach-orange;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 2px 2px 8px 3px rgba(212, 212, 212, .6);
+}
+
+#soffie-update-form {
+  position: fixed;
+  bottom: 9vh;
+  right: 7vw;
+  border-radius: 50%;
+  background-color: $light-gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 310px;
+  height: 310px;
+  padding: 10px;
+  box-shadow: 2px 2px 40px 3px rgba(105, 105, 105, .6);
+}
+
+form#update-book-form {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+
+  input[type="text"],
+  input[type="number"] {
+    width: 4rem;
+    background: $peach-orange;
+    height: 4rem;
+    border:none;
+    text-align: center;
+    color: $neon-orange;
+    padding-bottom: .2rem;
+    border-radius: 50%;
+  }
+
+  ::placeholder {
+    text-align: center;
+    color: white;
+  }
+
+  h6, p {
+    padding: 10px 20px 6px;
+  }
+  p {
+    text-transform: uppercase;
+  }
+}
+
+body#pages-home > .select2-container--open .select2-dropdown {
+  font-size: 1.2rem !important;
+}
+
+body#pages-home > .select2-container--default .select2-selection--single {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 0px;
+  font-size: 1.4rem;
+  padding: 3px;
+}
+
+.hidden {
+  display: none;
+  }
+
+#soffie-icon {
+  height: 53px;
+  width: 70px;
+}

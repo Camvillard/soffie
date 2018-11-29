@@ -60,27 +60,27 @@
 }
 
 
-#new-book-form .select2 {
-  width: 100% !important;
-  border: none;
-  border-bottom: 3px solid $dark-blue;
-  margin-bottom: 4rem;
+#new-book-form {
 
-  select {
+  .select2 {
+    width: 100% !important;
+    border: none;
+    border-bottom: 3px solid $dark-blue;
+    margin-bottom: 4rem;
+  }
+
+  .select2 select {
     font-size: 4rem !important;
     border: none !important;
+    background: red;
   }
-  input {
+
+  .select2 input {
     border: none;
     margin-bottom: 2rem;
+    height: 2.4rem;
   }
-}
 
-#new-book-form {
-  .select2-dropdown {
-    @include border-small($peach-orange);
-    font-size: 2.6rem;
-  }
   .select2-container--default .select2-selection--multiple .select2-selection__choice {
     padding: 6px 16px 3px;
     text-transform: uppercase;
@@ -92,3 +92,19 @@
   }
 
 }
+
+
+body#users_books-new > .select2-container--open .select2-dropdown {
+  font-size: 1.6rem !important;
+  color: $dark-blue;
+  @include border-small($peach-orange);
+  border-bottom: none;
+  text-transform: uppercase;
+}
+
+input.select2-search__field {
+  width: 100% !important;
+  // border: 4px solid red !important;
+}
+
+
