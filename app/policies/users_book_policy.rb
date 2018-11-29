@@ -32,4 +32,8 @@ class UsersBookPolicy < ApplicationPolicy
   def update?
     record.user == user
   end
+
+  def update_completed_pages?
+    true
+  end
 end

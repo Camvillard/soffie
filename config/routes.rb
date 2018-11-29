@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/search_results', to: 'pages#search_results'
 
+  patch '/update_completed_pages', to: 'users_books#update_completed_pages'
+
   resources :users_books, only: [:new, :create, :show, :update] do
     resources :reviews, only: [:create]
    end

@@ -77,6 +77,20 @@ class UsersBooksController < ApplicationController
     redirect_to root_path
   end
 
+  def update_completed_pages
+    users_book_id = params[:users_books].first
+    @users_book = UsersBook.find(users_book_id)
+
+    completed_pages = params[:book][:completed_pages]
+
+    @users_book.completed_pages = completed_pages
+    @users_book.save
+
+    authorize(@users_book)
+
+    redirect_to root_path
+  end
+
   private
 
   def add_category_to_a_book(book, categories)
@@ -112,7 +126,7 @@ class UsersBooksController < ApplicationController
   end
 
   def strong_params
-    params.require(:users_book).permit(:status, :completed_pages, :end_readingdate)
+    params.require(:users_book).permit(:status, :end_readingdate)
   end
 
 end
