@@ -2,8 +2,8 @@
   <div id="result-header">
     <h1>hola <%= current_user.first_name %> </h1>
     <h3>you want to read a
-      <% @categories.each do |category| %>
-        <span class="category" data-content="&"><%= category.name %></span>
+      <% @moods.each do |mood| %>
+        <span class="mood" data-content="&"><%= mood.name %></span>
       <% end %>
       and you have
       <% if params[:day] == "" || params[:hours] == "" %>
