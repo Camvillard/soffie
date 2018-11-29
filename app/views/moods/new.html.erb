@@ -1,0 +1,14 @@
+<h1>hello from new !</h1>
+
+<%= form_tag moods_path, method: 'post', id: "mood-modal-form" do %>
+
+         <input type="text" name='mood[name]' placeholder="name of the mood">
+         <input type="text" name='mood[description]' placeholder="description">
+         <h6>add some books to that mood</h6>
+         <%=  select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), class: "select2-mood-modal", id: "mood-modal" %>
+         <button type="submit" class="button-border-blue">create a mood</button>
+        <% end %>
+
+
+
+<%= javascript_pack_tag 'select2' %>
