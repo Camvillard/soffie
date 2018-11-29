@@ -36,14 +36,18 @@ form#update-book-form {
 
   input[type="text"],
   input[type="number"] {
-    width: 4rem;
-    background: $peach-orange;
-    height: 4rem;
     border:none;
     text-align: center;
     color: $neon-orange;
     padding-bottom: .2rem;
     border-radius: 50%;
+    background-color: $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 310px;
+    height: 310px;
+    padding: 10px;
   }
 
   ::placeholder {

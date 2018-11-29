@@ -43,10 +43,9 @@
 </div>
 <div class="container">
   <h5>Hola <%= @user.email.split('@')[0].capitalize %>!</h5>
-  <p>If you can read <%= @final_book.title %> at the pace you just determined, you should end your reading on <%= @final_book.end_readingdate.strftime("%A, %b %d") %>.</p>
+  <p>If you can read <%= @final_book.title %> at the pace you just determined, you should end your reading on <%= Date.parse(@final_book.end_readingdate).strftime("%A, %b %d") %>.</p>
   <p>Enjoy!</p>
   </div>
 <div class="container-button">
   <p><a class="button-peach" href="http://soffie-app.herokuapp.com">Visit me and update your reading status!</a></p>
 </div>
-
