@@ -88,7 +88,7 @@ class UsersBooksController < ApplicationController
 
     authorize(@users_book)
 
-    redirect_to root_path
+    redirect_to "#{root_path}#book-carousel"
   end
 
   private
