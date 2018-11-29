@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h1>Add a new mood</h1>
+  <h6>A « mood » describes, in your own words, a state of mind you’re in.
+Add your own moods here and associate them to relevant books in your pile.</h6>
+
+  <%= form_tag moods_path, method: 'post', id: "new-mood" do %>
+     <input type="text" name='mood[name]' placeholder="name of the mood">
+     <input type="text" name='mood[description]' placeholder="description">
+     <h6>add some books to that mood</h6>
+     <%=  select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), class: "select2-mood-modal", id: "new-mood-selection" %>
+     <button type="submit" class="button-border-blue">create a mood</button>
+  <% end %>
+
+</div>
+
+
+
+
+
+
+<%= javascript_pack_tag 'select2' %>

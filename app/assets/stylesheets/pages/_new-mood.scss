@@ -1,0 +1,60 @@
+/* ------ PAGES : NEW BOOK ------ */
+
+
+#moods-new {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .container {
+    width: 50vw;
+    margin: auto;
+  }
+}
+
+
+form#new-mood {
+
+
+input {
+  border: none;
+  @include horizontal-border(6px, $dark-blue);
+  margin: 4rem auto;
+  font-family: $headers-font;
+  font-weight: $font-weight-extrabold;
+  background: none;
+  padding-bottom: 1rem;
+  width: 100%;
+  display: block;
+  font-size: 3rem;
+}
+
+input:focus,
+input:hover,
+input:visited,
+input:active {
+  border: none;
+  outline-offset: 0px;
+  outline: none;
+  font-size: 3rem;
+  @include horizontal-border(6px, $dark-blue);
+}
+
+button {
+  display: block;
+}
+
+  ::placeholder {
+    margin: 4rem auto;
+    font-family: $headers-font;
+    color: $peach-orange;
+    font-size: 3rem;
+    font-style: normal !important;
+  }
+
+}
+
+#new-mood > span {
+  width: 100% !important;
+  display: block;
+}
