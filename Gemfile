@@ -8,7 +8,7 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 
-gem "algoliasearch-rails"
+# gem "algoliasearch-rails"
 gem "letter_opener", group: :development
 gem 'postmark-rails'
 gem 'pg_search'
