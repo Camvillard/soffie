@@ -66,21 +66,17 @@
     <% end %>
 
     <div class="col-xs-12 col-md-6 col-lg-3">
-      <div id="last-mood-card">
+        <%= link_to moods_path do %>
+          <div id="last-mood-card">
+            <h6>see all your moods</h6>
 
-        <div id="last-mood-content">
+          </div> <!-- end of mood-card -->
+        <% end %>
 
-          <%= link_to 'see all your moods', moods_path, class: 'cta-md' %>
-
-        </div> <!-- end of mood-content -->
-
-      </div> <!-- end of mood-card -->
 
     </div> <!-- end of col -->
 
   </div> <!-- end of row -->
-
-
 
 </div> <!-- end of container -->
 
@@ -100,12 +96,5 @@
 
 </div>
 
-
-
 <%= javascript_pack_tag 'soffie-update-form' %>
 <%= javascript_pack_tag 'select2' %>
-
-<div class="test"></div>
-
-
-

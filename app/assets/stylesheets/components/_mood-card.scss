@@ -25,6 +25,7 @@
     color: $dark-blue;
     font-size: 2rem;
     font-weight: $font-weight-bold;
+
   }
   h6 {
     font-size: 1.6rem;
@@ -103,19 +104,16 @@
   background: $dark-blue;
   margin: 10px auto 20px;
   height: 320px;
-  position: relative;
-  background-size: cover;
-}
-
-#last-mood-content {
-  position: relative;
-  padding: 12px;
-  height: 320px;
-  background-size: cover;
+  outline-offset: -12px;
+  offset: 2px solid white;
+  padding: 22px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  .cta-md {
+  align-items: center;
+  h6 {
     color: white;
+    font-family: $body-font;
+    text-transform: uppercase;
   }
 }
+
+

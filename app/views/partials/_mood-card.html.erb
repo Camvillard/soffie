@@ -22,37 +22,36 @@
 
 </div> <!-- end of modal -->
 
-
-
 <div class="col-xs-12 col-md-6 col-lg-3">
-  <div class="mood-card">
+  <%= link_to mood_path(mood) do %>
+    <div class="mood-card">
 
-    <div class="mood-content" style="background-image: url(<%= mood.image_url %>)">
+      <div class="mood-content" style="background-image: linear-gradient(-225deg, rgba(16,19,28,0.4) 0%, rgba(16,19,28,0.4) 50%), url(<%= mood.image_url %>)">
 
-      <h4><%= mood.name %></h4>
-      <h6><%#= mood.description %></h6>
+        <div class="mood-title">
+          <h4> <span class="mood-title"><%= mood.name %></span></h4>
+        </div>
 
-      <% if mood.users_books.size != 0 %>
-        <p>
-          <%= mood.users_books.size %> books in that mood
-        </p>
-      <% else %>
-        <p>seems that there is no book yet in your mood!</p>
-      <% end %>
-    </div> <!-- end of mood-content -->
+        <% if mood.users_books.size != 0 %>
+          <p><%= mood.users_books.size %> books in that mood</p>
+        <% else %>
+          <p>seems that there is no book yet in your mood!</p>
+        <% end %>
+      </div> <!-- end of mood-content -->
 
-    <div class="mood-actions">
-      <!-- Button trigger modal -->
-      <button type="button" class="share-icons" data-toggle="modal" data-target="#add-book-modal-<%= mood.id %>">
-        <i class="fas fa-plus-circle"></i>
-      </button>
+      <div class="mood-actions">
+        <!-- Button trigger modal -->
+        <button type="button" class="share-icons" data-toggle="modal" data-target="#add-book-modal-<%= mood.id %>">
+          <i class="fas fa-plus-circle"></i>
+        </button>
 
-      <%= link_to '#', class: 'share-icons' do %>
-        <i class="fas fa-share"></i>
-      <% end %>
-    </div> <!-- end of mood actions -->
+        <%= link_to '#', class: 'share-icons' do %>
+          <i class="fas fa-share"></i>
+        <% end %>
+      </div> <!-- end of mood actions -->
 
-  </div> <!-- end of mood-card -->
+    </div> <!-- end of mood-card -->
+  <% end %>
 
 </div> <!-- end of col -->
 
