@@ -14,7 +14,6 @@ class PagesController < ApplicationController
     PgSearch::Multisearch.rebuild(UsersBook)
     PgSearch::Multisearch.rebuild(Mood)
     @results = PgSearch.multisearch(params[:query])
-#
   end
 
   def about
