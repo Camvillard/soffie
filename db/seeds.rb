@@ -9,10 +9,10 @@ User.delete_all
 
 puts 'planting seeds for soffie...'
 
-esteban = User.create(email: 'esteban@soffie.info', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes', reading_speed: "190")
-claire = User.create(email: 'claire@soffie.info', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman', reading_speed: "185")
-camille = User.create(email: 'camille@soffie.info', password: 'wagonwagon', first_name: 'camille', last_name: 'villard', reading_speed: "220")
-serge = User.create(email: 'serge@soffie.info', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc', reading_speed: "210" )
+# esteban = User.create(email: 'esteban@soffie.info', password: 'wagonwagon', first_name: 'esteban', last_name: 'montantes', reading_speed: "190")
+# claire = User.create(email: 'claire@soffie.info', password: 'wagonwagon', first_name: 'claire', last_name: 'sackman', reading_speed: "185")
+camille = User.create(email: 'ca.villard@gmail.com', password: 'wagonwagon', first_name: 'camille', last_name: 'villard', reading_speed: "220")
+# serge = User.create(email: 'serge@soffie.info', password: 'wagonwagon', first_name: 'serge', last_name: 'leclerc', reading_speed: "210" )
 
 
 Category.create(name: 'fiction')
