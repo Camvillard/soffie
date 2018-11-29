@@ -7,9 +7,6 @@
     </div>
     <div id="content-details">
       <p class="accent-text"><%= pluralize(mood.users_books.count, "book")%> in this mood</p>
-      <% @mood_categories.each do |category| %>
-          <%= category %>
-      <% end %>
       <h6><%= mood.user.first_name %></h6>
     </div>
   </div> <!-- end of #single-mood-header -->
