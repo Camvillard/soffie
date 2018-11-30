@@ -34,10 +34,10 @@
     font-size: 3rem;
   }
 
-  input:active,
-  input:hover,
-  input:visited,
-  input:focus {
+  input[type="text"]:active,
+  input[type="text"]:hover,
+  input[type="text"]:visited,
+  input[type="text"]:focus {
     font-family: $headers-font;
     color: $dark-blue;
     font-size: 3rem;
