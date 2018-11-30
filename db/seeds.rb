@@ -34,16 +34,16 @@ Category.create(name: 'children')
 Category.create(name: 'travel')
 
 Mood.create(
-  name: "relaxing with a glass of wine - or whatever you need it to be",
-  image_url: "https://res.cloudinary.com/camvillard/image/upload/v1543358544/soffie/book-2.jpg",
-  description: "pretty self-explanatory.",
+  name: "reading after an intense 9 weeks coding bootcamp",
+  description: "perfect for an over-used brain that cries for some light reading.",
+  image_url: "https://res.cloudinary.com/camvillard/image/upload/v1543452106/soffie/book-6.jpg",
   user: camille
 )
 
 Mood.create(
-  name: "reading after an intense 9 weeks coding bootcamp",
-  description: "perfect for an over-used brain that cries for some light reading.",
-  image_url: "https://res.cloudinary.com/camvillard/image/upload/v1543452106/soffie/book-6.jpg",
+  name: "relaxing with a glass of wine - or whatever you need it to be",
+  image_url: "https://res.cloudinary.com/camvillard/image/upload/v1543358544/soffie/book-2.jpg",
+  description: "pretty self-explanatory.",
   user: camille
 )
 

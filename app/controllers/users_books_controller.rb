@@ -62,6 +62,7 @@ class UsersBooksController < ApplicationController
   def search_for_a_book
     @book = UsersBook.new
     authorize @book
+    @moods = Mood.all.order(created_at: :asc)
   end
 
   def calculate_reading_time(days, hours)
