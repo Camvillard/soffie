@@ -9,12 +9,12 @@
 
       <div class="book-details">
 
-        <h3><%= @final_books.first.title.downcase.capitalize %></h3>
+        <h3><%= @final_books.first.title %></h3>
         <hr class="sm-border-blue">
         <h4><%= @final_books.first.author %></h4>
         <div class="book-pages">
           <p><%= @final_books.first.num_pages %> pages <br>
-            <%= @final_books.first.reading_time.to_i / 3600 %> hours of reading, don't forget to stay hydrated
+            <%= @final_books.first.reading_time.to_i / 3600 %> hours of reading, don't forget to stay hydrated.
           </p>
         </div>
 
@@ -42,12 +42,7 @@
       </div>
       <div class="modal-body">
         <h4 class="modal-title">you have a new book to read!</h4>
-        now is time to close this computer and find your book.
-      </div>
-      <div class="modal-footer">
-
-<!--         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button> -->
+        now is time to close this computer and go find your book in your pile.
       </div>
     </div>
   </div>

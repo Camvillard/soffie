@@ -1,7 +1,7 @@
 <div class="container">
   <div id="result-header">
-    <h1>hola <%= current_user.first_name %> </h1>
-    <h3>you want to read a
+    <h1>hey <%= current_user.first_name %>,</h1>
+    <h4>you want a book for
       <% @moods.each do |mood| %>
         <span class="mood" data-content="&"><%= mood.name %></span>
       <% end %>
@@ -11,8 +11,9 @@
       <% else %>
         <%= params[:day].to_i * params[:hours].to_i %> hours of reading time.
       <% end %>
-      Here are my suggestions.
-    </h3>
+    </h4>
+    <h4 id="book-suggestion">Here is my suggestion.</h4>
+
   </div>
 </div>
 
