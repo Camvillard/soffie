@@ -89,10 +89,6 @@
   }
 }
 
-.cta-special {
-  @include cta-special(4px, $dark-blue, $dark-blue);
-  font-size: 2.6rem;
-}
 
 .form-big-cta {
   border-bottom: 4px solid white;
@@ -110,3 +106,33 @@
   }
 }
 
+.cta-special {
+  @include cta-special($dark-blue);
+  -webkit-animation: textColorBlock 0.2s 0.3s cubic-bezier(0, 0, 0, 1.25) forwards;
+  -moz-animation: textColorBlock 0.2s 0.3s cubic-bezier(0, 0, 0, 1.25) forwards;
+  -o-animation: textColorBlock 0.2s 0.3s cubic-bezier(0, 0, 0, 1.25) forwards;
+  animation: textColorBlock 0.2s 0.3s cubic-bezier(0, 0, 0, 1.25) forwards;
+  transition: all 0.2s ease;
+  &:hover {
+    color: $neon-orange;
+  }
+}
+
+
+@-webkit-keyframes textColorBlock {
+  0%   { box-shadow: inset 0px 0 $peach-orange; }
+  100% { box-shadow: inset 0px -1.2rem $peach-orange; }
+}
+@-moz-keyframes textColorBlock {
+  0%   { box-shadow: inset 0px 0 $peach-orange; }
+  100% { box-shadow: inset 0px -1.2rem $peach-orange; }
+}
+@-o-keyframes textColorBlock {
+  0%   { box-shadow: inset 0px 0 $peach-orange; }
+  100% { box-shadow: inset 0px -1.2rem $peach-orange; }
+}
+
+@keyframes textColorBlock {
+  0%   { box-shadow: inset 0px 0 $peach-orange; }
+  100% { box-shadow: inset 0px -1.2rem $peach-orange; }
+}
