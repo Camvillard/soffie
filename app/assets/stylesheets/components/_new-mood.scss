@@ -1,5 +1,39 @@
 /* ------ COMPONENT : NEW MOOD ------ */
 
+#moods-new {
+
+  .select2 {
+    width: 100% !important;
+    border-bottom: 6px solid $neon-orange;
+  }
+
+  .select2-container {
+  width: 100% !important;
+  }
+
+  .select2-search--dropdown {
+    display: block;
+    padding: 4px;
+  }
+
+  .select2-results {
+    display: block;
+    font-color: $dark-blue !important;
+  }
+
+  .select2-container--open .select2-dropdown {
+    left: 0;
+    color: $dark-blue;
+  }
+
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    padding: 8px 12px 4px;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+
+}
 
 
 #new-mood-modal {
@@ -11,7 +45,8 @@
 }
 
 form#mood-modal-form {
-    input {
+
+    input[type="text"] {
     width: 100%;
     display: block;
     margin: 5rem auto;
@@ -29,6 +64,14 @@ form#mood-modal-form {
   }
 
 }
-  #mood-modal-form li.select2-search.select2-search--inline {
-    width: 100%;
-  }
+
+#mood-modal-form li.select2-search.select2-search--inline {
+  width: 100% !important;
+  @include horizontal-border(6px, $peach-orange);
+}
+
+
+
+
+
+

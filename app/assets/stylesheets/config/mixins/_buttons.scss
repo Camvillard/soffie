@@ -46,6 +46,18 @@
   font-weight: $font-weight-extrabold;
 }
 
+@mixin cta-special($width, $font-color, $color) {
+  border: none;
+  display: inline-block;
+  border-bottom: $width solid $color;
+  color: $font-color;
+  font-family: $headers-font;
+  text-transform:lowercase;
+  font-weight: $font-weight-extrabold;
+  background-image: linear-gradient(to right, rgba(90,175,173,0.5) 50%, rgba(90,175,173,0.5) 100%);
+  background-size: 10px 10px;
+}
+
 @mixin text-link($color) {
   font-weight: $font-weight-bold;
   font-family: $headers-font;

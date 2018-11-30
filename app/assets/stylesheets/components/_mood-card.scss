@@ -34,16 +34,27 @@
 
   .mood-details,
   .home-mood-details {
-    display:none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 400ms;
   }
 
   &:hover .mood-details {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
   }
   &:hover .home-mood-details {
-    display: inline;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
   }
 }
+
+
+
+
+
 
 
 .mood-title {
@@ -55,6 +66,7 @@
   }
 }
 .mood-details {
+  display:flex;
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -88,12 +100,17 @@
 }
 
 .home-mood-details {
+  padding: 8px;
   background: white;
   p {
     color: $dark-blue;
     font-family: $accent-font;
     font-style: italic;
     margin: 2px 0px;
+  }
+  button.share-icons {
+    margin-left: 0px;
+    padding-left: 0px;
   }
 }
 

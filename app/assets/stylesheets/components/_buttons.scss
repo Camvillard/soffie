@@ -89,6 +89,11 @@
   }
 }
 
+.cta-special {
+  @include cta-special(4px, $dark-blue, $dark-blue);
+  font-size: 2.6rem;
+}
+
 .form-big-cta {
   border-bottom: 4px solid white;
   &:hover {
