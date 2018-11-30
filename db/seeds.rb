@@ -48,8 +48,8 @@ Mood.create(
 )
 
 
-wine = Mood.find_by(name: "relaxing with a glass of wine - or whatever you need it to be")
 light = Mood.find_by(name: "reading after an intense 9 weeks coding bootcamp")
+wine = Mood.find_by(name: "relaxing with a glass of wine - or whatever you need it to be")
 
 
 harry_potter_1 = UsersBook.create(
