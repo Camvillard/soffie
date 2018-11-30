@@ -1,9 +1,9 @@
 <div class="container">
 
-  <h1>i want to read something</h1>
+  <h1>i want to read a</h1>
 
-   <%= form_tag results_path, method: 'get' do %>
-      <%=  select_tag "categories[]", options_from_collection_for_select(Category.all, "id", "name"), class: "js-example-basic-multiple" %>
+   <%= form_tag results_path, method: 'get', id: "search-form" do %>
+      <%=  select_tag "moods[]", options_from_collection_for_select(Mood.all, "id", "name"), class: "js-example-basic-multiple" %>
      <h1>i can read <input type="text" name="hours" placeholder="3"> hours a day and i want to finish my book in <input type="text" name="day" placeholder="3"> days.</h1>
     <%= submit_tag "give me a book, soffie", class: "button-neon", id: "give-me-a-book" %>
    <% end %>

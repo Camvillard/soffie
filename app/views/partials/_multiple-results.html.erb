@@ -27,7 +27,7 @@
         </div>
 
         <div class="book-actions">
-          <%= link_to "great soffie, I'll read this one", users_book_path(id: @final_books.first.id, users_book: {status: "Reading in progress"}), method: :patch, class: "button-peach" %>
+          <%= link_to "great soffie, I'll read this one", users_book_path(id: @final_books.first.id, users_book: {status: "Reading in progress"}), method: :patch, class: "button-peach", id: 'choose-this-book' %>
           <%= link_to "show me the others (please, soffie)", "#other-results", class: "button-border-peach" %>
         </div>
 
@@ -70,3 +70,24 @@
     </div> <!-- end of col-md-6 -->
   <% end %> <!-- end of iteration in the results -->
 </div> <!-- end of row -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="choose-book-modal" tabindex="-1" role="dialog" aria-labelledby="choose-book-modalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="choose-book-modalLabel">yay!</h2>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title">you have a new book to read!</h4>
+        now is time to close this computer and find your book.
+      </div>
+      <div class="modal-footer">
+
+<!--         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>

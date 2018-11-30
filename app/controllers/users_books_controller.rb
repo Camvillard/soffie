@@ -3,7 +3,7 @@ require 'open-uri'
 class UsersBooksController < ApplicationController
 
   def results
-    @categories = Category.find(params[:categories])
+    @moods = Mood.find(params[:moods])
     @reading_time = calculate_reading_time(params[:day], params[:hours])
     @users_books = policy_scope(UsersBook)
     if params[:day] == "" || params[:hours] == ""
@@ -14,7 +14,7 @@ class UsersBooksController < ApplicationController
     @final_books = []
 
     @time_books.each do |book|
-      @final_books << book if book.is_valid?(@categories)
+      @final_books << book if book.is_valid?(@moods)
     end
     if @final_books.empty?
       render :no_results
@@ -78,7 +78,17 @@ class UsersBooksController < ApplicationController
   end
 
   def update_completed_pages
-    # TO DO
+    users_book_id = params[:users_books].first
+    @users_book = UsersBook.find(users_book_id)
+
+    completed_pages = params[:book][:completed_pages]
+
+    @users_book.completed_pages = completed_pages
+    @users_book.save
+
+    authorize(@users_book)
+
+    redirect_to "#{root_path}#book-carousel"
   end
 
   private
@@ -94,7 +104,7 @@ class UsersBooksController < ApplicationController
   def find_a_book_with_time(time)
     @time_books = []
     @users_books.each do |users_book|
-      if users_book.reading_time.to_f > (time - 7200) && users_book.reading_time.to_f < (time + 7200)
+      if users_book.reading_time.to_f > (time - 10800) && users_book.reading_time.to_f < (time + 10800)
         @time_books << users_book
       end
     end
@@ -116,7 +126,7 @@ class UsersBooksController < ApplicationController
   end
 
   def strong_params
-    params.require(:users_book).permit(:status, :completed_pages, :end_readingdate)
+    params.require(:users_book).permit(:status, :end_readingdate)
   end
 
 end

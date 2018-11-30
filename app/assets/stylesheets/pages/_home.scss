@@ -35,3 +35,64 @@
 
 // logged in user
 
+#all-moods {
+  margin: 90px auto 30px;
+}
+
+#homepage-title{
+  h1 {
+    font-size: 8rem;
+  }
+  h4 {
+    color: $dark-blue;
+    font-size: 3.5rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+}
+
+
+#books-stats {
+  padding-top: 20px;
+  ul {
+    padding: 0px;
+    margin: 0px;
+  }
+  li {
+    color: $medium-gray;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: $sm-screen) {
+  #books-stats {
+    // width: 750px;
+    width: 90vw;
+    margin: auto;
+  }
+}
+@media (min-width: $md-screen) {
+  #books-stats {
+    // width: 970px;
+    width: 85vw;
+    margin: auto;
+  }
+}
+@media (min-width: $lg-screen) {
+  #books-stats {
+    // width: 1170px;
+    width: 80vw;
+    margin: auto;
+  }
+}
+
+@media (min-width: $hg-screen) {
+  #books-stats {
+    // width: 1170px;
+    width: 76vw;
+    margin: auto;
+  }
+}
+

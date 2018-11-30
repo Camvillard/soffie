@@ -4,6 +4,7 @@
     <div id="footer-nav">
       <ul>
         <li><%= link_to "add a new book", new_users_book_path, class: "cta-big" %></li>
+        <li><%= link_to "create a new mood", new_mood_path, class: "cta-big" %></li>
         <li><%= link_to "search the next book to read", search_path, class: "cta-big" %></li>
       </ul>
     </div>
@@ -16,6 +17,15 @@
         <li><%= link_to "search your next book", search_path, class: 'cta-md' %></li>
       </ul>
     </div>
+    <% elsif controller_path == "moods" && action_name == "show" %>
+      <!-- footer for single book page -->
+      <div id="single-book-footer">
+        <ul>
+          <li><%= link_to "return to your pile", root_path, class: 'cta-md' %></li>
+          <li><%= link_to "add a book to your pile", new_users_book_path, class: 'cta-md' %></li>
+          <li><%= link_to "search your next book", search_path, class: 'cta-md' %></li>
+        </ul>
+      </div>
   <% elsif controller_path == "moods" && action_name == "index" %>
     <!-- footer for single book page -->
     <div id="index-mood-footer">

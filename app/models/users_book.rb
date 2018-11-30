@@ -6,6 +6,12 @@ class UsersBook < ApplicationRecord
   has_many :moods, through: :book_moods
   belongs_to :user
 
+  include PgSearch
+  multisearchable against: [ :title, :author ],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+
   # before_save :define_reading_time_for_a_book
   after_create :define_reading_time_for_a_book
 
@@ -17,9 +23,9 @@ class UsersBook < ApplicationRecord
     update(reading_time: total_time_for_a_book)
   end
 
-  def is_valid?(categories)
-    self.categories.each do |category|
-      if categories.include?(category)
+  def is_valid?(moods)
+    self.moods.each do |mood|
+      if moods.include?(mood)
         return true
       end
     end

@@ -1,23 +1,31 @@
-<div class="container">
-
-  <h1> welcome, <%= current_user.first_name%></h1>
-  <h4>you have <%= pluralize(current_user.users_books.size, "book") %> in your pile.</h4>
-  <p>you are currently reading (...) books and you have <%= pluralize(@moods.size, "mood") %> created.</p>
-
+<div class="container" id="homepage-title">
+  <div class="row">
+    <h1> Welcome, <%= current_user.first_name if current_user.first_name.present? %>!</h1>
+    <h4>you have <%= pluralize(current_user.users_books.size, "book") %> in your pile.</h4>
+  </div>
 </div>  <!-- end of container -->
 
 <div id="carousel-container">
+  <div id="books-stats">
 
-  <!-- <div class="container"> -->
+    <ul>
+      <li>currently reading <%= pluralize(@books_in_progress.size, "book") %></li>
+      <li><%= @pages_to_read %> pages to read in your pile</li>
+      <li><%= (@pages_to_read * current_user.reading_speed.to_i) / 3600 %> hours of reading </li>
+      <li></li>
+    </ul>
 
-  <div class="book-carousel">
+  </div>
+
+
+  <div class="book-carousel" id="book-carousel">
     <% @users_books.each do |book| %>
       <div class="book-card">
 
         <div class="book-image">
-        <% if book.image_url.present? %>
-          <%= image_tag book.image_url %>
-        <% end %>
+          <% if book.image_url.present? %>
+            <%= image_tag book.image_url %>
+          <% end %>
         </div>
 
         <div class="book-carousel-description">
@@ -38,69 +46,64 @@
             <!-- Reading Progress Bar -->
 
             <p><%=book.completed_pages%> out of <%= book.num_pages%> pages</p>
-              <div id="bar">
-                <div id="progress-bar"></div>
+              <div class="bar">
+                <div class="progress-bar" data-completedpages="<%= book.completed_pages %>" data-bookpages="<%= book.num_pages %>"></div>
               </div>
 
             <% end %> <!-- end of iteration over the categories -->
-            <p>35 out of <%= book.num_pages%> pages</p>
 
           </div>
 
         </div> <!-- end of book carousel description -->
       </div>
     <% end %>
-  </div>
+  </div> <!-- end of book-carousel -->
 
 </div> <!-- end of carousel container -->
 
 
-<div class="container">
 
-  <h4>oh, all the moods that you have!</h4>
+<div class="container" id="all-moods">
+
+  <h4> books to match your reading mood</h4>
 
   <div class="row">
-    <% @moods[0..3].each do |mood| %>
+    <% @moods.each do |mood| %>
 
     <%= render "partials/mood-card", mood: mood %>
 
     <% end %>
+
+    <div class="col-xs-12 col-md-6 col-lg-3">
+        <%= link_to moods_path do %>
+          <div id="last-mood-card">
+            <h6>see all your moods</h6>
+
+          </div> <!-- end of mood-card -->
+        <% end %>
+
+    </div> <!-- end of col -->
 
   </div> <!-- end of row -->
 
 </div> <!-- end of container -->
 
 
-<!-- Modal -->
-<div class="modal fade" id="pagesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <ol>
-          <% @books_in_progress.each do |book| %>
-            <p><%= book.title %></p>
-            <%= simple_form_for book do |f| %>
-              <%= f.input :completed_pages %>
-              <%= f.submit %>
-            <% end %>
-          <% end %>
-        </ol>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+<div id="soffie-button">
+  <%= image_tag "soffie-icon_white.svg", id:"soffie-icon" %>
 </div>
 
-<%= javascript_pack_tag 'completed-pages-read' %>
+<div id="soffie-update-form" class="hidden">
+  <%= form_tag update_completed_pages_path, method: :patch, id: "update-book-form" do %>
+
+    <h6>choose the book to update</h6>
+    <%=  select_tag "users_books[]", options_from_collection_for_select(@books_in_progress, "id", "title"), class: "select2-update-selection", id: "book-selector" %>
+    <p>I'm on page <input type="text" name='book[completed_pages]' placeholder="2"> now, yay</p>
+
+  <% end %>
+
+</div>
+
+
+<%= javascript_pack_tag 'soffie-update-form' %>
 <%= javascript_pack_tag 'select2' %>
-
-
-
