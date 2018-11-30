@@ -1,5 +1,71 @@
 /* ------ COMPONENT : NEW MOOD ------ */
 
+#moods-new {
+
+  .select2 {
+    width: 100% !important;
+  }
+
+  .select2-container {
+  width: 100% !important;
+  }
+
+  .select2-search--dropdown {
+    display: block;
+    padding: 4px;
+  }
+
+  .select2-results {
+    display: block;
+    font-color: $dark-blue !important;
+  }
+
+  .select2-container--open .select2-dropdown {
+    left: 0;
+    color: $dark-blue;
+  }
+
+  .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    padding: 8px 12px 4px;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  #new-mood > span > span.selection > span > ul > li.select2-search.select2-search--inline {
+    width: 100% !important;
+  }
+
+  #new-mood {
+    margin-bottom: 50px;
+  }
+
+  #new-mood input[type="text"] {
+    color: $dark-blue;
+    border: none;
+    @include horizontal-border(6px, $peach-orange);
+    margin: 3rem auto;
+    font-family: $headers-font;
+    font-weight: $font-weight-extrabold;
+    background: none;
+    padding-bottom: 1rem;
+  }
+
+
+  #new-mood input[type="text"]:focus,
+  #new-mood input[type="text"]:visited,
+  #new-mood input[type="text"]:hover,
+  #new-mood input[type="text"]:active {
+    border: none;
+    outline-offset: 0px;
+    @include horizontal-border(6px, $dark-blue);
+    outline: none;
+  }
+
+  #new-mood ::placeholder {
+    color: $peach-orange;
+  }
+
+}
 
 
 #new-mood-modal {
@@ -11,7 +77,8 @@
 }
 
 form#mood-modal-form {
-    input {
+
+    input[type="text"] {
     width: 100%;
     display: block;
     margin: 5rem auto;
@@ -29,6 +96,10 @@ form#mood-modal-form {
   }
 
 }
-  #mood-modal-form li.select2-search.select2-search--inline {
-    width: 100%;
-  }
+
+#mood-modal-form li.select2-search.select2-search--inline {
+  width: 100% !important;
+}
+
+
+

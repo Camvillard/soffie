@@ -10,11 +10,11 @@
 Harry Potter collection in 4 days, without doing anything else, which is a little bit intense, but well, you could.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="cta-neon" data-dismiss="modal">close</button>
+        <button type="button" class="cta-special" data-dismiss="modal">close</button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <%= form_tag updating_users_reading_time_path, method: "patch" do %>
           <%= hidden_field_tag "words_per_minute"%>
-          <%= submit_tag "save my result", class: "cta-neon" %>
+          <%= submit_tag "save my result", class: "cta-special" %>
         <% end %>
       </div>
     </div>

@@ -41,7 +41,7 @@ Mood.create(
 )
 
 Mood.create(
-  name: "reading for after an intense 9 weeks coding bootcamp",
+  name: "reading after an intense 9 weeks coding bootcamp",
   description: "perfect for an over-used brain that cries for some light reading.",
   image_url: "https://res.cloudinary.com/camvillard/image/upload/v1543452106/soffie/book-6.jpg",
   user: camille
@@ -220,7 +220,7 @@ singuliere_tristesse.moods = [wine, light]
 
 saga_harry_potter = UsersBook.create(
     user_id: camille.id,
-    title: 'Harry Potter - the whole saga',
+    title: 'Harry Potter - The Whole Saga',
     author: 'JK Rowling',
     isbn: 9780747538486,
     image_url: "https://images.gr-assets.com/books/1474169725l/15881.jpg",
