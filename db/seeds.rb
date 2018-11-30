@@ -59,8 +59,6 @@ harry_potter_1 = UsersBook.create(
     isbn: 9780747532743,
     image_url: "https://images.gr-assets.com/books/1327190600l/72193.jpg",
     num_pages: 223,
-    status: "Reading in progress",
-    completed_pages: 145,
     description:"Harry Potter's life is miserable. His parents are dead and he's stuck with his
 heartless relatives, who force him to live in a tiny closet under the stairs.
 But his fortune changes when he receives a letter that tells him the truth about
@@ -92,8 +90,6 @@ harry_potter_4 = UsersBook.create(
     title: "Harry Potter and the Goblet of Fire",
     author: "JK Rowling",
     isbn: 9780439139601,
-    completed_pages: 15,
-    status: "Reading in progress",
     image_url: "https://images.gr-assets.com/books/1361482611l/6.jpg",
     num_pages: 734,
     description:"Harry Potter is midway through his training as a wizard and his coming of age.
@@ -199,6 +195,8 @@ singuliere_tristesse = UsersBook.create(
     title: 'La Singulière Tristesse du gâteau au citron',
     author: 'Aimee Bender',
     isbn: 9782879297804,
+    completed_pages: 15,
+    status: "Reading in progress",
     image_url: "https://images.gr-assets.com/books/1369746930l/17984746.jpg",
     num_pages: 292,
     description: "Le jour de ses neuf ans, Rose Edelstein mord avec délice dans le gâteau au
@@ -319,6 +317,8 @@ pride_and_prejudice = UsersBook.create(
     title: "Pride and Prejudice",
     author: "Jane Austen",
     isbn: 9781853260001,
+    completed_pages: 205,
+    status: "Reading in progress",
     image_url: "https://images.gr-assets.com/books/1487841905l/84979.jpg",
     num_pages: 401,
     description: "Austen’s most celebrated novel tells the story of Elizabeth Bennet, a bright, lively young woman with four sisters, and a mother determined to marry them to wealthy men. At a party near the Bennets’ home in the English countryside, Elizabeth meets the wealthy, proud Fitzwilliam Darcy. Elizabeth initially finds Darcy haughty and intolerable, but circumstances continue to unite the pair. Mr. Darcy finds himself captivated by Elizabeth’s wit and candor, while her reservations about his character slowly vanish. The story is as much a social critique as it is a love story, and the prose crackles with Austen’s wry wit.",
