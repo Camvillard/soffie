@@ -41,11 +41,9 @@ class UsersBooksController < ApplicationController
     # image = data['imageLinks'].is_a?(Hash) ? data['imageLinks']['thumbnail'] : data['imageLinks'].first['thumbnail']
     @book = UsersBook.new(
       title: data["title"],
-      # author: data["authors"][0],
       description: data["description"],
       num_pages: data["pageCount"],
       isbn: data["industryIdentifiers"][0]["identifier"],
-      # image_url: image,
       user: current_user
     )
     @book.image_url = retrieve_image_from_goodreads(@book.title)
@@ -115,7 +113,6 @@ class UsersBooksController < ApplicationController
   def build_api_query(title, isbn)
     output = ""
     output += title
-    # output += "+inauthor:#{author}" unless author.empty?
     output += "+isbn:#{isbn}" unless isbn.empty?
     return output
   end
@@ -126,7 +123,10 @@ class UsersBooksController < ApplicationController
           api_secret: ENV['GOODREADS_API_SECRET']
         )
     search = client.search_books(book)
-    search.results.work.first.best_book.image_url
+    url = search.results.work.first.best_book.image_url
+    index_of_letter = url.index(/(\ds|\dm)/) + 1
+    url[index_of_letter] = "l"
+    return url
   end
 
   def retrieve_information_from_google_api(search)
