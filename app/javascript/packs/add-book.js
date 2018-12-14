@@ -1,23 +1,22 @@
 // selecting elements
 
 const inputTitle = document.getElementById('input-title');
+const inputISBN = document.getElementById('input-isbn');
 const addButton = document.getElementById('add-book-button');
 const resultsSection = document.getElementById('new-book-results');
 const resultsTitle = document.getElementById('new-book-results-title');
 const resultsAuthor = document.getElementById('new-book-results-author');
 const resultsDescription = document.getElementById('new-book-results-description');
 
-console.log(addButton);
-console.log(inputTitle);
-console.log(resultsSection);
-
+console.log(resultsTitle.innerText);
 
 // functions
 
 
 // event listeners
 
-const bookTitle = inputTitle.addEventListener('blur', (event) => {
+const filledForm = inputTitle.addEventListener('blur', (event) => {
+  addButton.classList.remove('disabled');
   fetch(`https://www.googleapis.com/books/v1/volumes?q=${event.target.value}`)
     .then(response => response.json())
     .then((data) => {
@@ -31,8 +30,9 @@ const bookTitle = inputTitle.addEventListener('blur', (event) => {
     });
 });
 
-// console.log(bookTitle);
-
-addButton.addEventListener('click', (event) => {
-  event.preventDefault();
-});
+if (resultsTitle.innerText === "") {
+  addButton.classList.add('disabled');
+  addButton.addEventListener('click', (event) => {
+    event.preventDefault();
+  });
+};
