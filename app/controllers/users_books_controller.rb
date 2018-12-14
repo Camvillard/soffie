@@ -36,18 +36,17 @@ class UsersBooksController < ApplicationController
   end
 
   def create
-    built_query = build_api_query(params[:title], params[:author], params[:isbn])
+    built_query = build_api_query(params[:title], params[:isbn])
     data = retrieve_information_from_google_api(built_query)["items"][0]["volumeInfo"]
-    image = data['imageLinks'].is_a?(Hash) ? data['imageLinks']['thumbnail'] : data['imageLinks'].first['thumbnail']
     @book = UsersBook.new(
       title: data["title"],
       author: data["authors"][0],
       description: data["description"],
       num_pages: data["pageCount"],
       isbn: data["industryIdentifiers"][0]["identifier"],
-      image_url: image,
       user: current_user
     )
+    @book.image_url = retrieve_image_from_goodreads(@book.title)
     authorize @book
 
     if @book.save
@@ -132,12 +131,23 @@ class UsersBooksController < ApplicationController
     end
   end
 
-  def build_api_query(title, author, isbn)
+  def build_api_query(title, isbn)
     output = ""
     output += title
-    output += "+inauthor:#{author}" unless author.empty?
     output += "+isbn:#{isbn}" unless isbn.empty?
     return output
+  end
+
+  def retrieve_image_from_goodreads(book)
+    client = Goodreads.new(
+          api_key: ENV['GOODREADS_API_KEY'],
+          api_secret: ENV['GOODREADS_API_SECRET']
+        )
+    search = client.search_books(book)
+    url = search.results.work.first.best_book.image_url
+    index_of_letter = url.index(/(\ds|\dm)/) + 1
+    url[index_of_letter] = "l"
+    return url
   end
 
   def retrieve_information_from_google_api(search)

@@ -1,16 +1,30 @@
 <div class="container">
   <% if policy(UsersBook).create? %>
-  <div id="new-book-form">
-    <h2>add a new book</h2>
-   <%= form_tag users_books_path, method: 'post' do %>
-    <input type="text" name='title' placeholder="title">
-    <input type="text" name='author' placeholder="author">
-    <input type="text" name='isbn' placeholder="isbn">
-    <%=  select_tag "categories[]", options_from_collection_for_select(Category.all, "id", "name"), class: "js-example-basic-multiple" %>
-    <button type="submit" class="button-border-blue">add a book</button>
-    <%#= submit_tag "add a book", class: "button-border-blue" %>
-   <% end %>
-  </div>
+    <div id="new-book-form">
+      <h2>add a new book</h2>
+      <p>using isbn will give you a more accurate results.</p>
+     <%= form_tag users_books_path, method: 'post' do %>
+      <input type="text" name='title' placeholder="title" id="input-title">
+      <input type="text" name='isbn' placeholder="isbn" id="input-isbn">
+
+      <!-- hidden until form is completed -->
+      <div id="new-book-results" class="hidden">
+        <h3>results</h3>
+        <div id="new-book-results-content">
+          <h1 id="new-book-results-title"></h1>
+          <h4 id="new-book-results-author"></h4>
+          <p id="new-book-results-description"></p>
+        </div>
+      <%= label_tag "assign categories to that book" %>
+      <%=  select_tag "categories[]", options_from_collection_for_select(Category.all, "id", "name"), class: "js-example-basic-multiple" %>
+      </div>
+      <button type="submit" class="button-border-blue" id="add-book-button" >add a book</button>
+      <!-- end of new-book-results -->
+
+     <% end %> <!-- end od form_tag -->
+    </div>
+
+
 
   <% else %>
     <%= link_to "Login", new_user_session_path %>
@@ -18,3 +32,4 @@
 </div>
 
 <%= javascript_pack_tag 'select2' %>
+<%= javascript_pack_tag 'add-book' %>

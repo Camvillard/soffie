@@ -112,6 +112,9 @@ span.accent-text {
   font-family: $accent-font;
 }
 
+.disabled {
+  cursor: not-allowed;
+}
 
 /* only for dev */
 
