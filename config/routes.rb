@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :users_books, only: [:new, :create, :show, :update, :destroy] do
     resources :reviews, only: [:create]
    end
-
+  patch '/users_book/:id', to: 'users_books#add_mood', as: 'add_mood'
   patch '/mood/:id', to: 'moods#add_book', as: 'add_book'
 
   resources :moods, only: [:index, :show, :new, :create]

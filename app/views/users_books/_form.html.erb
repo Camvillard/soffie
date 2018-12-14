@@ -1,11 +1,23 @@
-<div id="new-add-book-user-form">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-      <%= simple_form_for(@users_book) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :author %>
-        <%= f.input :isbn %>
+<!-- modal -->
+<div class="modal fade" id="add-mood-modal-<%= @users_book.id %>" tabindex="-1" role="dialog" aria-labelledby="addBookModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h3>Select the mood(s) in which you think you will want to read this book</h3>
 
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-</div>
+        <%= form_tag add_book_path(@mood), method: 'patch', id:"add-book-modal-form" do %>
+           <h6>add some books to that mood</h6>
+           <%= select_tag "books[]", options_from_collection_for_select(UsersBook.all, "id", "title"), multiple: 'multiple', class: "select2-book-modal mood-#{@mood.id}", id: "book-modal-#{@mood.id}" %>
+           <%= hidden_field_tag @mood.id %>
+           <button type="submit" class="button-border-blue">add books</button>
+        <% end %>
+
+      </div> <!-- end of modal-body -->
+
+      <div class="modal-footer">
+        <button type="button" class="cta-neon" data-dismiss="modal">close</button>
+      </div>
+    </div> <!-- end of modal body -->
+  </div>
+
+</div> <!-- end of modal -->

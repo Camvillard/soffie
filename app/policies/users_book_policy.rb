@@ -37,6 +37,10 @@ class UsersBookPolicy < ApplicationPolicy
     true
   end
 
+  def add_mood?
+    true
+  end
+
   def destroy?
     true
   end
