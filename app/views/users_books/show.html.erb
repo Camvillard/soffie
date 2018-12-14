@@ -46,6 +46,7 @@
         <div id="single-book-actions">
           <%= link_to "finished!", "#", class: 'button-blue' %>
           <%= link_to "update my reading", "#", class: 'button-border-blue' %>
+          <%= link_to "delete this book", users_book_path(@users_book), method: :delete, class: 'button-border-blue' %>
         </div> <!-- end of single-book-actions -->
 
       </div>  <!-- end of single-book-details -->

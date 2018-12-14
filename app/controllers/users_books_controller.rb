@@ -92,6 +92,14 @@ class UsersBooksController < ApplicationController
     redirect_to "#{root_path}#book-carousel"
   end
 
+  def destroy
+    @user_book = UsersBook.find(params[:id])
+    @user_book.destroy
+
+    authorize @user_book
+    redirect_to root_path
+  end
+
   private
 
   def add_category_to_a_book(book, categories)
@@ -127,7 +135,7 @@ class UsersBooksController < ApplicationController
   end
 
   def strong_params
-    params.require(:users_book).permit(:status, :end_readingdate)
+    params.require(:users_book).permit(:status, :end_readingdate, :delete)
   end
 
 end

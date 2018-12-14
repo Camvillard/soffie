@@ -36,4 +36,8 @@ class UsersBookPolicy < ApplicationPolicy
   def update_completed_pages?
     true
   end
+
+  def destroy?
+    true
+  end
 end
