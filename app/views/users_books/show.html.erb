@@ -20,6 +20,11 @@
               </a>
             </li>
             <li><%= link_to "recommend", "#", class: "book-extra-actions" %></li>
+            <li>
+              <a class="book-extra-actions" data-toggle="modal" data-target="#addmoodModal">
+                link to mood(s)
+              </a>
+            </li>
             <li><%= link_to "add to a mood", "#", class: "book-extra-actions" %></li>
           </ul>
         </div>
@@ -56,6 +61,31 @@
 
 
  </div> <!-- end of container -->
+
+ <!-- add a mood modal -->
+<div class="add-mood-container">
+  <div class="modal fade" id="addmoodModal" tabindex="-1" role="dialog" aria-labelledby="addMoodModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>select reading moods that match this book</h3>
+
+          <%= form_tag add_mood_path(@users_book), method: 'patch', id:"addmoodModal-form" do %>
+             <%= select_tag "moods[]", options_from_collection_for_select(Mood.all, "id", "name"), multiple: 'multiple', class: "select2-mood-modal users_book-#{@users_book.id}", id: "mood-modal-#{@users_book.id}" %>
+             <%= hidden_field_tag @users_book.id %>
+             <button type="submit" class="button-border-blue">select moods</button>
+          <% end %>
+
+        </div> <!-- end of modal-body -->
+
+        <div class="modal-footer">
+          <button type="button" class="cta-neon" data-dismiss="modal">close</button>
+        </div>
+      </div> <!-- end of modal body -->
+    </div>
+  </div>
+</div> <!-- end of add a mood modal -->
+
 
  <!-- Review Modal -->
 <div class="review-modal-container">

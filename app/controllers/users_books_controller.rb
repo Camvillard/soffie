@@ -59,6 +59,19 @@ class UsersBooksController < ApplicationController
     end
   end
 
+  def add_mood
+    @user_book = UsersBook.find(params[:id])
+    authorize @user_book
+    params[:moods].each do |mood_id|
+      @users_books << UsersBook.find(mood_id)
+    end
+    if @user_book.save
+      redirect_to users_book_path(@user_book)
+    else
+      flash[:alert] = "oops, something wrong in here"
+    end
+  end
+
   def search_for_a_book
     @book = UsersBook.new
     authorize @book
